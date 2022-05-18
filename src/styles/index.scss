@@ -1,0 +1,10 @@
+@use 'normalize';
+@use 'colors';
+@use 'fonts';
+@import './src/app.scss';
+@import '@/components/PostForm/post-form.scss';
+@import '@/components/PostList/post-list.scss';
+@import '@/components/PostItem/post-item.scss';
+@import '@/components/UI/MyButton/my-button.scss';
+@import '@/components/UI/MyInput/my-input.scss';
+@import '@/components/UI/MyDialog/my-dialog.scss';
