@@ -2,6 +2,7 @@
 @use 'colors';
 @use 'fonts';
 @import './src/app.scss';
+@import "~@/components/TeethMap/teeth-map.scss";
 @import '@/components/PostForm/post-form.scss';
 @import '@/components/PostList/post-list.scss';
 @import '@/components/PostItem/post-item.scss';
