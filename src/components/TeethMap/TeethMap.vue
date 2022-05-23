@@ -95,7 +95,7 @@
 </div>
 </template>
 
-<style lang='scss' src="./teeth-map.scss"></style>
+<style lang='scss' src="./teeth-map.scss" scoped></style>
 
 <script>
 export default {

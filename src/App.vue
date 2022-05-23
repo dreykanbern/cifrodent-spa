@@ -1,5 +1,16 @@
 <template>
+
   <div class="container">
+
+    <context-menu :display="showContextMenu" ref="menu">
+      <ul>
+        <li> List item 1 </li>
+        <li> List item 2 </li>
+      </ul>
+    </context-menu>
+
+    <button @click='openContextMenu'>activate context menu</button>
+
     <h1 class="container__h1">Заказ-наряд на фрезеровку</h1>
     <TeethMap :teeth1="teeth1" :teeth2="teeth2"/>
     <div class="container__info">
@@ -86,9 +97,10 @@
 
 <script>
 import TeethMap from "@/components/TeethMap/TeethMap";
+import ContextMenu from "@/components/ContextMenu/ContextMenu";
 export default {
   components: {
-    TeethMap
+    TeethMap, ContextMenu,
   },
   data() {
     return {
@@ -127,11 +139,14 @@ export default {
         {id: 30, value:36},
         {id: 31, value:37},
         {id: 32, value:38},
-      ]
+      ],
+      showContextMenu: false,
     }
   },
   methods: {
-
+    openContextMenu(e) {
+      this.$refs.menu.open(Element);
+    }
   }
 }
 </script>
