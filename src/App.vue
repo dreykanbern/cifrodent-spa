@@ -2,14 +2,12 @@
 
   <div class="container">
 
-    <context-menu :display="showContextMenu" ref="menu">
-      <ul>
+    <context-menu>
+      <ul id="right-click-menu" tabindex="-1" v-el="right" v-if="viewMenu" v-on="blur: closeMenu"  v-style="top:top, left:left">
         <li> List item 1 </li>
         <li> List item 2 </li>
       </ul>
     </context-menu>
-
-    <button @click='openContextMenu'>activate context menu</button>
 
     <h1 class="container__h1">Заказ-наряд на фрезеровку</h1>
     <TeethMap :teeth1="teeth1" :teeth2="teeth2"/>
@@ -145,7 +143,8 @@ export default {
   },
   methods: {
     openContextMenu(e) {
-      this.$refs.menu.open(Element);
+      this.$refs.menu.open(e);
+      e.preventDefault();
     }
   }
 }

@@ -1,6 +1,5 @@
 /* eslint-disable */
-import MyButton from '@/components/UI/MyButton/MyButton';
-import MyInput from '@/components/UI/MyInput/MyInput';
-import MyDialog from '@/components/UI/MyDialog/MyDialog';
+import TeethMap from "@/components/TeethMap/TeethMap";
+import ContextMenu from "@/components/ContextMenu/ContextMenu";
 
-export default [MyButton, MyInput, MyDialog];
+export default [TeethMap, ContextMenu,];
