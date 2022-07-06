@@ -1,29 +1,9 @@
 <template>
 
   <div class="container">
-    <h1 class="container__h1">Заказ-наряд на фрезеровку</h1>
-    <TeethMap :teeth1="teeth1" :teeth2="teeth2"/>
-    <div class="container__info">
+    <Screen1 :teeth1="teeth1" :teeth2="teeth2"></Screen1>
 
-      <div class="info__wrapper">
 
-        <span class="wrapper__flag"> 
-        Мостовидная опора
-        <img class="flag__img" src="./assets/img/info-icon.svg" alt="#">
-        </span>
-
-        <span class="wrapper__flag"> 
-        Как заполнять карту
-        <img class="flag__img" src="./assets/img/info-icon.svg" alt="#">
-        </span>
-      
-      </div>
-
-      <button class="container__finish-editing">
-      Завершить редактирование
-      </button> 
-
-    </div>
 
     <div class="container__right-click-ivent">
       <!-- <img class="right-click-ivent__img" src="./assets/img/background-right-click.svg" alt="#"> -->
@@ -86,13 +66,16 @@
 <style lang='scss' src="./app.scss"></style>
 
 <script>
-import TeethMap from "@/components/TeethMap/TeethMap";
-import ContextMenu from "@/components/ContextMenu/ContextMenu";
+import Screen1 from "@/components/RouterPages/Screen1";
+import Screen0 from "@/components/RouterPages/Screen0";
 export default {
   components: {
-    TeethMap, ContextMenu,
+    Screen1, Screen0
   },
   data() {
+
+  },
+  provide() {
     return {
       teeth1: [
         {id: 1, value:18},

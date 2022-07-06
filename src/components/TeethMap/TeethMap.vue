@@ -129,19 +129,10 @@
 
 <script>
 
-import Checkbox from 'vue-material-checkbox'
 export default {
   components: {},
-  props: {
-    teeth1: {
-      type: Array,
-      required: true
-    },
-    teeth2: {
-      type: Array,
-      required: true
-    },
-  },
+  name: "TeethMap",
+  inject: ['teeth1','teeth2'],
   data() {
     return {
       selectedTeethTop: [],

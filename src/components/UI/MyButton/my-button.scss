@@ -1,8 +1,11 @@
 .btn {
-  padding: 15px;
-  background: rgb(212, 0, 255);
-  color: white;
-  border: 1.5px solid rgb(212, 0, 255);
-  align-self: flex-end;
-  font-family: generalFont;
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+  font-family: subGeneralFont;
+  font-size: 18px;
+  background-color: transparent;
+  border-radius: 8px;
+  border: 2px solid #8c77de;
+  color: #8c77de;
 }
