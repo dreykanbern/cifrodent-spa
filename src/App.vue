@@ -1,14 +1,6 @@
 <template>
 
   <div class="container">
-
-    <context-menu>
-      <ul id="right-click-menu" tabindex="-1" v-el="right" v-if="viewMenu" v-on="blur: closeMenu"  v-style="top:top, left:left">
-        <li> List item 1 </li>
-        <li> List item 2 </li>
-      </ul>
-    </context-menu>
-
     <h1 class="container__h1">Заказ-наряд на фрезеровку</h1>
     <TeethMap :teeth1="teeth1" :teeth2="teeth2"/>
     <div class="container__info">
@@ -21,7 +13,7 @@
         </span>
 
         <span class="wrapper__flag"> 
-        Мостовидная опора
+        Как заполнять карту
         <img class="flag__img" src="./assets/img/info-icon.svg" alt="#">
         </span>
       
@@ -138,14 +130,10 @@ export default {
         {id: 31, value:37},
         {id: 32, value:38},
       ],
-      showContextMenu: false,
     }
   },
   methods: {
-    openContextMenu(e) {
-      this.$refs.menu.open(e);
-      e.preventDefault();
-    }
+
   }
 }
 </script>
