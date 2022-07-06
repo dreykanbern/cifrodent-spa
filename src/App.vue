@@ -1,76 +1,18 @@
 <template>
 
-  <div class="container">
-    <Screen1 :teeth1="teeth1" :teeth2="teeth2"></Screen1>
+  <h1>Первое приложение!</h1>
+  <router-view></router-view>
 
-
-
-    <div class="container__right-click-ivent">
-      <!-- <img class="right-click-ivent__img" src="./assets/img/background-right-click.svg" alt="#"> -->
-      <div class="right-click-ivent__item">Копировать</div>
-      <div class="right-click-ivent__item">Вставить</div>
-      <div class="right-click-ivent__item">Пометить зуб как <span class="red">отсутствующий</span></div>
-      <div class="right-click-ivent__item">Пометить зуб как <span class="green">здоровый</span></div>
-      <div class="right-click-ivent__item">Cбросить настройки зуба</div>
-    </div>
-
-    <button class="container__back-button">
-      <img class="back-button__img" src="./assets/img/back-button.svg" alt="#">
-    </button>
-
-    <div class="container__wrapper">
-
-      <div class="wrapper__chain">
-      <!--<img class="chain__img" src="./assets/img/line-chain.svg" alt="#"> Надо продумать логику свг цепочек-->  
-      <img class="chain__valid-img" src="./assets/img/valid-chain.svg" alt="#">
-      <img class="chain__novalid-img" src="./assets/img/novalid-chain.svg" alt="#">
-      <img class="chain__novalid-img" src="./assets/img/novalid-chain.svg" alt="#">
-      <img class="chain__novalid-img" src="./assets/img/novalid-chain.svg" alt="#">
-      <img class="chain__novalid-img" src="./assets/img/novalid-chain.svg" alt="#">
-      <img class="chain__novalid-img" src="./assets/img/novalid-chain.svg" alt="#">
-      <img class="chain__novalid-img" src="./assets/img/novalid-chain.svg" alt="#">
-      <img class="chain__novalid-img" src="./assets/img/novalid-chain.svg" alt="#">
-      </div>
-
-      <div class="chain__title">
-        <h2 class="title__h2">Тип конструкции</h2>
-        <h2 class="title__h2">Система имплантатов и размеры</h2>
-        <h2 class="title__h2">Материал изготовления</h2>
-        <h2 class="title__h2">Цвет коронки</h2>
-        <h2 class="title__h2">Десневая часть</h2>
-        <h2 class="title__h2">Опак и карвинг</h2>
-        <h2 class="title__h2">Параметры отступа</h2>
-      </div>
-
-    </div>
-
-      <div class="info__wrapper flex-column">
-
-        <span class="wrapper__flag "> 
-          Как заполнить форму
-        <img class="flag__img" src="./assets/img/info-icon.svg" alt="#">
-        </span>
-
-        <span class="wrapper__flag"> 
-        Мостовидная опора
-        <img class="flag__img" src="./assets/img/info-icon.svg" alt="#">
-        </span>
-      
-      </div>
-
-    
-
-  </div>
 </template>
 
 <style lang='scss' src="./app.scss"></style>
 
 <script>
-import Screen1 from "@/components/RouterPages/Screen1";
-import Screen0 from "@/components/RouterPages/Screen0";
+import Screen1 from "@/pages/Screen1";
+import Screen0 from "@/pages/Screen0";
 export default {
   components: {
-    Screen1, Screen0
+    Screen1, Screen0,
   },
   data() {
 
