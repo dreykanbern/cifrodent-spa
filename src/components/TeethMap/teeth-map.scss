@@ -26,7 +26,7 @@
   margin-bottom: 100px;
 }
 
-//Первая колонка (обозвать логически)
+//Первая колонка (Чекбоксы)
 
 .teeth-map__first-column {
   display: flex;
@@ -43,7 +43,7 @@
   border: 2px solid #c8c8c8;
 }
 
-//Вторая колонка (обозвать логически)
+//Вторая колонка (Стрелки зубов)
 .teeth-map__second-column {
   position: absolute;
   display: flex;
@@ -92,7 +92,7 @@
   border-right: 2px solid #8C77DE;
 }
 
-//Третья колонка (обозвать логически)
+//Третья колонка (Сами зубы)
 .teeth-map__third-column {
   display: flex;
   padding: 20px 0 0 0;
@@ -113,7 +113,68 @@
   justify-content: center;
 }
 
+.third-column__item-red {
+  display: flex;
+  font-family: generalFont;
+  font-size: 18px;
+  line-height: 125.5%;
+  color: #ffff;
+  background-color: #ff5656;
+  border-radius: 22px;
+  width: 57px;
+  height: 63px;
+  align-items: center;
+  justify-content: center;
+}
+
+.third-column__item-green {
+  display: flex;
+  font-family: generalFont;
+  font-size: 18px;
+  line-height: 125.5%;
+  color: #ffff;
+  background-color: #78e1db;
+  border-radius: 22px;
+  width: 57px;
+  height: 63px;
+  align-items: center;
+  justify-content: center;
+}
+
 //Переворот схемы
 .rotate-180 {
   transform: rotate(180deg);
+}
+
+//Контекстное меню
+.contextmenu-item {
+  padding: 10px;
+  display: flex;
+  gap: 5px;
+  font-family: subGeneralFont;
+  font-size: 18px;
+  line-height: 125.5%;
+  color: #000000;
+}
+
+.v-contextmenu-item--hover {
+  background-color: #eff3f5;
+}
+
+.red {
+  color: #ff5656;
+}
+
+.green {
+  color: #78e1db;
+}
+
+.contextmenu-img {
+  width: 28px;
+  height: 28px;
+  margin-left: 10px;
+}
+
+.contextmenu-text {
+  padding: 5px;
 }

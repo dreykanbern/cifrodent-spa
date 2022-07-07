@@ -57,7 +57,15 @@
         <div v-else class="second-column__item"></div>
       </div>
       <div class="teeth-map__third-column" >
-        <button class="third-column__item" v-for="tooth in teeth1">{{tooth.value}}</button>
+
+        <div
+            :class="{ 'third-column__item-red': isRemoteTooth, 'third-column__item-green': isHealthyTooth, 'third-column__item': isDefaultStyle  }"
+            v-contextmenu:contextmenu
+            v-for="tooth in teeth1"
+        >
+          <code>{{tooth.value}}</code>
+        </div>
+
       </div>
 
     </div>
@@ -115,7 +123,16 @@
         <div v-else class="second-column__item"></div>
       </div>
       <div class="teeth-map__third-column">
-        <button class="third-column__item rotate-180"  v-for="tooth in teeth2">{{tooth.value}}</button>
+
+        <div
+            :class="{ 'third-column__item-red': isRemoteTooth, 'third-column__item-green': isHealthyTooth, 'third-column__item': isDefaultStyle  }"
+            v-contextmenu:contextmenu
+            v-for="tooth in teeth2"
+            class="rotate-180"
+        >
+          <code>{{tooth.value}}</code>
+        </div>
+
       </div>
 
     </div>
@@ -123,23 +140,67 @@
   </div>
 
 </div>
+
+  <v-contextmenu ref="contextmenu">
+    <v-contextmenu-item class="contextmenu-item">
+      <img class="contextmenu-img" src="~@/assets/img/сopy-icon.svg" alt="#">
+      <p class="contextmenu-text">Копировать</p>
+    </v-contextmenu-item>
+    <v-contextmenu-item class="contextmenu-item">
+      <img class="contextmenu-img" src="~@/assets/img/paste-icon.svg" alt="#">
+      <p class="contextmenu-text">Вставить</p>
+    </v-contextmenu-item >
+    <v-contextmenu-item @click="remoteTooth" class="contextmenu-item">
+      <img class="contextmenu-img" src="~@/assets/img/remote-tooth-icon.svg" alt="#">
+      <p class="contextmenu-text">Пометить зуб как <span class="red">отсутствующий</span></p>
+    </v-contextmenu-item>
+    <v-contextmenu-item class="contextmenu-item">
+      <img class="contextmenu-img" src="~@/assets/img/healthy-tooth-icon.svg" alt="#">
+      <p class="contextmenu-text">Пометить зуб как <span class="green">здоровый</span></p>
+    </v-contextmenu-item>
+    <v-contextmenu-item class="contextmenu-item">
+      <img class="contextmenu-img" src="~@/assets/img/reset-basket-icon.svg" alt="#">
+      <p class="contextmenu-text">Сбросить настройки зуба</p>
+    </v-contextmenu-item>
+  </v-contextmenu>
+
 </template>
 
 <style lang='scss' src="./teeth-map.scss" scoped></style>
 
 <script>
-
+import { directive, Contextmenu, ContextmenuItem } from "v-contextmenu";
+import "v-contextmenu/dist/themes/default.css";
 export default {
-  components: {},
+  directives: {
+    contextmenu: directive,
+  },
+  components: {
+    [Contextmenu.name]: Contextmenu,
+    [ContextmenuItem.name]: ContextmenuItem,
+  },
   name: "TeethMap",
   inject: ['teeth1','teeth2'],
   data() {
     return {
       selectedTeethTop: [],
       selectedTeethBottom: [],
+
+      isRemoteTooth: false,
+      isHealthyTooth: false,
+      isDefaultStyle: true,
+
     }
   },
   methods: {
+    remoteTooth() {
+      if (this.isDefaultStyle === true) {
+        this.isDefaultStyle = false;
+        this.isRemoteTooth = true;
+        return isRemoteTooth, isDefaultStyle
+      }
+
+    }
   }
 }
 

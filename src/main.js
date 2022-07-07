@@ -1,9 +1,10 @@
 import './styles/index.scss';
-import router from "@/router/router";
+import router from "@/router/router.js";
 import { createApp } from 'vue';
 import App from './App';
 import components from "@/components/UI";
-import '@imengyu/vue3-context-menu/lib/vue3-context-menu.css'
+import contextmenu from "v-contextmenu";
+import "v-contextmenu/dist/themes/default.css"
 
 
 
@@ -14,5 +15,6 @@ components.forEach(component => {
 })
 
 app
+    .use(contextmenu)
     .use(router)
     .mount('#app');

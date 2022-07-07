@@ -1,6 +1,5 @@
 <template>
 
-  <h1>Первое приложение!</h1>
   <router-view></router-view>
 
 </template>
@@ -10,9 +9,10 @@
 <script>
 import Screen1 from "@/pages/Screen1";
 import Screen0 from "@/pages/Screen0";
+import router from "@/router/router.js";
 export default {
   components: {
-    Screen1, Screen0,
+    Screen1, Screen0, router,
   },
   data() {
 
