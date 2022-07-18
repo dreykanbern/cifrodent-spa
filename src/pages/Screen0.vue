@@ -1,7 +1,7 @@
 <template>
   <div class="container">
 
-    <router-link to="/teeth-map">
+    <router-link to="/teeth-map" class="text-decoration-none">
       <my-button>
         <slot>Заказ-наряд на фрезеровку</slot>
       </my-button>

@@ -8,21 +8,16 @@
 
       <div class="info__wrapper">
 
-          <span class="wrapper__flag">
-          Мостовидная опора
-          <img class="flag__img" src="~@/assets/img/info-icon.svg" alt="#">
-          </span>
-
-        <span class="wrapper__flag">
-          Как заполнять карту
-          <img class="flag__img" src="~@/assets/img/info-icon.svg" alt="#">
-          </span>
+        <flag-info>Мостовидная опора</flag-info>
+        <flag-info>Как заполнять карту</flag-info>
 
       </div>
 
-      <my-button class="btn">
-        Завершить редактирование
-      </my-button>
+      <router-link to="/teeth-map/final-data" class="text-decoration-none">
+        <my-button class="btn">
+          Завершить редактирование
+        </my-button>
+      </router-link>
 
     </div>
 
@@ -38,12 +33,14 @@ import app from "@/App";
 import TeethMap from "@/components/TeethMap/TeethMap";
 import MyButton from "@/components/UI/MyButton/MyButton";
 import router from "@/router/router";
+import FlagInfo from "@/components/UI/FlagInfo/FlagInfo";
 export default {
   components: {
     MyButton,
     TeethMap,
     app,
     router,
+    FlagInfo
   },
   name: "Screen1",
 }

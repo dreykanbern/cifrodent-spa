@@ -8,6 +8,17 @@
   padding: 20px;
   font-family: generalFont;
 }
+//Сброс стилей для списков
+ul, li {
+  list-style-type: none;
+}
+
+//Сброс стилей для ссылок
+
+a {
+  text-decoration: none;
+  color: unset;
+}
 
 //Сброс стилей для кнопки
 button {
@@ -24,7 +35,7 @@ button {
 //(обозвать логически или внедрить в отдельный компонент)
 .container {
   width: 1120px;
-  margin: 8% 12%;
+  margin: 5% 12%;
 }
 
 .container__h1 {
@@ -33,6 +44,15 @@ button {
   line-height: 150%;
   color: #000000;
   margin-bottom: 60px;
+}
+
+.container__h2 {
+  font-family: subGeneralFont;
+  font-size: 24px;
+  line-height: 150%;
+  color: #000000;
+  margin-top: 60px;
+  margin-bottom: 30px;
 }
 
 .container__info {
@@ -46,21 +66,6 @@ button {
 
 .flex-column {
   flex-direction: column;
-}
-
-.wrapper__flag {
-  font-family: subGeneralFont;
-  font-size: 18px;
-  line-height: 150%;
-  color: #5c5c5c;
-  display: flex;
-  align-self: center;
-  align-items: center;
-  margin-right: 71px;
-}
-
-.flag__img {
-  margin-left: 10px;
 }
 
 .container__finish-editing {
@@ -128,4 +133,23 @@ button {
 
 .title__h2:last-child {
   margin-bottom: 0px;
+}
+
+//Глобальные классы для компонентов
+
+//Обнуление подчеркивания у ссылок роутов
+.text-decoration-none {
+  text-decoration: none;
+}
+
+//Скрытие стандартных чекбоксов
+.checkbox-none {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+//Выравнивание по левой стороне
+.flex-start {
+  align-items: flex-start;
 }

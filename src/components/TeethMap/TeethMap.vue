@@ -58,13 +58,17 @@
       </div>
       <div class="teeth-map__third-column" >
 
-        <div
+        <router-link to="/teeth-map/tooth/" class="teeth-map__tooth-link text-decoration-none">
+
+          <div
             :class="{ 'third-column__item-red': isRemoteTooth, 'third-column__item-green': isHealthyTooth, 'third-column__item': isDefaultStyle  }"
             v-contextmenu:contextmenu
             v-for="tooth in teeth1"
-        >
-          <code>{{tooth.value}}</code>
-        </div>
+          >
+            <code>{{tooth.value}}</code>
+          </div>
+
+        </router-link>
 
       </div>
 
@@ -124,14 +128,18 @@
       </div>
       <div class="teeth-map__third-column">
 
-        <div
+        <router-link to="/teeth-map/tooth/" class="teeth-map__tooth-link text-decoration-none">
+
+          <div
             :class="{ 'third-column__item-red': isRemoteTooth, 'third-column__item-green': isHealthyTooth, 'third-column__item': isDefaultStyle  }"
             v-contextmenu:contextmenu
             v-for="tooth in teeth2"
             class="rotate-180"
-        >
-          <code>{{tooth.value}}</code>
-        </div>
+          >
+            <code>{{tooth.value}}</code>
+          </div>
+
+        </router-link>
 
       </div>
 

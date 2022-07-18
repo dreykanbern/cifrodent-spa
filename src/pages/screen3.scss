@@ -1,0 +1,26 @@
+.container-data {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 5% auto;
+}
+
+.main-table-row {
+  border-bottom: 2px solid #C8C8C8;
+}
+
+.main-table-row:last-child {
+  border: none;
+}
+
+
+//Форма
+
+.final-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  font-family: generalFont;
+  width: 27%;
+}

@@ -1,0 +1,58 @@
+.steps-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.steps-item+label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  font-family: generalFont;
+  font-size: 24px;
+  line-height: 125.5%;
+  color: black;
+  gap: 20px;
+
+}
+
+.steps-item+label::before {
+  content:'';
+  display: inline-block;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 5px solid #8C77DE;
+  border-radius: 0.25em;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+.steps-item:checked+label::before {
+  background-color: transparent;
+  background-image: url("~@/assets/img/steps-checkbox-icon.svg");
+}
+
+.steps-item:not(:disabled):not(:checked)+label:hover::before {
+  //border-color: #b3d7ff;
+}
+/* стили для активного состояния чекбокса (при нажатии на него) */
+.steps-item:not(:disabled):active+label::before {
+  //background-color: #b3d7ff;
+  //border-color: #b3d7ff;
+}
+/* стили для чекбокса, находящегося в фокусе */
+.steps-item:focus+label::before {
+  //box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+/* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+.steps-item:focus:not(:checked)+label::before {
+  //border-color: #80bdff;
+}
+/* стили для чекбокса, находящегося в состоянии disabled */
+.steps-item:disabled+label::before {
+  //background-color: #e9ecef;
+}

@@ -1,0 +1,116 @@
+.tooth-material {
+  display: flex;
+  margin-top: 30px;
+}
+
+.tip-wrapper {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+//Выключенная кнопка
+.disabled {
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+  font-family: subGeneralFont;
+  font-size: 18px;
+  background-color: transparent;
+  border-radius: 8px;
+  border: 2px solid #C8C8C8;
+  color: #C8C8C8;
+  &:hover {
+    border: 2px solid #8C77DE;
+    color: #8C77DE;
+  }
+}
+
+.buttons-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+  align-items: flex-start;
+}
+
+// Стили табов
+
+.tabs-info {
+  display: flex;
+  margin-left: 170px;
+}
+
+.tabs-component-tabs {
+  display: flex;
+  gap: 75px;
+  font-size: 24px;
+  justify-content: center;
+}
+
+.tabs-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: generalFont;
+  color: #5c5c5c;
+}
+
+.is-active {
+  font-family: generalFontBold;
+  color: #8c77de;
+  border-bottom: 2px solid #8c77de;
+}
+
+.tooth-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+}
+
+.tooth-number {
+  background: #EFF3F5;
+  padding: 27px 58px;
+  align-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+.tooth-item {
+  margin-top: 14px;
+  padding: 20px;
+  background: white;
+  border-radius: 22px;
+  display: flex;
+  justify-content: center;
+  color: black;
+}
+
+.tooth-title {
+  display: flex;
+  justify-content: center;
+  color: #5C5C5C;
+}
+
+.tooth-attribute {
+  display: flex;
+  flex-direction: column;
+  padding: 33px;
+  border: 2px solid #EFF3F5;
+  gap: 24px;
+}
+
+.tooth-attribute__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.tooth-attribute__item-value {
+  color: black;
+  font-size: 18px;
+  font-family: subGeneralFont;
+}
