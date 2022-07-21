@@ -1,0 +1,29 @@
+.my-modal {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0, 0.5);
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.my-modal-content {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  background: white;
+}
+
+.btn-close-modal {
+  margin-top: 60px;
+}
+
+.my-modal-content-footer {
+  display: flex;
+  flex-shrink: 0;
+  padding: 30px;
+  gap: 30px;
+  box-shadow: 0px -4px 4px rgba(39, 26, 90, 0.05);
+}

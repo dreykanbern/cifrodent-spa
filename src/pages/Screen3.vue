@@ -28,20 +28,36 @@
           placeholder="ФИО пациента*"
           :is-required ="modelValue.isRequired"
           :value="modelValue.value"
-          :is-valid="modelValue.isValid"
+          :is-validate="modelValue.isValidate"
       >
       </vue-base-input>
       <vue-base-input
+          pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
           placeholder="Контактный номер телефона*"
           :is-required ="modelValue.isRequired"
           :value="modelValue.value"
-          :is-valid="modelValue.isValid"
+          :is-validate="modelValue.isValidate"
+          :input-type="modelValue.inputTypeTel.inputType"
       >
       </vue-base-input>
       <vue-base-input placeholder="Адрес доставки*"></vue-base-input>
       <vue-base-input placeholder="Желаемая дата доставки"></vue-base-input>
       <vue-base-input placeholder="Желаемое время доставки"></vue-base-input>
-      <vue-base-input placeholder="Дополнительная информация к работе"></vue-base-input>
+      <textarea placeholder="Дополнительная информация к заказу"></textarea>
+      <div>
+        <input type="checkbox">
+        <label>Согласен на обработку персональных данных</label>
+      </div>
+
+      <div class="buttons-wrapper">
+        <router-link to="/teeth-map" class="text-decoration-none">
+          <my-button>Отправить в работу</my-button>
+        </router-link>
+        <router-link to="/teeth-map" class="text-decoration-none">
+          <my-button class="disabled">Вернуться к карте зубов</my-button>
+        </router-link>
+      </div>
+
     </div>
 
 
@@ -95,7 +111,11 @@ export default {
       modelValue:{
         isRequired: true,
         value:"",
-        isValid: '',
+        isValidate: null,
+        inputTypeTel: {
+          inputType:'tel'
+        }
+        ,
         inputClass: 'final-form-input',
         },
       }

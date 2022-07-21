@@ -43,7 +43,7 @@
 
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Тип конструкции</span>
-                  <span class="tooth-attribute__item-value">-</span>
+                  <span class="tooth-attribute__item-value">{{this.ChooseType}}</span>
                 </div>
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Система имплантов и размеры</span>
@@ -134,9 +134,13 @@ import FlagInfo from "@/components/UI/FlagInfo/FlagInfo";
 import MyButton from "@/components/UI/MyButton/MyButton";
 import MySteps from "@/components/MySteps/MySteps";
 import {Tab, Tabs} from "vue3-tabs-component";
+import MyModal from "@/components/UI/MyModal/MyModal";
 export default {
   name: "Screen2",
-  components: {router, BackButton, FlagInfo, MyButton, MySteps, Tabs, Tab},
+  components: {router, BackButton, FlagInfo, MyButton, MySteps, Tabs, Tab, MyModal},
+
+
+
 }
 </script>
 

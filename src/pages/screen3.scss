@@ -24,3 +24,20 @@
   font-family: generalFont;
   width: 27%;
 }
+
+//Выключенная кнопка
+.disabled {
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+  font-family: subGeneralFont;
+  font-size: 18px;
+  background-color: transparent;
+  border-radius: 8px;
+  border: 2px solid #C8C8C8;
+  color: #C8C8C8;
+  &:hover {
+    border: 2px solid #8C77DE;
+    color: #8C77DE;
+  }
+}

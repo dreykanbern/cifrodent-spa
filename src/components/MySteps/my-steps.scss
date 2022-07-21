@@ -56,3 +56,68 @@
 .steps-item:disabled+label::before {
   //background-color: #e9ecef;
 }
+
+.modal-select-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-top: 30px;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.modal-select-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.type-construction-img {
+  width: 200px;
+  height: 200px;
+}
+
+.content-modal-wrapper {
+  flex: 1;
+  overflow-y: scroll;
+}
+
+
+// Редактируем селект
+
+.modal-select {
+  padding: 15px 30px;
+  font-family: generalFont;
+  font-size: 18px;
+  background: #EFF3F5;
+  border-radius: 8px;
+  border: none;
+  text-align: center;
+  &:active {
+    //background: #8c77de;
+    //color: white;
+  }
+  &:target {
+    background: #8c77de;
+    color: white;
+    border: none;
+  }
+}
+
+.option-modal:checked {
+  background: #8c77de;
+  color: white;
+}
+
+.option-modal:hover {
+  background: #8c77de;
+  color: white;
+}
+
+.option-disabled {
+  align-content: center;
+}
+
+.modal-select-item:last-child {
+  margin-bottom: 30px;
+}

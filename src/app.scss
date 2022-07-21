@@ -153,3 +153,45 @@ button {
 .flex-start {
   align-items: flex-start;
 }
+
+//Выключенная кнопка
+.disabled {
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+  font-family: subGeneralFont;
+  font-size: 18px;
+  background-color: transparent;
+  border-radius: 8px;
+  border: 2px solid #C8C8C8;
+  color: #C8C8C8;
+  &:hover {
+    border: 2px solid #8C77DE;
+    color: #8C77DE;
+  }
+}
+
+.align-self-left {
+  align-self: flex-start;
+}
+
+//Подзаголовок в модалках
+.subheader__h2 {
+  font-family: generalFontLight;
+  font-size: 18px;
+  color: #5C5C5C;
+}
+//заголовок в модалках
+.modal__h2 {
+  font-family: subGeneralFont;
+  font-size: 24px;
+  line-height: 150%;
+  color: #000000;
+  margin-top: 60px;
+}
+//Контейнер контента в модалках
+.content-modal-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+}
