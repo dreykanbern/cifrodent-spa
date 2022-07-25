@@ -66,6 +66,16 @@
   flex-wrap: wrap;
 }
 
+.modal-select-container-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 30px;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+
 .modal-select-item {
   display: flex;
   flex-direction: column;
@@ -120,4 +130,92 @@
 
 .modal-select-item:last-child {
   margin-bottom: 30px;
+}
+
+
+// Цвет зубов
+
+.modal-select-column {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  font-family: generalFont;
+  gap: 10px;
+  flex-grow: 1;
+  align-items: flex-start;
+  &:first-child > .modal-select-column-item {
+    font-family: subGeneralFont;
+    background: none;
+    padding: 25px 25px 25px 0;
+    &:hover {
+      color: black;
+    }
+  }
+  &:last-child > .modal-select-column-item {
+    flex-grow: 0;
+  }
+}
+
+.modal-select-column-item {
+  background: #EFF3F5;
+  border-radius: 50%;
+  padding: 25px 30px;
+  flex-grow: 1;
+  &:hover {
+    color: white;
+    background: #8c77de;
+    cursor: pointer;
+  }
+}
+
+.group-column-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 18px;
+  font-family: 'generalFont';
+
+}
+
+.border-radius-60 {
+  border-radius: 54px;
+}
+
+.active {
+  color: white;
+  background: #8c77de;
+  cursor: pointer;
+}
+
+//Инпут цвета и лейбл
+
+.modal-select-input {
+  font-family: subGeneralFont;
+  font-size: 18px;
+  color: #5C5C5C;
+  margin: 20px 0 10px 0;
+}
+
+input {
+  padding: 18px;
+  font-size: 18px;
+  font-family: generalFont;
+  border-radius: 4px;
+}
+
+
+//Опак и карвинг
+
+.modal-select-carving-btn {
+  background: #EFF3F5;
+  font-family: generalFont;
+  color: #5C5C5C;
+  padding: 15px 10px;
+  font-size: 18px;
+  border-radius: 8px;
+  &:hover {
+    color: white;
+    background: #8c77de;
+    cursor: pointer;
+  }
 }

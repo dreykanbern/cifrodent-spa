@@ -195,3 +195,34 @@ button {
   flex-direction: column;
   margin-left: 30px;
 }
+
+//Делает флекс в колонку
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+//Делает флекс в строку
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.gap10 {
+  gap: 10px;
+}
+.gap60 {
+  gap: 60px;
+}
+
+.bg-none {
+  background: none;
+}
+
+// Костыли с ID в верстке
+
+#bg-none {
+  background: none;
+}

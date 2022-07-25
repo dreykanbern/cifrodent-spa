@@ -1,4 +1,5 @@
 import './styles/index.scss';
+import store from "@/store";
 import router from "@/router/router.js";
 import { createApp } from 'vue';
 import App from './App';
@@ -28,5 +29,6 @@ app
     .use(Tabs)
     .use(Tab)
     .use(contextmenu)
+    .use(store)
     .use(router)
     .mount('#app');

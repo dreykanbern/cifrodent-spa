@@ -11,7 +11,14 @@
 
       <div class="steps-material">
 
-        <my-steps></my-steps>
+        <my-steps
+            v-on:select-type="selectedConstructionType"
+            v-on:select-implant="selectedImplantSystem"
+            v-on:select-material="selectedMaterial"
+        >
+
+        </my-steps>
+
 
         <div class="tip-wrapper">
           <flag-info>Как заполнять форму?</flag-info>
@@ -41,17 +48,41 @@
 
               <div class="tooth-attribute">
 
-                <div class="tooth-attribute__item">
+                <div class="tooth-attribute__item" >
                   <span class="tooth-attribute__item-title">Тип конструкции</span>
-                  <span class="tooth-attribute__item-value">{{this.ChooseType}}</span>
+                  <span class="tooth-attribute__item-value" >
+                    {{chooseType.chooseType1}}
+                    {{chooseType.chooseType2}}
+                    {{chooseType.chooseType3}}
+                    {{chooseType.chooseType4}}
+                    {{chooseType.chooseType5}}
+                    {{chooseType.chooseType6}}
+                    {{chooseType.chooseType7}}
+                    {{chooseType.chooseType8}}
+                    {{chooseType.chooseType9}}
+                    {{chooseType.chooseType10}}
+                  </span>
                 </div>
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Система имплантов и размеры</span>
-                  <span class="tooth-attribute__item-value">-</span>
+                  <span class="tooth-attribute__item-value">
+                    {{chooseImplant.chooseImplant1}}
+                    {{chooseImplant.chooseImplant2}}
+                  </span>
                 </div>
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Материал изготовления</span>
-                  <span class="tooth-attribute__item-value">-</span>
+                  <span class="tooth-attribute__item-value">
+                    {{chooseMaterial.chooseMaterial1}}
+                    {{chooseMaterial.chooseMaterial2}}
+                    {{chooseMaterial.chooseMaterial3}}
+                    {{chooseMaterial.chooseMaterial4}}
+                    {{chooseMaterial.chooseMaterial5}}
+                    {{chooseMaterial.chooseMaterial6}}
+                    {{chooseMaterial.chooseMaterial7}}
+                    {{chooseMaterial.chooseMaterial8}}
+                    {{chooseMaterial.chooseMaterial9}}
+                  </span>
                 </div>
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Цвет коронки</span>
@@ -138,9 +169,27 @@ import MyModal from "@/components/UI/MyModal/MyModal";
 export default {
   name: "Screen2",
   components: {router, BackButton, FlagInfo, MyButton, MySteps, Tabs, Tab, MyModal},
-
-
-
+  data() {
+    return {
+      chooseType: "",
+      chooseImplant: "",
+      chooseMaterial: "",
+    }
+  },
+  methods: {
+    selectedConstructionType(chooseType) {
+      console.log(chooseType)
+      this.chooseType = chooseType;
+    },
+    selectedImplantSystem(chooseImplant) {
+      console.log(chooseImplant)
+      this.chooseImplant = chooseImplant;
+    },
+    selectedMaterial(chooseMaterial) {
+      console.log(chooseMaterial)
+      this.chooseMaterial = chooseMaterial;
+    }
+  }
 }
 </script>
 
