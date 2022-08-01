@@ -2,7 +2,7 @@
   <div class="container">
 
     <h1 class="container__h1">Заказ-наряд на фрезеровку</h1>
-    <TeethMap :teeth1="teeth1" :teeth2="teeth2"></TeethMap>
+    <TeethMap></TeethMap>
 
     <div class="container__info">
 

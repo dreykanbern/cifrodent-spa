@@ -12,10 +12,10 @@
           <div class="modal-select-item">
 
             <img class="type-construction-img" src="~@/assets/img/type-construction/anatomic-crown.svg" alt="Анатомическая коронка">
-            <select class="modal-select" v-model="chooseType.chooseType1" @click="selectedConstructionType">
-              <option class="option-disabled" disabled value="">Анатомическая коронка</option>
-              <option class="option-modal">Полная анатомия</option>
-              <option class="option-modal">С вестибулярным редуцированием</option>
+            <select class="modal-select" v-model="this.optionsTypeConstruction">
+              <option class="option-disabled" disabled value="">{{this.optionsTypeConstruction.Type1.typeNameDefault}}</option>
+              <option class="option-modal">{{this.optionsTypeConstruction.Type1.option1}}</option>
+              <option class="option-modal">{{this.optionsTypeConstruction.Type1.option2}}</option>
             </select>
 
           </div>
@@ -460,7 +460,7 @@ import MyModal from "@/components/UI/MyModal/MyModal";
 export default  {
   name: "MySteps",
   components: {
-    MyModal
+    MyModal,
   },
   data() {
     return {
@@ -532,14 +532,10 @@ export default  {
     showModal7() {
       this.modalVisible7 = true;
     },
-    selectedConstructionType() {
-      this.$emit('select-type', this.chooseType)
-    },
-    selectedImplantSystem() {
-      this.$emit('select-implant', this.chooseImplant)
-    },
-    selectedMaterial() {
-      this.$emit('select-material', this.chooseMaterial)
+  },
+  computed: {
+    optionsTypeConstruction () {
+      return this.$store.state.module1.optionsTypeConstruction
     }
   }
 }

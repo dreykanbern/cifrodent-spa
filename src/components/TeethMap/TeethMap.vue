@@ -58,17 +58,16 @@
       </div>
       <div class="teeth-map__third-column" >
 
-        <router-link to="/teeth-map/tooth/" class="teeth-map__tooth-link text-decoration-none">
 
           <div
             :class="{ 'third-column__item-red': isRemoteTooth, 'third-column__item-green': isHealthyTooth, 'third-column__item': isDefaultStyle  }"
+            @click="$router.push(`/teeth-map/tooth/${tooth.toothNumber}`)"
             v-contextmenu:contextmenu
             v-for="tooth in teeth1"
           >
-            <code>{{tooth.value}}</code>
+            <code>{{tooth.toothNumber}}</code>
           </div>
 
-        </router-link>
 
       </div>
 
@@ -128,18 +127,17 @@
       </div>
       <div class="teeth-map__third-column">
 
-        <router-link to="/teeth-map/tooth/" class="teeth-map__tooth-link text-decoration-none">
 
           <div
             :class="{ 'third-column__item-red': isRemoteTooth, 'third-column__item-green': isHealthyTooth, 'third-column__item': isDefaultStyle  }"
+            @click="$router.push(`/teeth-map/tooth/${tooth.toothNumber}`)"
             v-contextmenu:contextmenu
             v-for="tooth in teeth2"
             class="rotate-180"
           >
-            <code>{{tooth.value}}</code>
+            <code>{{tooth.toothNumber}}</code>
           </div>
 
-        </router-link>
 
       </div>
 
@@ -194,10 +192,11 @@ export default {
       selectedTeethTop: [],
       selectedTeethBottom: [],
 
+      selectedTooth: {},
+
       isRemoteTooth: false,
       isHealthyTooth: false,
       isDefaultStyle: true,
-
     }
   },
   methods: {
@@ -207,7 +206,9 @@ export default {
         this.isRemoteTooth = true;
         return isRemoteTooth, isDefaultStyle
       }
-
+    },
+    ChoosingTooth(el, toothNumber) {
+      this.selectedTooth = this.state.module1[tooth(toothNumber)]
     }
   }
 }

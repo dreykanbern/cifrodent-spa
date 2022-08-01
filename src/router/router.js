@@ -15,7 +15,7 @@ const routes = [
         component: Screen1,
     },
     {
-        path: `/teeth-map/tooth/`,
+        path: `/teeth-map/tooth/:id/`,
         component: Screen2,
     },
 

@@ -43,7 +43,7 @@
 
               <div class="tooth-number">
                 <span class="tooth-title"> Вы редактируете зуб под номером </span>
-                <div class="tooth-item"> Здесь инжектить значение зуба </div>
+                <div class="tooth-item">{{$route.params.id}}</div>
               </div>
 
               <div class="tooth-attribute">
@@ -51,54 +51,44 @@
                 <div class="tooth-attribute__item" >
                   <span class="tooth-attribute__item-title">Тип конструкции</span>
                   <span class="tooth-attribute__item-value" >
-                    {{chooseType.chooseType1}}
-                    {{chooseType.chooseType2}}
-                    {{chooseType.chooseType3}}
-                    {{chooseType.chooseType4}}
-                    {{chooseType.chooseType5}}
-                    {{chooseType.chooseType6}}
-                    {{chooseType.chooseType7}}
-                    {{chooseType.chooseType8}}
-                    {{chooseType.chooseType9}}
-                    {{chooseType.chooseType10}}
+                    {{stage1.typeConstruction}}
                   </span>
                 </div>
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Система имплантов и размеры</span>
                   <span class="tooth-attribute__item-value">
-                    {{chooseImplant.chooseImplant1}}
-                    {{chooseImplant.chooseImplant2}}
+                    {{stage1.implantSystem}}
                   </span>
                 </div>
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Материал изготовления</span>
                   <span class="tooth-attribute__item-value">
-                    {{chooseMaterial.chooseMaterial1}}
-                    {{chooseMaterial.chooseMaterial2}}
-                    {{chooseMaterial.chooseMaterial3}}
-                    {{chooseMaterial.chooseMaterial4}}
-                    {{chooseMaterial.chooseMaterial5}}
-                    {{chooseMaterial.chooseMaterial6}}
-                    {{chooseMaterial.chooseMaterial7}}
-                    {{chooseMaterial.chooseMaterial8}}
-                    {{chooseMaterial.chooseMaterial9}}
+                    {{stage1.material}}
                   </span>
                 </div>
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Цвет коронки</span>
-                  <span class="tooth-attribute__item-value">-</span>
+                  <span class="tooth-attribute__item-value">
+                    {{stage1.colorVita}}
+                  </span>
                 </div>
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Дисневая часть</span>
-                  <span class="tooth-attribute__item-value">-</span>
+                  <span class="tooth-attribute__item-value">
+                    {{stage1.gumPart}}
+                  </span>
                 </div>
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Опак и карвинг</span>
-                  <span class="tooth-attribute__item-value">-</span>
+                  <span class="tooth-attribute__item-value">
+                    {{stage1.carving}}
+                  </span>
                 </div>
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Параметры отступа</span>
-                  <span class="tooth-attribute__item-value">-</span>
+                  <span class="tooth-attribute__item-value">
+                    {{stage1.indentOptions}}
+                  </span>
                 </div>
 
               </div>
@@ -110,38 +100,52 @@
 
               <div class="tooth-number">
                 <span class="tooth-title"> Вы редактируете зуб под номером </span>
-                <div class="tooth-item"> Здесь инжектить значение зуба </div>
+                <div class="tooth-item">{{$route.params.id}}</div>
               </div>
 
               <div class="tooth-attribute">
 
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Тип конструкции</span>
-                  <span class="tooth-attribute__item-value">-</span>
+                  <span class="tooth-attribute__item-value">
+                    {{stage2.typeConstruction}}
+                  </span>
                 </div>
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Система имплантов и размеры</span>
-                  <span class="tooth-attribute__item-value">-</span>
+                  <span class="tooth-attribute__item-value">
+                    {{stage2.implantSystem}}
+                  </span>
                 </div>
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Материал изготовления</span>
-                  <span class="tooth-attribute__item-value">-</span>
+                  <span class="tooth-attribute__item-value">
+                    {{stage2.material}}
+                  </span>
                 </div>
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Цвет коронки</span>
-                  <span class="tooth-attribute__item-value">-</span>
+                  <span class="tooth-attribute__item-value">
+                    {{stage2.colorVita}}
+                  </span>
                 </div>
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Дисневая часть</span>
-                  <span class="tooth-attribute__item-value">-</span>
+                  <span class="tooth-attribute__item-value">
+                    {{stage2.gumPart}}
+                  </span>
                 </div>
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Опак и карвинг</span>
-                  <span class="tooth-attribute__item-value">-</span>
+                  <span class="tooth-attribute__item-value">
+                    {{stage2.carving}}
+                  </span>
                 </div>
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Параметры отступа</span>
-                  <span class="tooth-attribute__item-value">-</span>
+                  <span class="tooth-attribute__item-value">
+                    {{stage2.indentOptions}}
+                  </span>
                 </div>
 
               </div>
@@ -168,12 +172,16 @@ import {Tab, Tabs} from "vue3-tabs-component";
 import MyModal from "@/components/UI/MyModal/MyModal";
 export default {
   name: "Screen2",
-  components: {router, BackButton, FlagInfo, MyButton, MySteps, Tabs, Tab, MyModal},
+  components: {router, BackButton, FlagInfo, MyButton, MySteps, Tabs, Tab, MyModal,},
+  inject: ['teeth1','teeth2'],
   data() {
     return {
       chooseType: "",
       chooseImplant: "",
       chooseMaterial: "",
+      props: {
+
+      },
     }
   },
   methods: {
@@ -189,6 +197,17 @@ export default {
       console.log(chooseMaterial)
       this.chooseMaterial = chooseMaterial;
     }
+  },
+  computed: {
+    toothId () {
+      return this.$route.params.id
+    },
+    stage1 () {
+      return this.$store.state.module1[`tooth${this.toothId}`].stage1
+    },
+    stage2 () {
+      return this.$store.state.module1[`tooth${this.toothId}`].stage2
+    },
   }
 }
 </script>
