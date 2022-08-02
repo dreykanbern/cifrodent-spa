@@ -12,8 +12,9 @@
           <div class="modal-select-item">
 
             <img class="type-construction-img" src="~@/assets/img/type-construction/anatomic-crown.svg" alt="Анатомическая коронка">
-            <select class="modal-select" v-model="this.optionsTypeConstruction">
-              <option class="option-disabled" disabled value="">{{this.optionsTypeConstruction.Type1.typeNameDefault}}</option>
+            <span class = 'modal-select-header'>{{this.optionsTypeConstruction.Type1.typeNameDefault}}</span>
+            <select class="modal-select select" v-model="this.optionsTypeConstruction.SelectOption">
+              <option class="option-modal" disabled >Выберите значение</option>
               <option class="option-modal">{{this.optionsTypeConstruction.Type1.option1}}</option>
               <option class="option-modal">{{this.optionsTypeConstruction.Type1.option2}}</option>
             </select>
@@ -23,10 +24,11 @@
           <div class="modal-select-item">
 
             <img class="type-construction-img" src="~@/assets/img/type-construction/anatomic-crown-screw-retained.svg" alt="Анатомическая коронка винтовой фиксации">
-            <select class="modal-select" v-model="chooseType.chooseType2" @click="selectedConstructionType">
-              <option class="option-disabled" disabled value="">Анатомическая коронка винтовой фиксации</option>
-              <option class="option-modal">Полная анатомия</option>
-              <option class="option-modal">С вестибулярным редуцированием</option>
+            <span class = 'modal-select-header'>{{this.optionsTypeConstruction.Type2.typeNameDefault}}</span>
+            <select class="modal-select" v-model="this.optionsTypeConstruction.SelectOption">
+              <option class="option-modal" disabled >Выберите значение</option>
+              <option class="option-modal">{{this.optionsTypeConstruction.Type2.option1}}</option>
+              <option class="option-modal">{{this.optionsTypeConstruction.Type2.option2}}</option>
             </select>
 
           </div>

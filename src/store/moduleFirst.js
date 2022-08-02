@@ -823,6 +823,7 @@ export const moduleFirst = {
                 option5: 'Репонирующие',
                 option6: 'Ретенционные',
             },
+            SelectOption: '',
         }
     }),
     getters: {
@@ -830,6 +831,9 @@ export const moduleFirst = {
     },
     mutations: {
         changeTypeConstruction(state) {
+            if (state.optionsTypeConstruction.length > 1 ) {
+                state[`tooth${this.toothId}`].typeConstruction = state.optionsTypeConstruction
+            }
         }
     },
     actions: {

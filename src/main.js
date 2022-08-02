@@ -2,6 +2,7 @@ import './styles/index.scss';
 import store from "@/store";
 import router from "@/router/router.js";
 import { createApp } from 'vue';
+import VueNextSelect from 'vue-next-select'
 import App from './App';
 import components from "@/components/UI";
 import {Tabs, Tab} from 'vue3-tabs-component';
@@ -24,6 +25,7 @@ components.forEach(component => {
 
 app.component('EasyDataTable', Vue3EasyDataTable);
 app
+    .use(VueNextSelect)
     .use(VueSidePanel)
     .use(vueBaseInput)
     .use(Tabs)

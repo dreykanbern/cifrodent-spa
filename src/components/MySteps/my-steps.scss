@@ -112,6 +112,9 @@
     color: white;
     border: none;
   }
+  &:focus-visible {
+    border: none;
+  }
 }
 
 .option-modal:checked {
@@ -219,3 +222,29 @@ input {
     cursor: pointer;
   }
 }
+
+// Проблемы селекта
+.modal-select-header {
+  font-family: generalFont;
+  font-size: 18px;
+  margin-bottom: 15px;
+  &:after {
+    content: '';
+  }
+}
+
+select {
+  // A reset of styles, including removing the default dropdown arrow
+  appearance: none;
+  // Additional resets for further consistency
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  // ...existing styles
+  outline: none;
+}
+
