@@ -10,6 +10,7 @@ import contextmenu from "v-contextmenu";
 import Vue3EasyDataTable from 'vue3-easy-data-table';
 import vueBaseInput from 'vue-base-input';
 import VueSidePanel from 'vue3-side-panel';
+import MySelect from "@/components/UI/MySelect/MySelect";
 import 'vue3-side-panel/dist/vue3-side-panel.css'
 import 'vue3-easy-data-table/dist/style.css';
 import "v-contextmenu/dist/themes/default.css";
@@ -25,6 +26,7 @@ components.forEach(component => {
 
 app.component('EasyDataTable', Vue3EasyDataTable);
 app
+    .use(MySelect)
     .use(VueNextSelect)
     .use(VueSidePanel)
     .use(vueBaseInput)

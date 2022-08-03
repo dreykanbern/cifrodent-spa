@@ -13,7 +13,10 @@
 
             <img class="type-construction-img" src="~@/assets/img/type-construction/anatomic-crown.svg" alt="Анатомическая коронка">
             <span class = 'modal-select-header'>{{this.optionsTypeConstruction.Type1.typeNameDefault}}</span>
-            <select class="modal-select select" v-model="this.optionsTypeConstruction.SelectOption">
+            <select
+                class="modal-select select"
+                v-model="this.optionsTypeConstruction.SelectOption"
+            >
               <option class="option-modal" disabled >Выберите значение</option>
               <option class="option-modal">{{this.optionsTypeConstruction.Type1.option1}}</option>
               <option class="option-modal">{{this.optionsTypeConstruction.Type1.option2}}</option>
@@ -36,9 +39,10 @@
           <div class="modal-select-item">
 
             <img class="type-construction-img" src="~@/assets/img/type-construction/frame.svg" alt="Каркас">
-            <select class="modal-select" v-model="chooseType.chooseType3" @click="selectedConstructionType">
-              <option class="option-disabled" disabled value="">Каркас</option>
-              <option class="option-modal">Выбран каркас</option>
+            <span class = 'modal-select-header'>{{this.optionsTypeConstruction.Type3.typeNameDefault}}</span>
+            <select class="modal-select" v-model="this.optionsTypeConstruction.SelectOption">
+              <option class="option-modal" disabled >Выберите значение</option>
+              <option class="option-modal">{{this.optionsTypeConstruction.Type3.option1}}</option>
             </select>
 
           </div>
@@ -46,10 +50,11 @@
           <div class="modal-select-item">
 
             <img class="type-construction-img" src="~@/assets/img/type-construction/frame-for-application.svg" alt="Каркас под нанесение">
-            <select class="modal-select" v-model="chooseType.chooseType4" @click="selectedConstructionType">
-              <option class="option-disabled" disabled value="">Каркас под нанесение</option>
-              <option class="option-modal">Винтовой фиксации</option>
-              <option class="option-modal">Цементной фиксации</option>
+            <span class = 'modal-select-header'>{{this.optionsTypeConstruction.Type4.typeNameDefault}}</span>
+            <select class="modal-select" v-model="this.optionsTypeConstruction.SelectOption">
+              <option class="option-modal" disabled >Выберите значение</option>
+              <option class="option-modal">{{this.optionsTypeConstruction.Type4.option1}}</option>
+              <option class="option-modal">{{this.optionsTypeConstruction.Type4.option1}}</option>
             </select>
 
           </div>
@@ -459,10 +464,11 @@
 
 <script>
 import MyModal from "@/components/UI/MyModal/MyModal";
+import MySelect from "@/components/UI/MySelect/MySelect";
 export default  {
   name: "MySteps",
   components: {
-    MyModal,
+    MyModal,MySelect
   },
   data() {
     return {
@@ -504,6 +510,7 @@ export default  {
 
     }
   },
+
   methods: {
     activeButton() {
       if (this.isActive !== true) {
@@ -536,9 +543,21 @@ export default  {
     },
   },
   computed: {
+    toothId () {
+      return this.$route.params.id
+    },
     optionsTypeConstruction () {
       return this.$store.state.module1.optionsTypeConstruction
+    },
+    zub: {
+      set(value) {
+        this.$store.commit('changeTypeConstruction', value);
+      },
+      get() {
+        return this.$store.getters('zub');
+      }
     }
+
   }
 }
 </script>

@@ -771,8 +771,14 @@ export const moduleFirst = {
         optionsTypeConstruction: {
             Type1: {
                 typeNameDefault: 'Анатомическая коронка',
-                option1: 'Полная анатомия',
-                option2:'С вестибулярным редуцированием',
+                option1: {
+                    titleTypeName: 'Анатомическая коронка',
+                    chooseTypeName: 'Полная анатомия'
+                },
+                option2: {
+                    titleTypeName: 'Анатомическая коронка',
+                    chooseTypeName: 'С вестибулярным редуцированием',
+                },
             },
             Type2: {
                 typeNameDefault: 'Анатомическая коронка винтовой фиксации',
@@ -823,7 +829,11 @@ export const moduleFirst = {
                 option5: 'Репонирующие',
                 option6: 'Ретенционные',
             },
-            SelectOption: '',
+            SelectOption: {
+                titleTypeName:'',
+                chooseTypeName: '',
+            },
+
         }
     }),
     getters: {
