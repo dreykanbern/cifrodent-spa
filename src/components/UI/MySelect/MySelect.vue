@@ -25,9 +25,7 @@ export default {
     chooseTypeName: String,
   },
   computed: {
-    SelectOption() {
-      return this.$store.state.module1.optionsTypeConstruction.SelectOption
-    }
+
   }
 }
 </script>

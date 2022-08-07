@@ -12,14 +12,11 @@
           <div class="modal-select-item">
 
             <img class="type-construction-img" src="~@/assets/img/type-construction/anatomic-crown.svg" alt="Анатомическая коронка">
-            <span class = 'modal-select-header'>{{this.optionsTypeConstruction.Type1.typeNameDefault}}</span>
-            <select
-                class="modal-select select"
-                v-model="this.optionsTypeConstruction.SelectOption"
-            >
-              <option class="option-modal" disabled >Выберите значение</option>
-              <option class="option-modal">{{this.optionsTypeConstruction.Type1.option1}}</option>
-              <option class="option-modal">{{this.optionsTypeConstruction.Type1.option2}}</option>
+            <span class ='modal-select-header'>{{this.optionsTypeConstruction.Type1.typeNameDefault}}</span>
+            <select class="modal-select select" v-model="optionsTypeConstruction.SelectOption">
+              <option class="option-modal" disabled :value="{chooseTypeName: '', selectDefault: 'Выберите значение', titleTypeName: '',}">Выберите значение</option>
+              <option class="option-modal" :value="{chooseTypeName: 'Полная анатомия', selectDefault: 'Выберите значение', titleTypeName: 'Анатомическая коронка',}">Полная анатомия</option>
+              <option class="option-modal" :value="{chooseTypeName: 'С вестибулярным редуцированием', selectDefault: 'Выберите значение', titleTypeName: 'Анатомическая коронка',}">С вестибулярным редуцированием</option>
             </select>
 
           </div>
@@ -28,10 +25,10 @@
 
             <img class="type-construction-img" src="~@/assets/img/type-construction/anatomic-crown-screw-retained.svg" alt="Анатомическая коронка винтовой фиксации">
             <span class = 'modal-select-header'>{{this.optionsTypeConstruction.Type2.typeNameDefault}}</span>
-            <select class="modal-select" v-model="this.optionsTypeConstruction.SelectOption">
-              <option class="option-modal" disabled >Выберите значение</option>
-              <option class="option-modal">{{this.optionsTypeConstruction.Type2.option1}}</option>
-              <option class="option-modal">{{this.optionsTypeConstruction.Type2.option2}}</option>
+            <select class="modal-select" v-model="optionsTypeConstruction.SelectOption">
+              <option class="option-modal" disabled :value="{titleTypeName: '', chooseTypeName: '', selectDefault: 'Выберите значение',}">Выберите значение</option>
+              <option class="option-modal" :value="{titleTypeName: 'Анатомическая коронка винтовой фиксации', chooseTypeName: 'Полная анатомия', selectDefault: 'Выберите значение',}">Полная анатомия</option>
+              <option class="option-modal" :value="{titleTypeName: 'Анатомическая коронка винтовой фиксации', chooseTypeName: 'С вестибулярным редуцированием', selectDefault: 'Выберите значение',}">С вестибулярным редуцированием</option>
             </select>
 
           </div>
@@ -507,7 +504,6 @@ export default  {
         chooseMaterial8: "",
         chooseMaterial9: "",
       },
-
     }
   },
 
@@ -549,15 +545,6 @@ export default  {
     optionsTypeConstruction () {
       return this.$store.state.module1.optionsTypeConstruction
     },
-    zub: {
-      set(value) {
-        this.$store.commit('changeTypeConstruction', value);
-      },
-      get() {
-        return this.$store.getters('zub');
-      }
-    }
-
   }
 }
 </script>

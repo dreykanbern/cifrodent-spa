@@ -782,8 +782,14 @@ export const moduleFirst = {
             },
             Type2: {
                 typeNameDefault: 'Анатомическая коронка винтовой фиксации',
-                option1: 'Полная анатомия',
-                option2:'С вестибулярным редуцированием',
+                option1: {
+                    titleTypeName: 'Анатомическая коронка винтовой фиксации',
+                    chooseTypeName: 'Полная анатомия'
+                },
+                option2: {
+                    titleTypeName: 'Анатомическая коронка винтовой фиксации',
+                    chooseTypeName: 'С вестибулярным редуцированием',
+                },
             },
             Type3: {
                 typeNameDefault: 'Каркас',
@@ -830,16 +836,23 @@ export const moduleFirst = {
                 option6: 'Ретенционные',
             },
             SelectOption: {
-                titleTypeName:'',
                 chooseTypeName: '',
+                selectDefault: "Выберите значение",
+                titleTypeName:'',
             },
 
         }
     }),
     getters: {
-
+        zub(state) {
+            this.$store.commit('SET_PROPERTY', {key: 'zub', value: value})
+            this.zub = 'new value';
+        }
     },
     mutations: {
+        SET_PROPERTY(state, payload) {
+            state[payload.key] = payload.value
+        },
         changeTypeConstruction(state) {
             if (state.optionsTypeConstruction.length > 1 ) {
                 state[`tooth${this.toothId}`].typeConstruction = state.optionsTypeConstruction
