@@ -60,7 +60,7 @@
 
 
           <div
-            :class="{ 'third-column__item-red': isRemoteTooth, 'third-column__item-green': isHealthyTooth, 'third-column__item': isDefaultStyle, 'active': isFilledTooth }"
+            :class="{ 'third-column__item-red': isRemoteTooth, 'third-column__item-green': isHealthyTooth, 'third-column__item': isDefaultStyle, 'active': tooth.isFilledTooth }"
             @click="$router.push(`/teeth-map/tooth/${tooth.toothNumber}`)"
             v-contextmenu:contextmenu
             v-for="tooth in teeth1"
@@ -129,7 +129,7 @@
 
 
           <div
-            :class="{ 'third-column__item-red': isRemoteTooth, 'third-column__item-green': isHealthyTooth, 'third-column__item': isDefaultStyle ,     }"
+            :class="{ 'third-column__item-red': isRemoteTooth, 'third-column__item-green': isHealthyTooth, 'third-column__item': isDefaultStyle ,  'active': tooth.isFilledTooth   }"
             @click="$router.push(`/teeth-map/tooth/${tooth.toothNumber}`)"
             v-contextmenu:contextmenu
             v-for="tooth in teeth2"
@@ -215,8 +215,9 @@ export default {
         if (item.typeConstruction !== '-' || item.implantSystem !== '-' || item.material !== '-' || item.colorVita !=='-'
             || item.gumPart !== '-' || item.carving !== '-' || item.indentOptions !== '-') {
           item.isFilledTooth = true
+          console.log(item.isFilledTooth)
           this.MUT_FILLED_TOOTH( {
-            newValue: item.isFilledTooth = !item.isFilledTooth,
+            newValue:  item.isFilledTooth,
             toothId: this.toothId
           })
         }
@@ -226,9 +227,9 @@ export default {
             || item.gumPart !== '-' || item.carving !== '-' || item.indentOptions !== '-') {
           item.isFilledTooth = true
           this.MUT_FILLED_TOOTH( {
-            newValue: item.isFilledTooth = !item.isFilledTooth,
+            newValue:  item.isFilledTooth,
             toothId: this.toothId
-          }) //подумать насчет for in для объектов
+          })
         }
       })
       return
@@ -244,7 +245,40 @@ export default {
     }
   },
   computed: {
-  }
+    ...mapGetters([
+      'GET_STATE1',
+    ]),
+  },
+  watch: {
+    'GET_STATE1': {
+      deep: true,
+      handler(GET_STATE1) {
+        GET_STATE1.forEach(item => {
+            if (item.typeConstruction !== '-' || item.implantSystem !== '-' || item.material !== '-' || item.colorVita !=='-'
+                || item.gumPart !== '-' || item.carving !== '-' || item.indentOptions !== '-') {
+              console.log(item.isFilledTooth)
+              item.isFilledTooth = true
+              console.log(this.GET_STATE1)
+              this.MUT_FILLED_TOOTH( {
+                newValue:  item.isFilledTooth,
+                toothId: this.toothId
+              })
+            }
+          })
+          teeth2.forEach(item => {
+            if (item.typeConstruction !== '-' || item.implantSystem !== '-' || item.material !== '-' || item.colorVita !=='-'
+                || item.gumPart !== '-' || item.carving !== '-' || item.indentOptions !== '-') {
+              item.isFilledTooth = true
+              this.MUT_FILLED_TOOTH( {
+                newValue:  item.isFilledTooth,
+                toothId: this.toothId
+              })
+            }
+          })
+        return
+      },
+    }
+  },
 }
 
 

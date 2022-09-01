@@ -917,7 +917,6 @@ export default  {
     indentOptions: {
       deep: true,
       handler(indentOptions) {
-          console.log(this.indentOptions)
           if (this.indentOptions.WidhtWest.length >= 1 && this.indentOptions.WidhtNeb.length >= 1 && this.indentOptions.Deep1.length >= 1 && this.indentOptions.Deep2.length >= 1 ) {
             indentOptions = `Ширина уступа: Вестибулярная ${this.indentOptions.WidhtWest}мм Небная ${this.indentOptions.WidhtNeb}мм Глубина уступа: Над десной ${this.indentOptions.Deep1}мм Под десной ${this.indentOptions.Deep2}мм`
             this.MUT_PROPERTY({
