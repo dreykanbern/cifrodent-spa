@@ -4,13 +4,18 @@ export const moduleFirst = {
             stage1: {
                 stageNumber: '1',
                 toothNumber: '18',
-                typeConstruction: '-',
+                typeConstruction: "-",
                 implantSystem: '-',
                 material: '-',
                 colorVita: '-',
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isRemoteTooth: false, //Подумать насчет изменений значений не стейте а прокидывать настоящим инжектом
+                isHealthyTooth: false,
+                isDefaultStyle: true,
+                isFilledTooth: false, //Изменить на тру, при изменении стейта, дает заполненным зубам на карте фиолетовую окраску
             },
             stage2: {
                 stageNumber: '2',
@@ -22,6 +27,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth17: {
@@ -35,6 +42,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -46,6 +55,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth16: {
@@ -59,6 +70,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -70,6 +83,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth15: {
@@ -83,6 +98,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -94,6 +111,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth14: {
@@ -107,6 +126,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -118,6 +139,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth13: {
@@ -131,6 +154,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -142,6 +167,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth12: {
@@ -155,6 +182,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -166,6 +195,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth11: {
@@ -179,6 +210,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -190,6 +223,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth21: {
@@ -203,6 +238,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -214,6 +251,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth22: {
@@ -227,6 +266,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -238,6 +279,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth23: {
@@ -251,6 +294,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -262,6 +307,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth24: {
@@ -275,6 +322,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -286,6 +335,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth25: {
@@ -299,6 +350,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -310,6 +363,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth26: {
@@ -323,6 +378,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -334,6 +391,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth27: {
@@ -347,6 +406,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -358,6 +419,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth28: {
@@ -371,6 +434,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -382,6 +447,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth48: {
@@ -395,6 +462,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -406,6 +475,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth47: {
@@ -419,6 +490,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -430,6 +503,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth46: {
@@ -443,6 +518,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -454,6 +531,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth45: {
@@ -467,6 +546,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -478,6 +559,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth44: {
@@ -491,6 +574,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -502,6 +587,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth43: {
@@ -515,6 +602,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -526,6 +615,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth42: {
@@ -539,6 +630,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -550,6 +643,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth41: {
@@ -563,6 +658,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -574,6 +671,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth31: {
@@ -587,6 +686,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -598,6 +699,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth32: {
@@ -611,6 +714,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -622,6 +727,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth33: {
@@ -635,6 +742,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -646,6 +755,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth34: {
@@ -659,6 +770,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -670,6 +783,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth35: {
@@ -683,6 +798,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -694,6 +811,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth36: {
@@ -707,6 +826,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -718,6 +839,8 @@ export const moduleFirst = {
                 gumPart: '',
                 carving: '',
                 indentOptions: '',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth37: {
@@ -731,6 +854,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -742,6 +867,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         tooth38: {
@@ -755,6 +882,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             },
             stage2: {
                 stageNumber: '2',
@@ -766,6 +895,8 @@ export const moduleFirst = {
                 gumPart: '-',
                 carving: '-',
                 indentOptions: '-',
+                selectDefault: 'Выберите значение',
+                isFilledTooth: false,
             }
         },
         optionsTypeConstruction: {
@@ -835,12 +966,56 @@ export const moduleFirst = {
                 option5: 'Репонирующие',
                 option6: 'Ретенционные',
             },
-            SelectOption: {
+            SelectOption1: {
                 chooseTypeName: '',
                 selectDefault: "Выберите значение",
                 titleTypeName:'',
             },
-
+            SelectOption2: {
+                chooseTypeName: '',
+                selectDefault: "Выберите значение",
+                titleTypeName:'',
+            },
+            SelectOption3: {
+                chooseTypeName: '',
+                selectDefault: "Выберите значение",
+                titleTypeName:'',
+            },
+            SelectOption4: {
+                chooseTypeName: '',
+                selectDefault: "Выберите значение",
+                titleTypeName:'',
+            },
+            SelectOption5: {
+                chooseTypeName: '',
+                selectDefault: "Выберите значение",
+                titleTypeName:'',
+            },
+            SelectOption6: {
+                chooseTypeName: '',
+                selectDefault: "Выберите значение",
+                titleTypeName:'',
+            },
+            SelectOption7: {
+                chooseTypeName: '',
+                selectDefault: "Выберите значение",
+                titleTypeName:'',
+            },
+            SelectOption8: {
+                chooseTypeName: '',
+                selectDefault: "Выберите значение",
+                titleTypeName:'',
+            },
+            SelectOption9: {
+                chooseTypeName: '',
+                selectDefault: "Выберите значение",
+                titleTypeName:'',
+            },
+            SelectOption10: {
+                chooseTypeName: '',
+                selectDefault: "Выберите значение",
+                titleTypeName:'',
+            },
         }
     }),
     getters: {
@@ -857,7 +1032,8 @@ export const moduleFirst = {
             if (state.optionsTypeConstruction.length > 1 ) {
                 state[`tooth${this.toothId}`].typeConstruction = state.optionsTypeConstruction
             }
-        }
+        },
+
     },
     actions: {
 

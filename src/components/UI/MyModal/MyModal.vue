@@ -1,15 +1,17 @@
 <template>
 
-  <div class="my-modal" v-if="show" @click.stop="hideModal">
-    <div @click.stop class="my-modal-content">
-      <back-button class="align-self-left btn-close-modal" @click.stop="hideModal">Вернуться к списку настроек</back-button>
-      <slot></slot>
-      <div class="my-modal-content-footer">
-        <my-button @click.stop="hideModal">Сохранить</my-button>
-        <button @click.stop="hideModal" class="disabled">Отменить</button>
+  <form>
+    <div class="my-modal" v-if="show" @click.stop="hideModal">
+      <div @click.stop class="my-modal-content">
+        <back-button class="align-self-left btn-close-modal" @click.stop="hideModal">Вернуться к списку настроек</back-button>
+        <slot></slot>
+        <div class="my-modal-content-footer">
+          <my-button @click.stop="hideModal">Сохранить</my-button>
+          <button @click.stop="hideModal" type="reset" class="disabled">Отменить</button>
+        </div>
       </div>
     </div>
-  </div>
+  </form>
 
 </template>
 
@@ -32,7 +34,10 @@ export default {
   methods: {
     hideModal() {
       this.$emit('update:show', false)
-    }
+    },
+    clearSelection() {
+      document.getElementsByClassName('default-option').options[0].selected = 'selected'; // Подумать над сбросом значений по умолчанию
+    },
   }
 }
 </script>

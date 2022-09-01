@@ -60,7 +60,7 @@
 
 
           <div
-            :class="{ 'third-column__item-red': isRemoteTooth, 'third-column__item-green': isHealthyTooth, 'third-column__item': isDefaultStyle  }"
+            :class="{ 'third-column__item-red': isRemoteTooth, 'third-column__item-green': isHealthyTooth, 'third-column__item': isDefaultStyle, 'active': isFilledTooth }"
             @click="$router.push(`/teeth-map/tooth/${tooth.toothNumber}`)"
             v-contextmenu:contextmenu
             v-for="tooth in teeth1"
@@ -129,7 +129,7 @@
 
 
           <div
-            :class="{ 'third-column__item-red': isRemoteTooth, 'third-column__item-green': isHealthyTooth, 'third-column__item': isDefaultStyle  }"
+            :class="{ 'third-column__item-red': isRemoteTooth, 'third-column__item-green': isHealthyTooth, 'third-column__item': isDefaultStyle ,     }"
             @click="$router.push(`/teeth-map/tooth/${tooth.toothNumber}`)"
             v-contextmenu:contextmenu
             v-for="tooth in teeth2"
@@ -177,6 +177,7 @@
 <script>
 import { directive, Contextmenu, ContextmenuItem } from "v-contextmenu";
 import "v-contextmenu/dist/themes/default.css";
+import {mapGetters, mapMutations, mapActions} from 'vuex';
 export default {
   directives: {
     contextmenu: directive,
@@ -184,6 +185,7 @@ export default {
   components: {
     [Contextmenu.name]: Contextmenu,
     [ContextmenuItem.name]: ContextmenuItem,
+    mapGetters, mapMutations, mapActions,
   },
   name: "TeethMap",
   inject: ['teeth1','teeth2'],
@@ -192,24 +194,56 @@ export default {
       selectedTeethTop: [],
       selectedTeethBottom: [],
 
-      selectedTooth: {},
-
+      selectedTooth: {
+        isRemoteTooth: Boolean,
+        isHealthyTooth: Boolean,
+        isDefaultStyle: Boolean,
+      },
       isRemoteTooth: false,
       isHealthyTooth: false,
-      isDefaultStyle: true,
+      isDefaultStyle: Boolean,
     }
   },
   methods: {
-    remoteTooth() {
+    ...mapMutations([
+      'MUT_PROPERTY',
+      'MUT_COLOR',
+      'MUT_FILLED_TOOTH'
+    ]),
+    FilledTooth (teeth1, teeth2) {
+      teeth1.forEach(item => {
+        if (item.typeConstruction !== '-' || item.implantSystem !== '-' || item.material !== '-' || item.colorVita !=='-'
+            || item.gumPart !== '-' || item.carving !== '-' || item.indentOptions !== '-') {
+          item.isFilledTooth = true
+          this.MUT_FILLED_TOOTH( {
+            newValue: item.isFilledTooth = !item.isFilledTooth,
+            toothId: this.toothId
+          })
+        }
+      })
+      teeth2.forEach(item => {
+        if (item.typeConstruction !== '-' || item.implantSystem !== '-' || item.material !== '-' || item.colorVita !=='-'
+            || item.gumPart !== '-' || item.carving !== '-' || item.indentOptions !== '-') {
+          item.isFilledTooth = true
+          this.MUT_FILLED_TOOTH( {
+            newValue: item.isFilledTooth = !item.isFilledTooth,
+            toothId: this.toothId
+          }) //подумать насчет for in для объектов
+        }
+      })
+      return
+    },
+    remoteTooth(toothNumber) {
       if (this.isDefaultStyle === true) {
         this.isDefaultStyle = false;
         this.isRemoteTooth = true;
-        return isRemoteTooth, isDefaultStyle
       }
     },
     ChoosingTooth(el, toothNumber) {
       this.selectedTooth = this.state.module1[tooth(toothNumber)]
     }
+  },
+  computed: {
   }
 }
 

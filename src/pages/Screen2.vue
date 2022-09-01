@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container1">
 
     <router-link to="/teeth-map" class="text-decoration-none">
       <back-button>
@@ -170,10 +170,11 @@ import MyButton from "@/components/UI/MyButton/MyButton";
 import MySteps from "@/components/MySteps/MySteps";
 import {Tab, Tabs} from "vue3-tabs-component";
 import MyModal from "@/components/UI/MyModal/MyModal";
+import {mapGetters, mapMutations, mapActions} from 'vuex';
 export default {
   name: "Screen2",
   components: {router, BackButton, FlagInfo, MyButton, MySteps, Tabs, Tab, MyModal,},
-  inject: ['teeth1','teeth2'],
+  inject: ['teeth1','teeth2',],
   data() {
     return {
       chooseType: "",
@@ -185,6 +186,10 @@ export default {
     }
   },
   methods: {
+    ...mapMutations([
+      'MUT_PROPERTY',
+      'MUT_COLOR'
+    ]),
     selectedConstructionType(chooseType) {
       console.log(chooseType)
       this.chooseType = chooseType;

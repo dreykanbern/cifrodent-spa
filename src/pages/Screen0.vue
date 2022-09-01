@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container1">
 
     <router-link to="/teeth-map" class="text-decoration-none">
       <my-button>

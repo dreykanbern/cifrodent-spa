@@ -33,7 +33,7 @@ button {
 }
 
 //(обозвать логически или внедрить в отдельный компонент)
-.container {
+.container1 {
   width: 1120px;
   margin: 5% 12%;
 }
@@ -221,8 +221,19 @@ button {
   background: none;
 }
 
+.back-btn {
+  background: #C8C8C8;
+}
+
 // Костыли с ID в верстке
 
 #bg-none {
   background: none;
 }
+
+.active {
+  color: white;
+  background: #8c77de;
+  cursor: pointer;
+}
+

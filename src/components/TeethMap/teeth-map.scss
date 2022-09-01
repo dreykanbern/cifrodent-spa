@@ -186,3 +186,15 @@
   gap: 14px;
   justify-content: space-between;
 }
+
+.third-column__item:hover {
+  color: #ffff;
+  background-color: #8c77de;
+  cursor: pointer;
+}
+
+.active {
+  color: #ffff;
+  background-color: #8c77de;
+  cursor: pointer;
+}

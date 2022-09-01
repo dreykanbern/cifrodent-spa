@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container1">
 
     <h1 class="container__h1">Заказ-наряд на фрезеровку</h1>
     <TeethMap></TeethMap>
@@ -8,8 +8,18 @@
 
       <div class="info__wrapper">
 
-        <flag-info>Мостовидная опора</flag-info>
-        <flag-info>Как заполнять карту</flag-info>
+        <flag-info id="flag1">
+          <div id="flag-content1">
+            Данный раздел находится в активной разработке и в ближайшее время будет дополнен
+          </div>
+          <div id="flag-hover-background"></div>
+          Мостовидная опора</flag-info>
+        <flag-info id="flag2">
+          <div id="flag-content2">
+            Данный раздел находится в активной разработке и будет дополнен в ближайшее время
+          </div>
+          <div id="flag-hover-background"></div>
+          Как заполнять карту</flag-info>
 
       </div>
 
@@ -43,6 +53,12 @@ export default {
     FlagInfo
   },
   name: "Screen1",
+  methods: {
+
+  },
+  computed: {
+
+  }
 }
 </script>
 

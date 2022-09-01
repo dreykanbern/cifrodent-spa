@@ -13,10 +13,10 @@
 
             <img class="type-construction-img" src="~@/assets/img/type-construction/anatomic-crown.svg" alt="Анатомическая коронка">
             <span class ='modal-select-header'>{{this.optionsTypeConstruction.Type1.typeNameDefault}}</span>
-            <select class="modal-select select" v-model="optionsTypeConstruction.SelectOption">
-              <option class="option-modal" disabled :value="{chooseTypeName: '', selectDefault: 'Выберите значение', titleTypeName: '',}">Выберите значение</option>
-              <option class="option-modal" :value="{chooseTypeName: 'Полная анатомия', selectDefault: 'Выберите значение', titleTypeName: 'Анатомическая коронка',}">Полная анатомия</option>
-              <option class="option-modal" :value="{chooseTypeName: 'С вестибулярным редуцированием', selectDefault: 'Выберите значение', titleTypeName: 'Анатомическая коронка',}">С вестибулярным редуцированием</option>
+            <select class="modal-select select" v-model="stage1.typeConstruction">
+              <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
+              <option class="option-modal" :value="'Анатомическая коронка: полная анатомия'">Полная анатомия</option>
+              <option class="option-modal" :value="'Анатомическая коронка: с вестибулярным редуцированием'">С вестибулярным редуцированием</option>
             </select>
 
           </div>
@@ -25,10 +25,10 @@
 
             <img class="type-construction-img" src="~@/assets/img/type-construction/anatomic-crown-screw-retained.svg" alt="Анатомическая коронка винтовой фиксации">
             <span class = 'modal-select-header'>{{this.optionsTypeConstruction.Type2.typeNameDefault}}</span>
-            <select class="modal-select" v-model="optionsTypeConstruction.SelectOption">
-              <option class="option-modal" disabled :value="{titleTypeName: '', chooseTypeName: '', selectDefault: 'Выберите значение',}">Выберите значение</option>
-              <option class="option-modal" :value="{titleTypeName: 'Анатомическая коронка винтовой фиксации', chooseTypeName: 'Полная анатомия', selectDefault: 'Выберите значение',}">Полная анатомия</option>
-              <option class="option-modal" :value="{titleTypeName: 'Анатомическая коронка винтовой фиксации', chooseTypeName: 'С вестибулярным редуцированием', selectDefault: 'Выберите значение',}">С вестибулярным редуцированием</option>
+            <select class="modal-select" v-model="stage1.typeConstruction">
+              <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
+              <option class="option-modal" :value="'Анатомическая коронка винтовой фиксации: полная анатомия'">Полная анатомия</option>
+              <option class="option-modal" :value="'Анатомическая коронка винтовой фиксации: с вестибулярным редуцированием'">С вестибулярным редуцированием</option>
             </select>
 
           </div>
@@ -37,9 +37,9 @@
 
             <img class="type-construction-img" src="~@/assets/img/type-construction/frame.svg" alt="Каркас">
             <span class = 'modal-select-header'>{{this.optionsTypeConstruction.Type3.typeNameDefault}}</span>
-            <select class="modal-select" v-model="this.optionsTypeConstruction.SelectOption">
-              <option class="option-modal" disabled >Выберите значение</option>
-              <option class="option-modal">{{this.optionsTypeConstruction.Type3.option1}}</option>
+            <select class="modal-select" v-model="stage1.typeConstruction">
+              <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
+              <option class="option-modal" :value="'Каркас'">Использовать каркас</option>
             </select>
 
           </div>
@@ -48,10 +48,10 @@
 
             <img class="type-construction-img" src="~@/assets/img/type-construction/frame-for-application.svg" alt="Каркас под нанесение">
             <span class = 'modal-select-header'>{{this.optionsTypeConstruction.Type4.typeNameDefault}}</span>
-            <select class="modal-select" v-model="this.optionsTypeConstruction.SelectOption">
-              <option class="option-modal" disabled >Выберите значение</option>
-              <option class="option-modal">{{this.optionsTypeConstruction.Type4.option1}}</option>
-              <option class="option-modal">{{this.optionsTypeConstruction.Type4.option1}}</option>
+            <select class="modal-select" v-model="stage1.typeConstruction">
+              <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
+              <option class="option-modal" :value="'Каркас под нанесение: винтовой фиксации'">Винтовой фиксации</option>
+              <option class="option-modal" :value="'Каркас под нанесение: цементной фиксации'">Цементной фиксации</option>
             </select>
 
           </div>
@@ -59,11 +59,12 @@
           <div class="modal-select-item">
 
             <img class="type-construction-img" src="~@/assets/img/type-construction/abutment.svg" alt="Абатмент">
-            <select class="modal-select" v-model="chooseType.chooseType5" @click="selectedConstructionType">
-              <option class="option-disabled" disabled value="">Абатмент</option>
-              <option class="option-modal">С использованием стандартных оснований</option>
-              <option class="option-modal">С анодированием титанового абатмента</option>
-              <option class="option-modal">С использованием жёлтых оснований</option>
+            <span class ='modal-select-header'>{{this.optionsTypeConstruction.Type5.typeNameDefault}}</span>
+            <select class="modal-select" v-model="stage1.typeConstruction">
+              <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
+              <option class="option-modal" :value="'Абатмент: с использованием стандартных оснований'">С использованием стандартных оснований</option>
+              <option class="option-modal" :value="'Абатмент: с анодированием титанового абатмента'">С анодированием титанового абатмента</option>
+              <option class="option-modal" :value="'Абатмент: с использованием жёлтых оснований'">С использованием жёлтых оснований</option>
             </select>
 
           </div>
@@ -71,10 +72,11 @@
           <div class="modal-select-item">
 
             <img class="type-construction-img" src="~@/assets/img/type-construction/tab.svg" alt="Вкладка">
-            <select class="modal-select" v-model="chooseType.chooseType6" @click="selectedConstructionType">
-              <option class="option-disabled" disabled value="">Вкладка</option>
-              <option class="option-modal">Не разборная</option>
-              <option class="option-modal">Разборная</option>
+            <span class ='modal-select-header'>{{this.optionsTypeConstruction.Type6.typeNameDefault}}</span>
+            <select class="modal-select" v-model="stage1.typeConstruction">
+              <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
+              <option class="option-modal" :value="'Вкладка: не разборная'">Не разборная</option>
+              <option class="option-modal" :value="'Вкладка: разборная'">Разборная</option>
             </select>
 
           </div>
@@ -82,11 +84,12 @@
           <div class="modal-select-item">
 
             <img class="type-construction-img" src="~@/assets/img/type-construction/rail-girder.svg" alt="Рельсовая балка">
-            <select class="modal-select" v-model="chooseType.chooseType7" @click="selectedConstructionType">
-              <option class="option-disabled" disabled value="">Рельсовая балка</option>
-              <option class="option-modal">С замками</option>
-              <option class="option-modal">Под варку (с пинами)</option>
-              <option class="option-modal">Под циркониевый мост</option>
+            <span class ='modal-select-header'>{{this.optionsTypeConstruction.Type7.typeNameDefault}}</span>
+            <select class="modal-select" v-model="stage1.typeConstruction">
+              <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
+              <option class="option-modal" :value="'Рельсовая балка: с замками'">С замками</option>
+              <option class="option-modal" :value="'Рельсовая балка: под варку (с пинами)'">Под варку (с пинами)</option>
+              <option class="option-modal" :value="'Рельсовая балка: под циркониевый мост'">Под циркониевый мост</option>
             </select>
 
           </div>
@@ -94,11 +97,11 @@
           <div class="modal-select-item">
 
             <img class="type-construction-img" src="~@/assets/img/type-construction/stump.svg" alt="Культя">
-            <select class="modal-select" v-model="chooseType.chooseType8" @click="selectedConstructionType">
-              <option class="option-disabled" disabled value="">Культя</option>
-              <option class="option-modal">Культя</option>
-              <option class="option-modal">Культя винтовой
-                фиксации</option>
+            <span class ='modal-select-header'>{{this.optionsTypeConstruction.Type8.typeNameDefault}}</span>
+            <select class="modal-select" v-model="stage1.typeConstruction">
+              <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
+              <option class="option-modal" :value="'Культя'">Выбрана культя</option>
+              <option class="option-modal" :value="'Культя винтовой фиксации'">Винтовой фиксации</option>
             </select>
 
           </div>
@@ -106,9 +109,10 @@
           <div class="modal-select-item">
 
             <img class="type-construction-img" src="~@/assets/img/type-construction/surgical-template.svg" alt="Хирургический шаблон">
-            <select class="modal-select" v-model="chooseType.chooseType9" @click="selectedConstructionType">
-              <option class="option-disabled" disabled value="">Хирургический шаблон</option>
-              <option class="option-modal">Выбран хирургический шаблон</option>
+            <span class ='modal-select-header'>{{this.optionsTypeConstruction.Type9.typeNameDefault}}</span>
+            <select class="modal-select" v-model="stage1.typeConstruction">
+              <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
+              <option class="option-modal" :value="'Хирургический шаблон'">Выбран хирургический шаблон</option>
             </select>
 
           </div>
@@ -116,14 +120,15 @@
           <div class="modal-select-item">
 
             <img class="type-construction-img" src="~@/assets/img/type-construction/splint.svg" alt="Сплинт">
-            <select class="modal-select" v-model="chooseType.chooseType10" @click="selectedConstructionType">
-              <option class="option-disabled" disabled value="">Сплинт</option>
-              <option class="option-modal">Декомпрессионные (разгрузочные)</option>
-              <option class="option-modal">Релаксационные (расслабляющие)</option>
-              <option class="option-modal">Позиционирующие</option>
-              <option class="option-modal">Стабилизирующие</option>
-              <option class="option-modal">Репонирующие</option>
-              <option class="option-modal">Ретенционные</option>
+            <span class ='modal-select-header'>{{this.optionsTypeConstruction.Type10.typeNameDefault}}</span>
+            <select class="modal-select" v-model="stage1.typeConstruction">
+              <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
+              <option class="option-modal" :value="'Сплинт: декомпрессионный (разгрузочный)'"><flag-info></flag-info> Декомпрессионный (разгрузочный)</option>
+              <option class="option-modal" :value="'Сплинт: релаксационный (расслабляющий)'"><flag-info></flag-info>Релаксационный (расслабляющий)</option>
+              <option class="option-modal" :value="'Сплинт: позиционирующий'"><flag-info></flag-info>Позиционирующий</option>
+              <option class="option-modal" :value="'Сплинт: стабилизирующий'"><flag-info></flag-info>Стабилизирующий</option>
+              <option class="option-modal" :value="'Сплинт: репонирующий'"><flag-info></flag-info>Репонирующий</option>
+              <option class="option-modal" :value="'Сплинт: ретенционный'"><flag-info></flag-info>Ретенционный</option>
             </select>
 
           </div>
@@ -141,49 +146,342 @@
         <h2 class="modal__h2">Системы имплантов и размер</h2>
         <h3 class="subheader__h2">Выберите один пункт</h3>
 
-        <div class="modal-select-container">
+        <div class="modal-select-container" id="implants">
 
           <div class="modal-select-item">
 
-            <select class="modal-select" v-model="chooseImplant.chooseImplant1" @click="selectedImplantSystem">
-              <option class="option-disabled" disabled value="">Система имплантов</option>
-              <option class="option-modal">Straumann Bone Level</option>
-              <option class="option-modal">Alfa Bio</option>
-              <option class="option-modal">ANKYLOS</option>
-              <option class="option-modal">Anthogry Axiom</option>
-              <option class="option-modal">BEGO Semados</option>
-              <option class="option-modal">BioHorizons</option>
-              <option class="option-modal">Biotech</option>
-              <option class="option-modal">Conmet</option>
-              <option class="option-modal">ICX</option>
-              <option class="option-modal">Dentium Implantium</option>
-              <option class="option-modal">IRIS Liko-M</option>
-              <option class="option-modal">MegaGen AnyOne</option>
-              <option class="option-modal">MegaGen AnyRidge</option>
-              <option class="option-modal">MIS</option>
-              <option class="option-modal">NIKO / LIKO</option>
-              <option class="option-modal">NobelActive</option>
-              <option class="option-modal">NobelReplace</option>
-              <option class="option-modal">OT medical F1</option>
-              <option class="option-modal">OT medical F2</option>
-              <option class="option-modal">Radix</option>
-              <option class="option-modal">ROOTT</option>
-              <option class="option-modal">Renova</option>
-              <option class="option-modal">Straumann Bone Level</option>
-              <option class="option-modal">Straumann SyncOcta</option>
-              <option class="option-modal">SIC</option>
-              <option class="option-modal">XiVE</option>
+            <span class ='modal-select-header'>Alfa Bio</span>
+            <select class="modal-select" v-model="stage1.implantSystem">
+              <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
+              <option class="option-modal" :value="'Alfa Bio: 4.5'">4.5</option>
+              <option class="option-modal" :value="'Alfa Bio: X'">X</option>
+              <option class="option-modal" :value="'Alfa Bio: Multi-Unit'">Multi-Unit</option>
             </select>
 
           </div>
 
           <div class="modal-select-item">
 
-            <select class="modal-select" v-model="chooseImplant.chooseImplant2" @click="selectedImplantSystem">
-              <option class="option-disabled" disabled value="">Размер имплантов</option>
-              <option class="option-modal">RC (4.1 / 4.8)</option>
-              <option class="option-modal">NC (3.3)</option>
-              <option class="option-modal">Multi-Unit</option>
+            <span class ='modal-select-header'>ANKYLOS</span>
+            <select class="modal-select" v-model="stage1.implantSystem">
+              <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
+              <option class="option-modal" :value="'ANKYLOS: C'">C</option>
+              <option class="option-modal" :value="'ANKYLOS: X'">X</option>
+              <option class="option-modal" :value="'ANKYLOS: Multi-Unit'">Multi-Unit</option>
+            </select>
+
+          </div>
+
+          <div class="modal-select-item">
+
+            <span class ='modal-select-header'>Anthogry Axiom</span>
+            <select class="modal-select" v-model="stage1.implantSystem">
+              <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
+              <option class="option-modal" :value="'Anthogry Axiom: Multi-Unit'">Multi-Unit</option>
+            </select>
+
+          </div>
+
+          <div class="modal-select-item">
+
+            <span class ='modal-select-header'>ASTRA TECH</span>
+            <select class="modal-select" v-model="stage1.implantSystem">
+              <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
+              <option class="option-modal" :value="'ASTRA TECH: 3.0'">3.0</option>
+              <option class="option-modal" :value="'ASTRA TECH: 3.5 / 4.0'">3.5 / 4.0</option>
+              <option class="option-modal" :value="'ASTRA TECH: 4.5 / 5.0'">4.5 / 5.0</option>
+              <option class="option-modal" :value="'ASTRA TECH: Multi-Unit'">Multi-Unit</option>
+            </select>
+
+          </div>
+
+          <div class="modal-select-item">
+
+            <span class ='modal-select-header'>BEGO Semados</span>
+            <select class="modal-select" v-model="stage1.implantSystem">
+              <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
+              <option class="option-modal" :value="'BEGO Semados: 3.25 / 3.75'">3.25 / 3.75</option>
+              <option class="option-modal" :value="'BEGO Semados: 4.1'">4.1</option>
+              <option class="option-modal" :value="'BEGO Semados: 4.5'">4.5</option>
+              <option class="option-modal" :value="'BEGO Semados: 5.5'">5.5</option>
+              <option class="option-modal" :value="'BEGO Semados: Multi-Unit'">Multi-Unit</option>
+            </select>
+
+          </div>
+
+          <div class="modal-select-item">
+
+            <span class ='modal-select-header'>BioHorizons</span>
+            <select class="modal-select" v-model="stage1.implantSystem">
+              <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
+              <option class="option-modal" :value="'BioHorizons: 3.0'">3.0</option>
+              <option class="option-modal" :value="'BioHorizons: 3.5'">3.5</option>
+              <option class="option-modal" :value="'BioHorizons: 4.5'">4.5</option>
+              <option class="option-modal" :value="'BioHorizons: 5.0 / 6.0'">5.0 / 6.0</option>
+              <option class="option-modal" :value="'BioHorizons: Multi-Unit'">Multi-Unit</option>
+            </select>
+
+          </div>
+
+          <div class="modal-select-item">
+
+            <span class ='modal-select-header'>Biotech</span>
+            <select class="modal-select" v-model="stage1.implantSystem">
+              <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
+              <option class="option-modal" :value="'Biotech: 3.6 / 4.8'">3.6 / 4.8</option>
+              <option class="option-modal" :value="'Biotech: Multi-Unit'">Multi-Unit</option>
+            </select>
+
+          </div>
+
+          <div class="modal-select-item">
+
+            <span class ='modal-select-header'>Conmet</span>
+            <select class="modal-select" v-model="stage1.implantSystem">
+              <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
+              <option class="option-modal" :value="'Conmet: NP (2.2)'">NP (2.2)</option>
+              <option class="option-modal" :value="'Conmet: RP (2.7'">RP (2.7</option>
+              <option class="option-modal" :value="'Conmet: Multi-Unit'">Multi-Unit</option>
+            </select>
+
+          </div>
+
+          <div class="modal-select-item">
+
+            <span class ='modal-select-header'>ICX</span>
+            <select class="modal-select" v-model="stage1.implantSystem">
+              <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
+              <option class="option-modal" :value="'ICX: Multi-Unit'">Multi-Unit</option>
+            </select>
+
+          </div>
+
+          <div class="modal-select-item">
+
+            <span class ='modal-select-header'>Dentium Implantium</span>
+            <select class="modal-select" v-model="stage1.implantSystem">
+              <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
+              <option class="option-modal" :value="'Dentium Implantium: 3.4'">3.4</option>
+              <option class="option-modal" :value="'Dentium Implantium: 3.8 / 4.2'">3.8 / 4.2</option>
+              <option class="option-modal" :value="'Dentium Implantium: Multi-Unit'">Multi-Unit</option>
+            </select>
+
+          </div>
+
+          <div class="modal-select-item">
+
+            <span class ='modal-select-header'>IRIS Liko-M</span>
+            <select class="modal-select" v-model="stage1.implantSystem">
+              <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
+              <option class="option-modal" :value="'IRIS Liko-M: Multi-Unit'">Multi-Unit</option>
+            </select>
+
+          </div>
+
+          <div class="modal-select-item">
+
+            <span class ='modal-select-header'>MegaGen AnyOne</span>
+            <select class="modal-select" v-model="stage1.implantSystem">
+              <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
+              <option class="option-modal" :value="'MegaGen AnyOne: Multi-Unit'">Multi-Unit</option>
+            </select>
+
+          </div>
+
+          <div class="modal-select-item">
+
+            <span class ='modal-select-header'>MegaGen AnyRidge</span>
+            <select class="modal-select" v-model="stage1.implantSystem">
+              <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
+              <option class="option-modal" :value="'MegaGen AnyRidge: Multi-Unit'">Multi-Unit</option>
+            </select>
+
+          </div>
+
+          <div class="modal-select-item">
+
+            <span class ='modal-select-header'>MIS</span>
+            <select class="modal-select" v-model="stage1.implantSystem">
+              <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
+              <option class="option-modal" :value="'MIS: NP (3.3)'">NP (3.3)</option>
+              <option class="option-modal" :value="'MIS: SP (3.75 / 4.2)'">SP (3.75 / 4.2)</option>
+              <option class="option-modal" :value="'MIS: WP (5.0 / 6.0)'">WP (5.0 / 6.0)</option>
+              <option class="option-modal" :value="'MIS: Multi-Unit'">Multi-Unit</option>
+            </select>
+
+          </div>
+
+          <div class="modal-select-item">
+
+            <span class ='modal-select-header'>MIS C1</span>
+            <select class="modal-select" v-model="stage1.implantSystem">
+              <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
+              <option class="option-modal" :value="'MIS C1: NP (3.3)'">NP (3.3)</option>
+              <option class="option-modal" :value="'MIS C1: SP (3.75 / 4.2)'">SP (3.75 / 4.2)</option>
+              <option class="option-modal" :value="'MIS C1: WP (5.0)'">WP (5.0)</option>
+              <option class="option-modal" :value="'MIS C1: Multi-Unit'">Multi-Unit</option>
+            </select>
+
+          </div>
+
+          <div class="modal-select-item">
+
+            <span class ='modal-select-header'>NIKO / LIKO</span>
+            <select class="modal-select" v-model="stage1.implantSystem">
+              <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
+              <option class="option-modal" :value="'NIKO / LIKO: 3.5'">3.5</option>
+              <option class="option-modal" :value="'NIKO / LIKO: 4.5'">4.5</option>
+              <option class="option-modal" :value="'NIKO / LIKO: Multi-Unit'">Multi-Unit</option>
+            </select>
+
+          </div>
+
+          <div class="modal-select-item">
+
+            <span class ='modal-select-header'>NobelActive</span>
+            <select class="modal-select" v-model="stage1.implantSystem">
+              <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
+              <option class="option-modal" :value="'NobelActive: 3.0'">3.0</option>
+              <option class="option-modal" :value="'NobelActive: NP (3.5)'">NP (3.5)</option>
+              <option class="option-modal" :value="'NobelActive: RP (4.5)'">RP (4.5)</option>
+              <option class="option-modal" :value="'NobelActive: WP (5.0)'">WP (5.0)</option>
+              <option class="option-modal" :value="'NobelActive: WP (5.5)'">WP (5.5)</option>
+              <option class="option-modal" :value="'NobelActive: Multi-Unit'">Multi-Unit</option>
+            </select>
+
+          </div>
+
+          <div class="modal-select-item">
+
+            <span class ='modal-select-header'>NobelReplace</span>
+            <select class="modal-select" v-model="stage1.implantSystem">
+              <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
+              <option class="option-modal" :value="'NobelReplace:NP (3.5)'">NP (3.5)</option>
+              <option class="option-modal" :value="'NobelReplace: RP (4.3)'">RP (4.3)</option>
+              <option class="option-modal" :value="'NobelReplace: WP (5.0)'">WP (5.0)</option>
+              <option class="option-modal" :value="'NobelReplace: WP (6.0)'">WP (6.0)</option>
+              <option class="option-modal" :value="'NobelReplace: Multi-Unit'">Multi-Unit</option>
+            </select>
+
+          </div>
+
+          <div class="modal-select-item">
+
+            <span class ='modal-select-header'>Osstem</span>
+            <select class="modal-select" v-model="stage1.implantSystem">
+              <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
+              <option class="option-modal" :value="'Osstem: Mini (3.5)'">Mini (3.5)</option>
+              <option class="option-modal" :value="'Osstem: Regular (4.0 / 4.5 / 5.0)'">Regular (4.0 / 4.5 / 5.0)</option>
+              <option class="option-modal" :value="'Osstem: Multi-Unit'">Multi-Unit</option>
+            </select>
+
+          </div>
+
+          <div class="modal-select-item">
+
+            <span class ='modal-select-header'>OT medical F1</span>
+            <select class="modal-select" v-model="stage1.implantSystem">
+              <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
+              <option class="option-modal" :value="'OT medical F1: 3.3'">3.3</option>
+              <option class="option-modal" :value="'OT medical F1: 3.8'">3.8</option>
+              <option class="option-modal" :value="'OT medical F1: 4.1'">4.1</option>
+              <option class="option-modal" :value="'OT medical F1: Multi-Unit'">Multi-Unit</option>
+            </select>
+
+          </div>
+
+          <div class="modal-select-item">
+
+            <span class ='modal-select-header'>OT medical F2</span>
+            <select class="modal-select" v-model="stage1.implantSystem">
+              <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
+              <option class="option-modal" :value="'OT medical F2: 4.1'">4.1</option>
+              <option class="option-modal" :value="'OT medical F2: 5.0'">5.0</option>
+              <option class="option-modal" :value="'OT medical F2: Multi-Unit'">Multi-Unit</option>
+            </select>
+
+          </div>
+
+          <div class="modal-select-item">
+
+            <span class ='modal-select-header'>Radix</span>
+            <select class="modal-select" v-model="stage1.implantSystem">
+              <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
+              <option class="option-modal" :value="'Radix: Multi-Unit'">Multi-Unit</option>
+            </select>
+
+          </div>
+
+          <div class="modal-select-item">
+
+            <span class ='modal-select-header'>Renova</span>
+            <select class="modal-select" v-model="stage1.implantSystem">
+              <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
+              <option class="option-modal" :value="'Renova: SP (3.75 / 4.2)'">SP (3.75 / 4.2)</option>
+              <option class="option-modal" :value="'Renova: RDI (4.5 / 4.75)'">RDI (4.5 / 4.75)</option>
+              <option class="option-modal" :value="'Renova: Multi-Unit'">Multi-Unit</option>
+            </select>
+
+          </div>
+
+          <div class="modal-select-item">
+
+            <span class ='modal-select-header'>ROOTT</span>
+            <select class="modal-select" v-model="stage1.implantSystem">
+              <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
+              <option class="option-modal" :value="'ROOTT: Multi-Unit'">Multi-Unit</option>
+            </select>
+
+          </div>
+
+          <div class="modal-select-item">
+
+            <span class ='modal-select-header'>Straumann Bone Level</span>
+            <select class="modal-select" v-model="stage1.implantSystem">
+              <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
+              <option class="option-modal" :value="'Straumann Bone Level: RC (4.1 / 4.8)'">RC (4.1 / 4.8)</option>
+              <option class="option-modal" :value="'Straumann Bone Level: NC (3.3)'">NC (3.3)</option>
+              <option class="option-modal" :value="'Straumann Bone Level: Multi-Unit'">Multi-Unit</option>
+            </select>
+
+          </div>
+
+          <div class="modal-select-item">
+
+            <span class ='modal-select-header'>Straumann SyncOcta</span>
+            <select class="modal-select" v-model="stage1.implantSystem">
+              <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
+              <option class="option-modal" :value="'Straumann SyncOcta: NN (3.5)'">NN (3.5)</option>
+              <option class="option-modal" :value="'Straumann SyncOcta: RN (4.8)'">RN (4.8)</option>
+              <option class="option-modal" :value="'Straumann SyncOcta: WN (6.5)'">WN (6.5)</option>
+              <option class="option-modal" :value="'Straumann SyncOcta: Multi-Unit'">Multi-Unit</option>
+            </select>
+
+          </div>
+
+          <div class="modal-select-item">
+
+            <span class ='modal-select-header'>SIC</span>
+            <select class="modal-select" v-model="stage1.implantSystem">
+              <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
+              <option class="option-modal" :value="'SIC: 3.3'">3.3)</option>
+              <option class="option-modal" :value="'SIC: 4.2'">4.2</option>
+              <option class="option-modal" :value="'SIC: Multi-Unit'">Multi-Unit</option>
+            </select>
+
+          </div>
+
+          <div class="modal-select-item">
+
+            <span class ='modal-select-header'>XiVE</span>
+            <select class="modal-select" v-model="stage1.implantSystem">
+              <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
+              <option class="option-modal" :value="'XiVE: 3.0'">3.0</option>
+              <option class="option-modal" :value="'XiVE: 3.4'">3.4</option>
+              <option class="option-modal" :value="'XiVE: 3.8'">3.8</option>
+              <option class="option-modal" :value="'XiVE: 4.5'">4.5</option>
+              <option class="option-modal" :value="'XiVE: 5.5'">5.5</option>
+              <option class="option-modal" :value="'XiVE: Multi-Unit'">Multi-Unit</option>
             </select>
 
           </div>
@@ -191,6 +489,7 @@
         </div>
 
       </div>
+
     </my-modal>
 
     <my-modal v-model:show="modalVisible3">
@@ -203,92 +502,101 @@
 
           <div class="modal-select-item">
 
-            <select class="modal-select" v-model="chooseMaterial.chooseMaterial1" @click="selectedMaterial">
-              <option class="option-disabled" disabled value="">Pre-mill (Ti)</option>
-              <option class="option-modal">Выбран Pre-mill (Ti)</option>
+            <span class ='modal-select-header'>Pre-mill (Ti)</span>
+            <select class="modal-select" v-model="stage1.material">
+              <option class="option-modal default-option" selected :value="'-'">Выберите материал</option>
+              <option class="option-modal" :value="'Pre-mill (Ti)'">Выбран Pre-mill (Ti)</option>
             </select>
 
           </div>
 
           <div class="modal-select-item">
 
-            <select class="modal-select" v-model="chooseMaterial.chooseMaterial2" @click="selectedMaterial">
-              <option class="option-disabled" disabled value="">CoCr (кобальт хром)</option>
-              <option class="option-modal">Mesa</option>
-              <option class="option-modal">Scheftner</option>
+            <span class ='modal-select-header'>CoCr (кобальт хром)</span>
+            <select class="modal-select" v-model="stage1.material">
+              <option class="option-modal default-option" selected :value="'-'">Выберите материал</option>
+              <option class="option-modal" :value="'CoCr (кобальт хром): Mesa'">Mesa</option>
+              <option class="option-modal" :value="'CoCr (кобальт хром): Scheftner'">Scheftner</option>
             </select>
 
           </div>
 
           <div class="modal-select-item">
 
-            <select class="modal-select" v-model="chooseMaterial.chooseMaterial3" @click="selectedMaterial">
-              <option class="option-disabled" disabled value="">Titan</option>
-              <option class="option-modal">Россия</option>
+            <span class ='modal-select-header'>Titan</span>
+            <select class="modal-select" v-model="stage1.material">
+              <option class="option-modal default-option" selected :value="'-'">Выберите материал</option>
+              <option class="option-modal" :value="'Titan: Россия'">Россия</option>
             </select>
 
           </div>
 
           <div class="modal-select-item">
 
-            <select class="modal-select" v-model="chooseMaterial.chooseMaterial4" @click="selectedMaterial">
-              <option class="option-disabled" disabled value="">PMMA</option>
-              <option class="option-modal">Yamahachi</option>
+            <span class ='modal-select-header'>PMMA</span>
+            <select class="modal-select" v-model="stage1.material">
+              <option class="option-modal default-option" selected :value="'-'">Выберите материал</option>
+              <option class="option-modal" :value="'PMMA: Yamahachi'">Yamahachi</option>
             </select>
 
           </div>
 
           <div class="modal-select-item">
 
-            <select class="modal-select" v-model="chooseMaterial.chooseMaterial5" @click="selectedMaterial">
-              <option class="option-disabled" disabled value="">WAX</option>
-              <option class="option-modal">Yamahachi</option>
+            <span class ='modal-select-header'>WAX</span>
+            <select class="modal-select" v-model="stage1.material">
+              <option class="option-modal default-option" selected :value="'-'">Выберите материал</option>
+              <option class="option-modal" :value="'WAX: Yamahachi'">Yamahachi</option>
             </select>
 
           </div>
 
           <div class="modal-select-item">
 
-            <select class="modal-select" v-model="chooseMaterial.chooseMaterial6" @click="selectedMaterial">
-              <option class="option-disabled" disabled value="">PEEK</option>
-              <option class="option-modal">Bredent</option>
+            <span class ='modal-select-header'>PEEK</span>
+            <select class="modal-select" v-model="stage1.material">
+              <option class="option-modal default-option" selected :value="'-'">Выберите материал</option>
+              <option class="option-modal" :value="'PEEK: Bredent'">Bredent</option>
             </select>
 
           </div>
 
           <div class="modal-select-item">
 
-            <select class="modal-select" v-model="chooseMaterial.chooseMaterial7" @click="selectedMaterial">
-              <option class="option-disabled" disabled value="">BioHPP</option>
-              <option class="option-modal">Bredent</option>
+            <span class ='modal-select-header'>BioHPP</span>
+            <select class="modal-select" v-model="stage1.material">
+              <option class="option-modal default-option" selected :value="'-'">Выберите материал</option>
+              <option class="option-modal" :value="'BioHPP: Bredent'">Bredent</option>
             </select>
 
           </div>
 
           <div class="modal-select-item">
 
-            <select class="modal-select" v-model="chooseMaterial.chooseMaterial8" @click="selectedMaterial">
-              <option class="option-disabled" disabled value="">ZrO2 (циркон)</option>
-              <option class="option-modal">Aidite</option>
-              <option class="option-modal">Katana</option>
-              <option class="option-modal">ZirCAD</option>
-              <option class="option-modal">Audental</option>
-              <option class="option-modal">Everest</option>
-              <option class="option-modal">Upcera</option>
+            <span class ='modal-select-header'>ZrO2 (циркон)</span>
+            <select class="modal-select" v-model="stage1.material">
+              <option class="option-modal default-option" selected :value="'-'">Выберите материал</option>
+              <option class="option-modal" :value="'ZrO2 (циркон): Aidite'">Aidite</option>
+              <option class="option-modal" :value="'ZrO2 (циркон): Katana'">Katana</option>
+              <option class="option-modal" :value="'ZrO2 (циркон): ZirCAD'">ZirCAD</option>
+              <option class="option-modal" :value="'ZrO2 (циркон): Audental'">Audental</option>
+              <option class="option-modal" :value="'ZrO2 (циркон): Everest'">Everest</option>
+              <option class="option-modal" :value="'ZrO2 (циркон): Upcera'">Upcera</option>
             </select>
 
           </div>
 
           <div class="modal-select-item">
 
-            <select class="modal-select" v-model="chooseMaterial.chooseMaterial9" @click="selectedMaterial">
-              <option class="option-disabled" disabled value="">Multilayer 3D</option>
-              <option class="option-modal">Aidite</option>
-              <option class="option-modal">Katana</option>
-              <option class="option-modal">ZirCAD</option>
-              <option class="option-modal">Audental</option>
-              <option class="option-modal">Everest</option>
-              <option class="option-modal">Upcera</option>
+            <span class ='modal-select-header'>Multilayer 3D</span>
+            <select class="modal-select" v-model="stage1.material">
+              <option class="option-modal default-option" selected :value="'-'">Выберите материал</option>
+              <option class="option-modal" :value="'Multilayer 3D: Aidite'">Aidite</option>
+              <option class="option-modal" :value="'Multilayer 3D: Katana'">Katana</option>
+              <option class="option-modal" :value="'Multilayer 3D: ZirCAD'">ZirCAD</option>
+              <option class="option-modal" :value="'Multilayer 3D: Audental'">Audental</option>
+              <option class="option-modal" :value="'Multilayer 3D: Everest'">Everest</option>
+              <option class="option-modal" :value="'Multilayer 3D: Upcera'">Upcera</option>
             </select>
 
           </div>
@@ -310,53 +618,25 @@
             <div class="column">
 
               <div class="row gap10">
-                <div class="modal-select-column">
-                  <div class="modal-select-column-item">A</div>
-                  <div class="modal-select-column-item">B</div>
-                  <div class="modal-select-column-item">C</div>
-                  <div class="modal-select-column-item">D</div>
-                  <div class="modal-select-column-item">Bleach</div>
-                </div>
+                  <div class="modal-select-column">
+                    <div class="modal-select-column-item">A</div>
+                    <div class="modal-select-column-item">B</div>
+                    <div class="modal-select-column-item">C</div>
+                    <div class="modal-select-column-item">D</div>
+                    <div class="modal-select-column-item">Bleach</div>
+                  </div>
 
-                <div class="modal-select-column">
-                  <div class="modal-select-column-item" @click="activeButton" v-bind:class="{ active: isActive }">1</div>
-                  <div class="modal-select-column-item" @click="activeButton" v-bind:class="{ active: isActive }">1</div>
-                  <div class="modal-select-column-item" @click="activeButton" v-bind:class="{ active: isActive }">1</div>
-                  <div class="modal-select-column-item" id="bg-none">&nbsp&nbsp</div>
-                  <div class="modal-select-column-item" @click="activeButton" v-bind:class="{ active: isActive }">1</div>
+                <div class="modal-select-column-calc">
+                  <div class="modal-select-column-item-calc" v-for='color in colorViteCalc' :id="color.id"
+                       @click="activeButton(colorViteCalc, color)" :class="{ 'active': color.isActive }">
+                    {{ color.value }}
+                  </div>
                 </div>
-
-                <div class="modal-select-column">
-                  <div class="modal-select-column-item" @click="activeButton" v-bind:class="{ active: isActive }">2</div>
-                  <div class="modal-select-column-item" @click="activeButton" v-bind:class="{ active: isActive }">2</div>
-                  <div class="modal-select-column-item" @click="activeButton" v-bind:class="{ active: isActive }">2</div>
-                  <div class="modal-select-column-item" @click="activeButton" v-bind:class="{ active: isActive }">2</div>
-                  <div class="modal-select-column-item" @click="activeButton" v-bind:class="{ active: isActive }">2</div>
-                </div>
-
-                <div class="modal-select-column">
-                  <div class="modal-select-column-item" @click="activeButton" v-bind:class="{ active: isActive }">3</div>
-                  <div class="modal-select-column-item" @click="activeButton" v-bind:class="{ active: isActive }">3</div>
-                  <div class="modal-select-column-item" @click="activeButton" v-bind:class="{ active: isActive }">3</div>
-                  <div class="modal-select-column-item" @click="activeButton" v-bind:class="{ active: isActive }">3</div>
-                  <div class="modal-select-column-item" @click="activeButton" v-bind:class="{ active: isActive }">3</div>
-                </div>
-
-              <div class="group-column-item">
-
-                <div class="modal-select-column-item border-radius-60" @click="activeButton" v-bind:class="{ active: isActive }">3.5</div>
-                <div class="modal-select-column">
-                  <div class="modal-select-column-item" @click="activeButton" v-bind:class="{ active: isActive }">4</div>
-                  <div class="modal-select-column-item" @click="activeButton" v-bind:class="{ active: isActive }">4</div>
-                  <div class="modal-select-column-item" @click="activeButton" v-bind:class="{ active: isActive }">4</div>
-                  <div class="modal-select-column-item" @click="activeButton" v-bind:class="{ active: isActive }">4</div>
-                </div>
-              </div>
 
               </div>
 
-              <label class="modal-select-input" for="">Другое</label>
-              <input type="text" name="" placeholder="Напишите свой вариант">
+                <label class="modal-select-input" for="">Другое</label>
+                <input type="text" name="" placeholder="Напишите свой вариант" v-model="stage1.colorVita">
 
 
             </div>
@@ -375,18 +655,31 @@
         <div class="modal-select-container-column">
 
           <div class="row gap60">
-              <div class="modal-select-carving-btn">Есть</div>
-              <div class="modal-select-carving-btn">Отсуствует</div>
+
+            <div class="modal-select-item">
+
+              <span class ='modal-select-header'>Десневая часть есть</span>
+              <select class="modal-select" v-model="stage1.gumPart">
+                <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
+                <option class="option-modal" :value="'Есть: красить'">Красить</option>
+                <option class="option-modal" :value="'Есть: Не красить'">Не красить</option>
+              </select>
+
+            </div>
+
           </div>
 
           <div class="column gap10">
-            <div class="row gap10">
-              <input type="radio" class="modal-select-carving-btn">
-              <label class="input">Красить</label>
-            </div>
-            <div class="row gap10">
-              <input type="radio" class="modal-select-carving-btn">
-              <label class="input">Не красить</label>
+
+            <div class="modal-select-item">
+
+              <span class ='modal-select-header'>Десневая часть отсутствует</span>
+              <select class="modal-select" v-model="stage1.gumPart">
+                <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
+                <option class="option-modal" :value="'Отсутствует: красить'">Красить</option>
+                <option class="option-modal" :value="'Отсутствует: Не красить'">Не красить</option>
+              </select>
+
             </div>
 
           </div>
@@ -406,21 +699,15 @@
 
         <div class="modal-select-container-column">
 
-          <div class="column gap10">
-            <div class="row gap10">
-              <input type="checkbox" class="modal-select-carving-btn">
-              <label class="input">Опак</label>
-            </div>
+          <div class="modal-select-item">
 
-            <div class="row gap10">
-              <input type="checkbox" class="modal-select-carving-btn">
-              <label class="input">Карвинг (силами фрезерного центра)</label>
-            </div>
-
-            <div class="row gap10">
-              <input type="checkbox" class="modal-select-carving-btn">
-              <label class="input">Отправить на карвинг заказчику</label>
-            </div>
+            <span class ='modal-select-header'></span>
+            <select class="modal-select" v-model="stage1.carving">
+              <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
+              <option class="option-modal" :value="'Опак'">Опак</option>
+              <option class="option-modal" :value="'Карвинг (силами фрезерного центра)'">Карвинг (силами фрезерного центра)</option>
+              <option class="option-modal" :value="'Отправить на карвинг заказчику'">Отправить на карвинг заказчику</option>
+            </select>
 
           </div>
 
@@ -433,7 +720,21 @@
       <div class="content-modal-wrapper">
 
         <h2 class="modal__h2">Укажите параметры отступа</h2>
-        <h3 class="subheader__h2">Выберите один пункт</h3>
+        <h3 class="subheader__h2">Напишите данные</h3>
+
+        <div class="modal-select-container-column">
+
+          <label class="modal-select-input" for="">Ширина уступа</label>
+          <input type="text" name="" placeholder="Вестибулярная (впишите значение в мм.)" v-model="this.indentOptions.WidhtWest">
+          <input type="text" name="" placeholder="Небная (впишите значение в мм.)" v-model="this.indentOptions.WidhtNeb" >
+
+          <label class="modal-select-input" for="">Глубина уступа</label>
+          <input type="text" name="" placeholder="Над десной (впишите значение в мм.)" v-model="this.indentOptions.Deep1">
+          <input type="text" name="" placeholder="Под дейсной (впишите значение в мм.)" v-model="this.indentOptions.Deep2">
+
+          <my-button @click="resetIndentOptions">Сбросить значение</my-button>
+
+        </div>
 
       </div>
     </my-modal>
@@ -462,13 +763,42 @@
 <script>
 import MyModal from "@/components/UI/MyModal/MyModal";
 import MySelect from "@/components/UI/MySelect/MySelect";
+import FlagInfo from "@/components/UI/FlagInfo/FlagInfo";
+import {mapGetters, mapMutations, mapActions} from 'vuex';
+import MyButton from "@/components/UI/MyButton/MyButton";
 export default  {
   name: "MySteps",
   components: {
-    MyModal,MySelect
+    FlagInfo,
+    MyModal,
+    MySelect,
+    MyButton,
   },
+
   data() {
     return {
+      colorViteCalc: [
+      {id: 'A1', name:"A1", isActive: false, value:1},
+      {id: 'B1', name:"B1", isActive: false, value:1},
+      {id: 'C1', name:"C1", isActive: false, value:1},
+      {id: 'bg-none', name:"D1", isActive: false, value: null},
+      {id: 'Bleach1', name:"Bleach1", isActive: false, value:1},
+      {id: 'A2', name:"A2", isActive: false, value:2},
+      {id: 'B2', name:"B2", isActive: false, value:2},
+      {id: 'C2', name:"C2", isActive: false, value:2},
+      {id: 'D2', name:"D2", isActive: false, value:2},
+      {id: 'Bleach2', name:"Bleach2", isActive: false, value:2},
+      {id: 'A3', name:"A3", isActive: false, value:3},
+      {id: 'B3', name:"B3", isActive: false, value:3},
+      {id: 'C3', name:"C3", isActive: false, value:3},
+      {id: 'D3', name:"D3", isActive: false, value:3},
+      {id: 'Bleach3', name:"Bleach3", isActive: false, value:3},
+      {id: 'A35', name:"A3.5", isActive: false, value:3.5},
+      {id: 'B4', name:"B4", isActive: false, value:4},
+      {id: 'C4', name:"C4", isActive: false, value:4},
+      {id: 'D4', name:"D4", isActive: false, value:4},
+      {id: 'Bleach4', name:"Bleach4", isActive: false, value:4},
+      ],
       isActive: false,
       modalVisible1: false,
       modalVisible2: false,
@@ -504,16 +834,47 @@ export default  {
         chooseMaterial8: "",
         chooseMaterial9: "",
       },
+      implantSystemLocal: {
+        StraumannBoneLevel: {
+          value1: '',
+          value2: '',
+          value3: '',
+        }
+      },
+      indentOptions: {
+        WidhtWest: '',
+        WidhtNeb: '',
+        Deep1: '',
+        Deep2: '',
+      },
+
     }
   },
 
   methods: {
-    activeButton() {
-      if (this.isActive !== true) {
-        this.isActive = true;
-      } else {
-        this.isActive = false;
-      }
+    ...mapMutations([
+        'MUT_PROPERTY',
+        'MUT_COLOR',
+        'MUT_FILLED_TOOTH'
+    ]),
+    resetIndentOptions () {
+      this.MUT_PROPERTY({ newValue: '-', toothId: this.toothId})
+      this.indentOptions.WidhtWest= "";
+      this.indentOptions.WidhtNeb= "";
+      this.indentOptions.Deep1= "";
+      this.indentOptions.Deep2= "";
+    },
+    activeButton (colorViteCalc, color) {
+      color.isActive = !color.isActive;
+      colorViteCalc.forEach(item => {
+        if (item.name !== color.name) {
+          item.isActive = false
+        }
+      })
+      this.MUT_COLOR( {
+        newValue: color.isActive ? color.name : '-',
+        toothId: this.toothId
+      })
     },
 
     showModal1() {
@@ -542,9 +903,30 @@ export default  {
     toothId () {
       return this.$route.params.id
     },
+    stage1 () {
+      return this.$store.state.module1[`tooth${this.toothId}`].stage1
+    },
+    stage2 () {
+      return this.$store.state.module1[`tooth${this.toothId}`].stage2
+    },
     optionsTypeConstruction () {
       return this.$store.state.module1.optionsTypeConstruction
     },
+  },
+  watch: {
+    indentOptions: {
+      deep: true,
+      handler(indentOptions) {
+          console.log(this.indentOptions)
+          if (this.indentOptions.WidhtWest.length >= 1 && this.indentOptions.WidhtNeb.length >= 1 && this.indentOptions.Deep1.length >= 1 && this.indentOptions.Deep2.length >= 1 ) {
+            indentOptions = `Ширина уступа: Вестибулярная ${this.indentOptions.WidhtWest}мм Небная ${this.indentOptions.WidhtNeb}мм Глубина уступа: Над десной ${this.indentOptions.Deep1}мм Под десной ${this.indentOptions.Deep2}мм`
+            this.MUT_PROPERTY({
+              newValue: indentOptions,
+              toothId: this.toothId
+            })
+          }
+      }
+    }
   }
 }
 </script>

@@ -150,6 +150,7 @@
     font-family: subGeneralFont;
     background: none;
     padding: 25px 25px 25px 0;
+    margin-left: 5px;
     &:hover {
       color: black;
     }
@@ -160,9 +161,14 @@
 }
 
 .modal-select-column-item {
+  display: flex;
+  justify-content: center;
   background: #EFF3F5;
   border-radius: 50%;
-  padding: 25px 30px;
+  padding: 25px 25px;
+  width: 70px;
+  height: 70px;
+  max-height: 70px;
   flex-grow: 1;
   &:hover {
     color: white;
@@ -177,11 +183,48 @@
   gap: 10px;
   font-size: 18px;
   font-family: 'generalFont';
-
+}
+#bg-none {
+  width: 10px;
+  height: 26px;
 }
 
-.border-radius-60 {
+#Bleach4 {
+}
+
+#A35{
   border-radius: 54px;
+}
+
+.modal-select-column-calc {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 300px;
+  height: 390px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.modal-select-column-item-calc {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 18px;
+  font-family: 'generalFont';
+  align-items: center;
+  background: #EFF3F5;
+  border-radius: 50%;
+  padding: 25px 25px;
+  width: 70px;
+  height: 70px;
+  max-height: 70px;
+  flex-grow: 1;
+  &:hover {
+    color: white;
+    background: #8c77de;
+    cursor: pointer;
+  }
 }
 
 .active {
