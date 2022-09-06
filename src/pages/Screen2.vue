@@ -208,7 +208,7 @@ export default {
       return this.$route.params.id
     },
     stage1 () {
-      return this.$store.state.module1[`tooth${this.toothId}`].stage1
+      return this.$store.state.module1.teeth1[`tooth${this.toothId}`].stage1
     },
     stage2 () {
       return this.$store.state.module1[`tooth${this.toothId}`].stage2
