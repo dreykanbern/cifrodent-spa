@@ -174,7 +174,7 @@ import {mapGetters, mapMutations, mapActions} from 'vuex';
 export default {
   name: "Screen2",
   components: {router, BackButton, FlagInfo, MyButton, MySteps, Tabs, Tab, MyModal,},
-  inject: ['teeth1','teeth2',],
+  // inject: ['teeth1','teeth2',],
   data() {
     return {
       chooseType: "",

@@ -61,11 +61,11 @@
 
           <div
             :class="{ 'third-column__item-red': isRemoteTooth, 'third-column__item-green': isHealthyTooth, 'third-column__item': isDefaultStyle, 'active': tooth.isFilledTooth }"
-            @click="$router.push(`/teeth-map/tooth/${tooth.toothNumber}`)"
+            @click="$router.push(`/teeth-map/tooth/${tooth.stage1.toothNumber}`)"
             v-contextmenu:contextmenu
             v-for="tooth in this.$store.state.module1.teeth1"
           >
-            <code>{{tooth.toothNumber}}</code>
+            <code>{{tooth.stage1.toothNumber}}</code>
           </div>
 
 
@@ -130,12 +130,12 @@
 
           <div
             :class="{ 'third-column__item-red': isRemoteTooth, 'third-column__item-green': isHealthyTooth, 'third-column__item': isDefaultStyle ,  'active': tooth.isFilledTooth   }"
-            @click="$router.push(`/teeth-map/tooth/${tooth.toothNumber}`)"
+            @click="$router.push(`/teeth-map/tooth/${tooth.stage1.toothNumber}`)"
             v-contextmenu:contextmenu
             v-for="tooth in this.$store.state.module1.teeth2"
             class="rotate-180"
           >
-            <code>{{tooth.toothNumber}}</code>
+            <code>{{tooth.stage1.toothNumber}}</code>
           </div>
 
 

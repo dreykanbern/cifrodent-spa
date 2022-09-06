@@ -35,9 +35,6 @@ export default {
     hideModal() {
       this.$emit('update:show', false)
     },
-    clearSelection() {
-      document.getElementsByClassName('default-option').options[0].selected = 'selected'; // Подумать над сбросом значений по умолчанию
-    },
   }
 }
 </script>
