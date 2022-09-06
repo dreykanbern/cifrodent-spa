@@ -929,6 +929,9 @@ export default  {
       concatStages = teeth1Stage2.concat(teeth2Stage2)
       return concatStages
     },
+    optionsTypeConstruction () {
+      return this.$store.state.module1.optionsTypeConstruction
+    },
   },
   watch: {
     indentOptions: {
