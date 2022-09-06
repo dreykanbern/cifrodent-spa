@@ -51,43 +51,43 @@
                 <div class="tooth-attribute__item" >
                   <span class="tooth-attribute__item-title">Тип конструкции</span>
                   <span class="tooth-attribute__item-value" >
-                    {{stage1.typeConstruction}}
+                    {{compTooth1.typeConstruction}}
                   </span>
                 </div>
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Система имплантов и размеры</span>
                   <span class="tooth-attribute__item-value">
-                    {{stage1.implantSystem}}
+                    {{compTooth1.implantSystem}}
                   </span>
                 </div>
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Материал изготовления</span>
                   <span class="tooth-attribute__item-value">
-                    {{stage1.material}}
+                    {{compTooth1.material}}
                   </span>
                 </div>
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Цвет коронки</span>
                   <span class="tooth-attribute__item-value">
-                    {{stage1.colorVita}}
+                    {{compTooth1.colorVita}}
                   </span>
                 </div>
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Дисневая часть</span>
                   <span class="tooth-attribute__item-value">
-                    {{stage1.gumPart}}
+                    {{compTooth1.gumPart}}
                   </span>
                 </div>
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Опак и карвинг</span>
                   <span class="tooth-attribute__item-value">
-                    {{stage1.carving}}
+                    {{compTooth1.carving}}
                   </span>
                 </div>
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Параметры отступа</span>
                   <span class="tooth-attribute__item-value">
-                    {{stage1.indentOptions}}
+                    {{compTooth1.indentOptions}}
                   </span>
                 </div>
 
@@ -108,43 +108,43 @@
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Тип конструкции</span>
                   <span class="tooth-attribute__item-value">
-                    {{stage2.typeConstruction}}
+                    {{compTooth2.typeConstruction}}
                   </span>
                 </div>
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Система имплантов и размеры</span>
                   <span class="tooth-attribute__item-value">
-                    {{stage2.implantSystem}}
+                    {{compTooth2.implantSystem}}
                   </span>
                 </div>
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Материал изготовления</span>
                   <span class="tooth-attribute__item-value">
-                    {{stage2.material}}
+                    {{compTooth2.material}}
                   </span>
                 </div>
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Цвет коронки</span>
                   <span class="tooth-attribute__item-value">
-                    {{stage2.colorVita}}
+                    {{compTooth2.colorVita}}
                   </span>
                 </div>
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Дисневая часть</span>
                   <span class="tooth-attribute__item-value">
-                    {{stage2.gumPart}}
+                    {{compTooth2.gumPart}}
                   </span>
                 </div>
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Опак и карвинг</span>
                   <span class="tooth-attribute__item-value">
-                    {{stage2.carving}}
+                    {{compTooth2.carving}}
                   </span>
                 </div>
                 <div class="tooth-attribute__item">
                   <span class="tooth-attribute__item-title">Параметры отступа</span>
                   <span class="tooth-attribute__item-value">
-                    {{stage2.indentOptions}}
+                    {{compTooth2.indentOptions}}
                   </span>
                 </div>
 
@@ -232,6 +232,12 @@ export default {
       })
       concatStages = teeth1Stage2.concat(teeth2Stage2)
       return concatStages
+    },
+    compTooth1() {
+      return this.stage1.find(el => el.toothNumber === this.toothId)
+    },
+    compTooth2() {
+      return this.stage2.find(el => el.toothNumber === this.toothId)
     },
     // stage1 () {
     //   return this.$store.state.module1.teeth1[`tooth${this.toothId}`].stage1

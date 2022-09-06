@@ -13,7 +13,7 @@
 
             <img class="type-construction-img" src="~@/assets/img/type-construction/anatomic-crown.svg" alt="Анатомическая коронка">
             <span class ='modal-select-header'>{{this.optionsTypeConstruction.Type1.typeNameDefault}}</span>
-            <select class="modal-select select" v-model="stage1.typeConstruction">
+            <select class="modal-select select" v-model="compTooth1.typeConstruction">
               <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
               <option class="option-modal" :value="'Анатомическая коронка: полная анатомия'">Полная анатомия</option>
               <option class="option-modal" :value="'Анатомическая коронка: с вестибулярным редуцированием'">С вестибулярным редуцированием</option>
@@ -25,7 +25,7 @@
 
             <img class="type-construction-img" src="~@/assets/img/type-construction/anatomic-crown-screw-retained.svg" alt="Анатомическая коронка винтовой фиксации">
             <span class = 'modal-select-header'>{{this.optionsTypeConstruction.Type2.typeNameDefault}}</span>
-            <select class="modal-select" v-model="stage1.typeConstruction">
+            <select class="modal-select" v-model="compTooth1.typeConstruction">
               <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
               <option class="option-modal" :value="'Анатомическая коронка винтовой фиксации: полная анатомия'">Полная анатомия</option>
               <option class="option-modal" :value="'Анатомическая коронка винтовой фиксации: с вестибулярным редуцированием'">С вестибулярным редуцированием</option>
@@ -37,7 +37,7 @@
 
             <img class="type-construction-img" src="~@/assets/img/type-construction/frame.svg" alt="Каркас">
             <span class = 'modal-select-header'>{{this.optionsTypeConstruction.Type3.typeNameDefault}}</span>
-            <select class="modal-select" v-model="stage1.typeConstruction">
+            <select class="modal-select" v-model="compTooth1.typeConstruction">
               <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
               <option class="option-modal" :value="'Каркас'">Использовать каркас</option>
             </select>
@@ -48,7 +48,7 @@
 
             <img class="type-construction-img" src="~@/assets/img/type-construction/frame-for-application.svg" alt="Каркас под нанесение">
             <span class = 'modal-select-header'>{{this.optionsTypeConstruction.Type4.typeNameDefault}}</span>
-            <select class="modal-select" v-model="stage1.typeConstruction">
+            <select class="modal-select" v-model="compTooth1.typeConstruction">
               <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
               <option class="option-modal" :value="'Каркас под нанесение: винтовой фиксации'">Винтовой фиксации</option>
               <option class="option-modal" :value="'Каркас под нанесение: цементной фиксации'">Цементной фиксации</option>
@@ -60,7 +60,7 @@
 
             <img class="type-construction-img" src="~@/assets/img/type-construction/abutment.svg" alt="Абатмент">
             <span class ='modal-select-header'>{{this.optionsTypeConstruction.Type5.typeNameDefault}}</span>
-            <select class="modal-select" v-model="stage1.typeConstruction">
+            <select class="modal-select" v-model="compTooth1.typeConstruction">
               <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
               <option class="option-modal" :value="'Абатмент: с использованием стандартных оснований'">С использованием стандартных оснований</option>
               <option class="option-modal" :value="'Абатмент: с анодированием титанового абатмента'">С анодированием титанового абатмента</option>
@@ -73,7 +73,7 @@
 
             <img class="type-construction-img" src="~@/assets/img/type-construction/tab.svg" alt="Вкладка">
             <span class ='modal-select-header'>{{this.optionsTypeConstruction.Type6.typeNameDefault}}</span>
-            <select class="modal-select" v-model="stage1.typeConstruction">
+            <select class="modal-select" v-model="compTooth1.typeConstruction">
               <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
               <option class="option-modal" :value="'Вкладка: не разборная'">Не разборная</option>
               <option class="option-modal" :value="'Вкладка: разборная'">Разборная</option>
@@ -85,7 +85,7 @@
 
             <img class="type-construction-img" src="~@/assets/img/type-construction/rail-girder.svg" alt="Рельсовая балка">
             <span class ='modal-select-header'>{{this.optionsTypeConstruction.Type7.typeNameDefault}}</span>
-            <select class="modal-select" v-model="stage1.typeConstruction">
+            <select class="modal-select" v-model="compTooth1.typeConstruction">
               <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
               <option class="option-modal" :value="'Рельсовая балка: с замками'">С замками</option>
               <option class="option-modal" :value="'Рельсовая балка: под варку (с пинами)'">Под варку (с пинами)</option>
@@ -98,7 +98,7 @@
 
             <img class="type-construction-img" src="~@/assets/img/type-construction/stump.svg" alt="Культя">
             <span class ='modal-select-header'>{{this.optionsTypeConstruction.Type8.typeNameDefault}}</span>
-            <select class="modal-select" v-model="stage1.typeConstruction">
+            <select class="modal-select" v-model="compTooth1.typeConstruction">
               <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
               <option class="option-modal" :value="'Культя'">Выбрана культя</option>
               <option class="option-modal" :value="'Культя винтовой фиксации'">Винтовой фиксации</option>
@@ -110,7 +110,7 @@
 
             <img class="type-construction-img" src="~@/assets/img/type-construction/surgical-template.svg" alt="Хирургический шаблон">
             <span class ='modal-select-header'>{{this.optionsTypeConstruction.Type9.typeNameDefault}}</span>
-            <select class="modal-select" v-model="stage1.typeConstruction">
+            <select class="modal-select" v-model="compTooth1.typeConstruction">
               <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
               <option class="option-modal" :value="'Хирургический шаблон'">Выбран хирургический шаблон</option>
             </select>
@@ -121,7 +121,7 @@
 
             <img class="type-construction-img" src="~@/assets/img/type-construction/splint.svg" alt="Сплинт">
             <span class ='modal-select-header'>{{this.optionsTypeConstruction.Type10.typeNameDefault}}</span>
-            <select class="modal-select" v-model="stage1.typeConstruction">
+            <select class="modal-select" v-model="compTooth1.typeConstruction">
               <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
               <option class="option-modal" :value="'Сплинт: декомпрессионный (разгрузочный)'"><flag-info></flag-info> Декомпрессионный (разгрузочный)</option>
               <option class="option-modal" :value="'Сплинт: релаксационный (расслабляющий)'"><flag-info></flag-info>Релаксационный (расслабляющий)</option>
@@ -151,7 +151,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>Alfa Bio</span>
-            <select class="modal-select" v-model="stage1.implantSystem">
+            <select class="modal-select" v-model="compTooth1.implantSystem">
               <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
               <option class="option-modal" :value="'Alfa Bio: 4.5'">4.5</option>
               <option class="option-modal" :value="'Alfa Bio: X'">X</option>
@@ -163,7 +163,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>ANKYLOS</span>
-            <select class="modal-select" v-model="stage1.implantSystem">
+            <select class="modal-select" v-model="compTooth1.implantSystem">
               <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
               <option class="option-modal" :value="'ANKYLOS: C'">C</option>
               <option class="option-modal" :value="'ANKYLOS: X'">X</option>
@@ -175,7 +175,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>Anthogry Axiom</span>
-            <select class="modal-select" v-model="stage1.implantSystem">
+            <select class="modal-select" v-model="compTooth1.implantSystem">
               <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
               <option class="option-modal" :value="'Anthogry Axiom: Multi-Unit'">Multi-Unit</option>
             </select>
@@ -185,7 +185,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>ASTRA TECH</span>
-            <select class="modal-select" v-model="stage1.implantSystem">
+            <select class="modal-select" v-model="compTooth1.implantSystem">
               <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
               <option class="option-modal" :value="'ASTRA TECH: 3.0'">3.0</option>
               <option class="option-modal" :value="'ASTRA TECH: 3.5 / 4.0'">3.5 / 4.0</option>
@@ -198,7 +198,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>BEGO Semados</span>
-            <select class="modal-select" v-model="stage1.implantSystem">
+            <select class="modal-select" v-model="compTooth1.implantSystem">
               <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
               <option class="option-modal" :value="'BEGO Semados: 3.25 / 3.75'">3.25 / 3.75</option>
               <option class="option-modal" :value="'BEGO Semados: 4.1'">4.1</option>
@@ -212,7 +212,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>BioHorizons</span>
-            <select class="modal-select" v-model="stage1.implantSystem">
+            <select class="modal-select" v-model="compTooth1.implantSystem">
               <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
               <option class="option-modal" :value="'BioHorizons: 3.0'">3.0</option>
               <option class="option-modal" :value="'BioHorizons: 3.5'">3.5</option>
@@ -226,7 +226,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>Biotech</span>
-            <select class="modal-select" v-model="stage1.implantSystem">
+            <select class="modal-select" v-model="compTooth1.implantSystem">
               <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
               <option class="option-modal" :value="'Biotech: 3.6 / 4.8'">3.6 / 4.8</option>
               <option class="option-modal" :value="'Biotech: Multi-Unit'">Multi-Unit</option>
@@ -237,7 +237,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>Conmet</span>
-            <select class="modal-select" v-model="stage1.implantSystem">
+            <select class="modal-select" v-model="compTooth1.implantSystem">
               <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
               <option class="option-modal" :value="'Conmet: NP (2.2)'">NP (2.2)</option>
               <option class="option-modal" :value="'Conmet: RP (2.7'">RP (2.7</option>
@@ -249,7 +249,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>ICX</span>
-            <select class="modal-select" v-model="stage1.implantSystem">
+            <select class="modal-select" v-model="compTooth1.implantSystem">
               <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
               <option class="option-modal" :value="'ICX: Multi-Unit'">Multi-Unit</option>
             </select>
@@ -259,7 +259,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>Dentium Implantium</span>
-            <select class="modal-select" v-model="stage1.implantSystem">
+            <select class="modal-select" v-model="compTooth1.implantSystem">
               <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
               <option class="option-modal" :value="'Dentium Implantium: 3.4'">3.4</option>
               <option class="option-modal" :value="'Dentium Implantium: 3.8 / 4.2'">3.8 / 4.2</option>
@@ -271,7 +271,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>IRIS Liko-M</span>
-            <select class="modal-select" v-model="stage1.implantSystem">
+            <select class="modal-select" v-model="compTooth1.implantSystem">
               <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
               <option class="option-modal" :value="'IRIS Liko-M: Multi-Unit'">Multi-Unit</option>
             </select>
@@ -281,7 +281,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>MegaGen AnyOne</span>
-            <select class="modal-select" v-model="stage1.implantSystem">
+            <select class="modal-select" v-model="compTooth1.implantSystem">
               <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
               <option class="option-modal" :value="'MegaGen AnyOne: Multi-Unit'">Multi-Unit</option>
             </select>
@@ -291,7 +291,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>MegaGen AnyRidge</span>
-            <select class="modal-select" v-model="stage1.implantSystem">
+            <select class="modal-select" v-model="compTooth1.implantSystem">
               <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
               <option class="option-modal" :value="'MegaGen AnyRidge: Multi-Unit'">Multi-Unit</option>
             </select>
@@ -301,7 +301,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>MIS</span>
-            <select class="modal-select" v-model="stage1.implantSystem">
+            <select class="modal-select" v-model="compTooth1.implantSystem">
               <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
               <option class="option-modal" :value="'MIS: NP (3.3)'">NP (3.3)</option>
               <option class="option-modal" :value="'MIS: SP (3.75 / 4.2)'">SP (3.75 / 4.2)</option>
@@ -314,7 +314,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>MIS C1</span>
-            <select class="modal-select" v-model="stage1.implantSystem">
+            <select class="modal-select" v-model="compTooth1.implantSystem">
               <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
               <option class="option-modal" :value="'MIS C1: NP (3.3)'">NP (3.3)</option>
               <option class="option-modal" :value="'MIS C1: SP (3.75 / 4.2)'">SP (3.75 / 4.2)</option>
@@ -327,7 +327,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>NIKO / LIKO</span>
-            <select class="modal-select" v-model="stage1.implantSystem">
+            <select class="modal-select" v-model="compTooth1.implantSystem">
               <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
               <option class="option-modal" :value="'NIKO / LIKO: 3.5'">3.5</option>
               <option class="option-modal" :value="'NIKO / LIKO: 4.5'">4.5</option>
@@ -339,7 +339,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>NobelActive</span>
-            <select class="modal-select" v-model="stage1.implantSystem">
+            <select class="modal-select" v-model="compTooth1.implantSystem">
               <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
               <option class="option-modal" :value="'NobelActive: 3.0'">3.0</option>
               <option class="option-modal" :value="'NobelActive: NP (3.5)'">NP (3.5)</option>
@@ -354,7 +354,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>NobelReplace</span>
-            <select class="modal-select" v-model="stage1.implantSystem">
+            <select class="modal-select" v-model="compTooth1.implantSystem">
               <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
               <option class="option-modal" :value="'NobelReplace:NP (3.5)'">NP (3.5)</option>
               <option class="option-modal" :value="'NobelReplace: RP (4.3)'">RP (4.3)</option>
@@ -368,7 +368,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>Osstem</span>
-            <select class="modal-select" v-model="stage1.implantSystem">
+            <select class="modal-select" v-model="compTooth1.implantSystem">
               <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
               <option class="option-modal" :value="'Osstem: Mini (3.5)'">Mini (3.5)</option>
               <option class="option-modal" :value="'Osstem: Regular (4.0 / 4.5 / 5.0)'">Regular (4.0 / 4.5 / 5.0)</option>
@@ -380,7 +380,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>OT medical F1</span>
-            <select class="modal-select" v-model="stage1.implantSystem">
+            <select class="modal-select" v-model="compTooth1.implantSystem">
               <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
               <option class="option-modal" :value="'OT medical F1: 3.3'">3.3</option>
               <option class="option-modal" :value="'OT medical F1: 3.8'">3.8</option>
@@ -393,7 +393,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>OT medical F2</span>
-            <select class="modal-select" v-model="stage1.implantSystem">
+            <select class="modal-select" v-model="compTooth1.implantSystem">
               <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
               <option class="option-modal" :value="'OT medical F2: 4.1'">4.1</option>
               <option class="option-modal" :value="'OT medical F2: 5.0'">5.0</option>
@@ -405,7 +405,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>Radix</span>
-            <select class="modal-select" v-model="stage1.implantSystem">
+            <select class="modal-select" v-model="compTooth1.implantSystem">
               <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
               <option class="option-modal" :value="'Radix: Multi-Unit'">Multi-Unit</option>
             </select>
@@ -415,7 +415,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>Renova</span>
-            <select class="modal-select" v-model="stage1.implantSystem">
+            <select class="modal-select" v-model="compTooth1.implantSystem">
               <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
               <option class="option-modal" :value="'Renova: SP (3.75 / 4.2)'">SP (3.75 / 4.2)</option>
               <option class="option-modal" :value="'Renova: RDI (4.5 / 4.75)'">RDI (4.5 / 4.75)</option>
@@ -427,7 +427,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>ROOTT</span>
-            <select class="modal-select" v-model="stage1.implantSystem">
+            <select class="modal-select" v-model="compTooth1.implantSystem">
               <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
               <option class="option-modal" :value="'ROOTT: Multi-Unit'">Multi-Unit</option>
             </select>
@@ -437,7 +437,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>Straumann Bone Level</span>
-            <select class="modal-select" v-model="stage1.implantSystem">
+            <select class="modal-select" v-model="compTooth1.implantSystem">
               <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
               <option class="option-modal" :value="'Straumann Bone Level: RC (4.1 / 4.8)'">RC (4.1 / 4.8)</option>
               <option class="option-modal" :value="'Straumann Bone Level: NC (3.3)'">NC (3.3)</option>
@@ -449,7 +449,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>Straumann SyncOcta</span>
-            <select class="modal-select" v-model="stage1.implantSystem">
+            <select class="modal-select" v-model="compTooth1.implantSystem">
               <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
               <option class="option-modal" :value="'Straumann SyncOcta: NN (3.5)'">NN (3.5)</option>
               <option class="option-modal" :value="'Straumann SyncOcta: RN (4.8)'">RN (4.8)</option>
@@ -462,7 +462,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>SIC</span>
-            <select class="modal-select" v-model="stage1.implantSystem">
+            <select class="modal-select" v-model="compTooth1.implantSystem">
               <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
               <option class="option-modal" :value="'SIC: 3.3'">3.3)</option>
               <option class="option-modal" :value="'SIC: 4.2'">4.2</option>
@@ -474,7 +474,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>XiVE</span>
-            <select class="modal-select" v-model="stage1.implantSystem">
+            <select class="modal-select" v-model="compTooth1.implantSystem">
               <option class="option-modal default-option" selected :value="'-'">Выберите размер</option>
               <option class="option-modal" :value="'XiVE: 3.0'">3.0</option>
               <option class="option-modal" :value="'XiVE: 3.4'">3.4</option>
@@ -503,7 +503,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>Pre-mill (Ti)</span>
-            <select class="modal-select" v-model="stage1.material">
+            <select class="modal-select" v-model="compTooth1.material">
               <option class="option-modal default-option" selected :value="'-'">Выберите материал</option>
               <option class="option-modal" :value="'Pre-mill (Ti)'">Выбран Pre-mill (Ti)</option>
             </select>
@@ -513,7 +513,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>CoCr (кобальт хром)</span>
-            <select class="modal-select" v-model="stage1.material">
+            <select class="modal-select" v-model="compTooth1.material">
               <option class="option-modal default-option" selected :value="'-'">Выберите материал</option>
               <option class="option-modal" :value="'CoCr (кобальт хром): Mesa'">Mesa</option>
               <option class="option-modal" :value="'CoCr (кобальт хром): Scheftner'">Scheftner</option>
@@ -524,7 +524,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>Titan</span>
-            <select class="modal-select" v-model="stage1.material">
+            <select class="modal-select" v-model="compTooth1.material">
               <option class="option-modal default-option" selected :value="'-'">Выберите материал</option>
               <option class="option-modal" :value="'Titan: Россия'">Россия</option>
             </select>
@@ -534,7 +534,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>PMMA</span>
-            <select class="modal-select" v-model="stage1.material">
+            <select class="modal-select" v-model="compTooth1.material">
               <option class="option-modal default-option" selected :value="'-'">Выберите материал</option>
               <option class="option-modal" :value="'PMMA: Yamahachi'">Yamahachi</option>
             </select>
@@ -544,7 +544,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>WAX</span>
-            <select class="modal-select" v-model="stage1.material">
+            <select class="modal-select" v-model="compTooth1.material">
               <option class="option-modal default-option" selected :value="'-'">Выберите материал</option>
               <option class="option-modal" :value="'WAX: Yamahachi'">Yamahachi</option>
             </select>
@@ -554,7 +554,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>PEEK</span>
-            <select class="modal-select" v-model="stage1.material">
+            <select class="modal-select" v-model="compTooth1.material">
               <option class="option-modal default-option" selected :value="'-'">Выберите материал</option>
               <option class="option-modal" :value="'PEEK: Bredent'">Bredent</option>
             </select>
@@ -564,7 +564,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>BioHPP</span>
-            <select class="modal-select" v-model="stage1.material">
+            <select class="modal-select" v-model="compTooth1.material">
               <option class="option-modal default-option" selected :value="'-'">Выберите материал</option>
               <option class="option-modal" :value="'BioHPP: Bredent'">Bredent</option>
             </select>
@@ -574,7 +574,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>ZrO2 (циркон)</span>
-            <select class="modal-select" v-model="stage1.material">
+            <select class="modal-select" v-model="compTooth1.material">
               <option class="option-modal default-option" selected :value="'-'">Выберите материал</option>
               <option class="option-modal" :value="'ZrO2 (циркон): Aidite'">Aidite</option>
               <option class="option-modal" :value="'ZrO2 (циркон): Katana'">Katana</option>
@@ -589,7 +589,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>Multilayer 3D</span>
-            <select class="modal-select" v-model="stage1.material">
+            <select class="modal-select" v-model="compTooth1.material">
               <option class="option-modal default-option" selected :value="'-'">Выберите материал</option>
               <option class="option-modal" :value="'Multilayer 3D: Aidite'">Aidite</option>
               <option class="option-modal" :value="'Multilayer 3D: Katana'">Katana</option>
@@ -636,7 +636,7 @@
               </div>
 
                 <label class="modal-select-input" for="">Другое</label>
-                <input type="text" name="" placeholder="Напишите свой вариант" v-model="stage1.colorVita">
+                <input type="text" name="" placeholder="Напишите свой вариант" v-model="compTooth1.colorVita">
 
 
             </div>
@@ -659,7 +659,7 @@
             <div class="modal-select-item">
 
               <span class ='modal-select-header'>Десневая часть есть</span>
-              <select class="modal-select" v-model="stage1.gumPart">
+              <select class="modal-select" v-model="compTooth1.gumPart">
                 <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
                 <option class="option-modal" :value="'Есть: красить'">Красить</option>
                 <option class="option-modal" :value="'Есть: Не красить'">Не красить</option>
@@ -674,7 +674,7 @@
             <div class="modal-select-item">
 
               <span class ='modal-select-header'>Десневая часть отсутствует</span>
-              <select class="modal-select" v-model="stage1.gumPart">
+              <select class="modal-select" v-model="compTooth1.gumPart">
                 <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
                 <option class="option-modal" :value="'Отсутствует: красить'">Красить</option>
                 <option class="option-modal" :value="'Отсутствует: Не красить'">Не красить</option>
@@ -702,7 +702,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'></span>
-            <select class="modal-select" v-model="stage1.carving">
+            <select class="modal-select" v-model="compTooth1.carving">
               <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
               <option class="option-modal" :value="'Опак'">Опак</option>
               <option class="option-modal" :value="'Карвинг (силами фрезерного центра)'">Карвинг (силами фрезерного центра)</option>
@@ -931,6 +931,12 @@ export default  {
     },
     optionsTypeConstruction () {
       return this.$store.state.module1.optionsTypeConstruction
+    },
+    compTooth1() {
+      return this.stage1.find(el => el.toothNumber === this.toothId)
+    },
+    compTooth2() {
+      return this.stage2.find(el => el.toothNumber === this.toothId)
     },
   },
   watch: {
