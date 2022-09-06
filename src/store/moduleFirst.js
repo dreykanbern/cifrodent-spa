@@ -1,8 +1,8 @@
 export const moduleFirst = {
     state: () => ({
         teeth1: [
-            {tooth18: {
-                    stage1: {
+            {toothId: 'tooth18',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '18',
                         typeConstruction: "-",
@@ -18,7 +18,8 @@ export const moduleFirst = {
                         isDefaultStyle: true,
                         isFilledTooth: false, //Изменить на тру, при изменении стейта, дает заполненным зубам на карте фиолетовую окраску
                     },
-                    stage2: {
+
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '18',
                         typeConstruction: '-',
@@ -31,9 +32,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth17: {
-                    stage1: {
+                },
+            {toothId: 'tooth17',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '17',
                         typeConstruction: '-',
@@ -46,7 +47,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     },
-                    stage2: {
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '17',
                         typeConstruction: '-',
@@ -59,9 +60,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth16: {
-                    stage1: {
+                },
+            {toothId: 'tooth16',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '16',
                         typeConstruction: '-',
@@ -74,7 +75,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     },
-                    stage2: {
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '16',
                         typeConstruction: '-',
@@ -87,9 +88,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth15: {
-                    stage1: {
+                },
+            {toothId: 'tooth15',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '15',
                         typeConstruction: '-',
@@ -102,7 +103,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     },
-                    stage2: {
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '15',
                         typeConstruction: '-',
@@ -115,9 +116,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth14: {
-                    stage1: {
+                },
+            {toothId: 'tooth14',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '14',
                         typeConstruction: '-',
@@ -130,7 +131,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     },
-                    stage2: {
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '14',
                         typeConstruction: '-',
@@ -143,9 +144,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth13: {
-                    stage1: {
+                },
+            {toothId: 'tooth13',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '13',
                         typeConstruction: '-',
@@ -158,7 +159,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     },
-                    stage2: {
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '13',
                         typeConstruction: '-',
@@ -171,9 +172,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth12: {
-                    stage1: {
+                },
+            {toothId: 'tooth12',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '12',
                         typeConstruction: '-',
@@ -186,7 +187,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     },
-                    stage2: {
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '12',
                         typeConstruction: '-',
@@ -199,9 +200,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth11: {
-                    stage1: {
+                },
+            {toothId: 'tooth11',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '11',
                         typeConstruction: '-',
@@ -214,7 +215,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     },
-                    stage2: {
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '11',
                         typeConstruction: '-',
@@ -227,9 +228,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth21: {
-                    stage1: {
+                },
+            {toothId: 'tooth21',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '21',
                         typeConstruction: '-',
@@ -242,7 +243,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     },
-                    stage2: {
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '21',
                         typeConstruction: '-',
@@ -255,9 +256,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth22: {
-                    stage1: {
+                },
+            {toothId: 'tooth22',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '22',
                         typeConstruction: '-',
@@ -270,7 +271,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     },
-                    stage2: {
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '22',
                         typeConstruction: '-',
@@ -283,9 +284,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth23: {
-                    stage1: {
+                },
+            {toothId: 'tooth23',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '23',
                         typeConstruction: '-',
@@ -298,7 +299,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     },
-                    stage2: {
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '23',
                         typeConstruction: '-',
@@ -311,9 +312,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth24: {
-                    stage1: {
+                },
+            {toothId: 'tooth24',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '24',
                         typeConstruction: '-',
@@ -326,7 +327,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     },
-                    stage2: {
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '24',
                         typeConstruction: '-',
@@ -339,9 +340,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth25: {
-                    stage1: {
+                },
+            {toothId: 'tooth25',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '25',
                         typeConstruction: '-',
@@ -354,7 +355,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     },
-                    stage2: {
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '25',
                         typeConstruction: '-',
@@ -367,9 +368,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth26: {
-                    stage1: {
+                },
+            {toothId: 'tooth26',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '26',
                         typeConstruction: '-',
@@ -382,7 +383,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     },
-                    stage2: {
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '26',
                         typeConstruction: '-',
@@ -395,9 +396,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth27: {
-                    stage1: {
+                },
+            {toothId: 'tooth27',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '27',
                         typeConstruction: '-',
@@ -410,7 +411,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     },
-                    stage2: {
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '27',
                         typeConstruction: '-',
@@ -423,9 +424,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth28: {
-                    stage1: {
+                },
+            {toothId: 'tooth28',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '28',
                         typeConstruction: '-',
@@ -451,11 +452,11 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
+                },
         ],
         teeth2: [
-            {tooth48: {
-                    stage1: {
+            {toothId: 'tooth48',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '48',
                         typeConstruction: '-',
@@ -481,9 +482,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth47: {
-                    stage1: {
+                },
+            {toothId: 'tooth47',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '47',
                         typeConstruction: '-',
@@ -496,7 +497,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     },
-                    stage2: {
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '47',
                         typeConstruction: '-',
@@ -509,9 +510,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth46: {
-                    stage1: {
+                },
+            {toothId: 'tooth46',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '46',
                         typeConstruction: '-',
@@ -524,7 +525,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     },
-                    stage2: {
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '46',
                         typeConstruction: '-',
@@ -537,9 +538,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth45: {
-                    stage1: {
+                },
+            {toothId: 'tooth45',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '45',
                         typeConstruction: '-',
@@ -552,7 +553,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     },
-                    stage2: {
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '45',
                         typeConstruction: '-',
@@ -565,9 +566,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth44: {
-                    stage1: {
+                },
+            {toothId: 'tooth44',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '44',
                         typeConstruction: '-',
@@ -580,7 +581,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     },
-                    stage2: {
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '44',
                         typeConstruction: '-',
@@ -593,9 +594,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth43: {
-                    stage1: {
+                },
+            {toothId: 'tooth43',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '43',
                         typeConstruction: '-',
@@ -608,7 +609,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     },
-                    stage2: {
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '43',
                         typeConstruction: '-',
@@ -621,9 +622,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth42: {
-                    stage1: {
+                },
+            {toothId: 'tooth42',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '42',
                         typeConstruction: '-',
@@ -636,7 +637,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     },
-                    stage2: {
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '42',
                         typeConstruction: '-',
@@ -649,9 +650,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth41: {
-                    stage1: {
+                },
+            {toothId: 'tooth41',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '41',
                         typeConstruction: '-',
@@ -664,7 +665,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     },
-                    stage2: {
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '41',
                         typeConstruction: '-',
@@ -677,9 +678,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth31: {
-                    stage1: {
+                },
+            {toothId: 'tooth31',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '31',
                         typeConstruction: '-',
@@ -692,7 +693,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     },
-                    stage2: {
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '31',
                         typeConstruction: '-',
@@ -705,9 +706,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth32: {
-                    stage1: {
+                },
+            {toothId: 'tooth32',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '32',
                         typeConstruction: '-',
@@ -720,7 +721,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     },
-                    stage2: {
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '32',
                         typeConstruction: '-',
@@ -733,9 +734,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth33: {
-                    stage1: {
+                },
+            {toothId: 'tooth33',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '33',
                         typeConstruction: '-',
@@ -748,7 +749,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     },
-                    stage2: {
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '33',
                         typeConstruction: '-',
@@ -761,9 +762,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth34: {
-                    stage1: {
+                },
+            {toothId: 'tooth34',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '34',
                         typeConstruction: '-',
@@ -776,7 +777,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     },
-                    stage2: {
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '34',
                         typeConstruction: '-',
@@ -789,9 +790,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth35: {
-                    stage1: {
+                },
+            {toothId: 'tooth35',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '35',
                         typeConstruction: '-',
@@ -804,7 +805,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     },
-                    stage2: {
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '35',
                         typeConstruction: '-',
@@ -817,9 +818,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth36: {
-                    stage1: {
+                },
+            {toothId: 'tooth36',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '36',
                         typeConstruction: '-',
@@ -832,7 +833,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     },
-                    stage2: {
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '36',
                         typeConstruction: '',
@@ -845,9 +846,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth37: {
-                    stage1: {
+                },
+            {toothId: 'tooth37',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '37',
                         typeConstruction: '-',
@@ -860,7 +861,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     },
-                    stage2: {
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '37',
                         typeConstruction: '-',
@@ -873,9 +874,9 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
-            {tooth38: {
-                    stage1: {
+                },
+            {toothId: 'tooth38',
+                stage1: {
                         stageNumber: '1',
                         toothNumber: '38',
                         typeConstruction: '-',
@@ -888,7 +889,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     },
-                    stage2: {
+                stage2: {
                         stageNumber: '2',
                         toothNumber: '38',
                         typeConstruction: '-',
@@ -901,7 +902,7 @@ export const moduleFirst = {
                         selectDefault: 'Выберите значение',
                         isFilledTooth: false,
                     }
-                },},
+                },
         ],
 
         optionsTypeConstruction: {

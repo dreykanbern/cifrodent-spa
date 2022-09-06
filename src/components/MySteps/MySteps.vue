@@ -904,13 +904,30 @@ export default  {
       return this.$route.params.id
     },
     stage1 () {
-      return this.$store.state.module1[`tooth${this.toothId}`].stage1
+      let teeth1Stage1 = [],
+          teeth2Stage1 = [],
+          concatStages = [];
+      this.$store.state.module1.teeth1.forEach(el => {
+        teeth1Stage1.push(el.stage1)
+      })
+      this.$store.state.module1.teeth2.forEach(el => {
+        teeth2Stage1.push(el.stage1)
+      })
+      concatStages = teeth1Stage1.concat(teeth2Stage1)
+      return concatStages
     },
     stage2 () {
-      return this.$store.state.module1[`tooth${this.toothId}`].stage2
-    },
-    optionsTypeConstruction () {
-      return this.$store.state.module1.optionsTypeConstruction
+      let teeth1Stage2 = [],
+          teeth2Stage2 = [],
+          concatStages = [];
+      this.$store.state.module1.teeth1.forEach(el => {
+        teeth1Stage2.push(el.stage2)
+      })
+      this.$store.state.module1.teeth2.forEach(el => {
+        teeth2Stage2.push(el.stage2)
+      })
+      concatStages = teeth1Stage2.concat(teeth2Stage2)
+      return concatStages
     },
   },
   watch: {

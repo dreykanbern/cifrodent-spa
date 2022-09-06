@@ -63,7 +63,7 @@
             :class="{ 'third-column__item-red': isRemoteTooth, 'third-column__item-green': isHealthyTooth, 'third-column__item': isDefaultStyle, 'active': tooth.isFilledTooth }"
             @click="$router.push(`/teeth-map/tooth/${tooth.toothNumber}`)"
             v-contextmenu:contextmenu
-            v-for="tooth in teeth1"
+            v-for="tooth in this.$store.state.module1.teeth1"
           >
             <code>{{tooth.toothNumber}}</code>
           </div>
@@ -132,7 +132,7 @@
             :class="{ 'third-column__item-red': isRemoteTooth, 'third-column__item-green': isHealthyTooth, 'third-column__item': isDefaultStyle ,  'active': tooth.isFilledTooth   }"
             @click="$router.push(`/teeth-map/tooth/${tooth.toothNumber}`)"
             v-contextmenu:contextmenu
-            v-for="tooth in teeth2"
+            v-for="tooth in this.$store.state.module1.teeth2"
             class="rotate-180"
           >
             <code>{{tooth.toothNumber}}</code>
@@ -188,7 +188,7 @@ export default {
     mapGetters, mapMutations, mapActions,
   },
   name: "TeethMap",
-  inject: ['teeth1','teeth2'],
+  // inject: ['teeth1','teeth2'],
   data() {
     return {
       selectedTeethTop: [],
