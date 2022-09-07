@@ -75,6 +75,7 @@ import EasyDataTable from "vue3-easy-data-table";
 import 'vue3-easy-data-table/dist/style.css';
 import vueBaseInput from "vue-base-input";
 import 'vue-base-input/src/assets/vue-base-input.css';
+import {mapGetters} from "vuex";
 export default {
   name: "Screen3",
   components: {
@@ -83,23 +84,17 @@ export default {
   data () {
     return {
       headers:[
-        { text: "Номер этапа", value: "step-number", sortable: true },
-        { text: "Номер зуба", value: "tooth-number", sortable: true },
-        { text: "Тип конструкции", value: "type-construction" },
-        { text: "Система имплантов и размеры", value: "implant-system" },
+       { text: "Номер этапа", value: "stageNumber", sortable: true },
+        { text: "Номер зуба", value: "toothNumber", sortable: true },
+        { text: "Тип конструкции", value: "typeConstruction"},
+        { text: "Система имплантов и размеры", value: "implantSystem "},
         { text: "Материал изготовления", value: "material" },
-        { text: "Цвет по шкале Vita", value: "color-vita" },
-        { text: "Десневая часть", value: "gum-part" },
+        { text: "Цвет по шкале Vita", value: "colorVita" },
+        { text: "Десневая часть", value: "gumPart" },
         { text: "Опак и карвинг", value: "carving" },
-        { text: "Параметры отступа", value: "indent-options" },
+        { text: "Параметры отступа", value: "indentOptions" },
       ],
       items: [
-        { "step-number": "1", "tooth-number": "-", "type-construction": "-", "implant-system": "-", "material": "-", "color-vita": "-", "gum-part": "-", "carving": "-", "indent-options": "-", },
-        { "step-number": "2", "tooth-number": "-", "type-construction": "-", "implant-system": "-", "material": "-", "color-vita": "-", "gum-part": "-", "carving": "-", "indent-options": "-", },
-        { "step-number": "1", "tooth-number": "-", "type-construction": "-", "implant-system": "-", "material": "-", "color-vita": "-", "gum-part": "-", "carving": "-", "indent-options": "-", },
-        { "step-number": "2", "tooth-number": "-", "type-construction": "-", "implant-system": "-", "material": "-", "color-vita": "-", "gum-part": "-", "carving": "-", "indent-options": "-", },
-        { "step-number": "1", "tooth-number": "-", "type-construction": "-", "implant-system": "-", "material": "-", "color-vita": "-", "gum-part": "-", "carving": "-", "indent-options": "-", },
-        { "step-number": "2", "tooth-number": "-", "type-construction": "-", "implant-system": "-", "material": "-", "color-vita": "-", "gum-part": "-", "carving": "-", "indent-options": "-", },
       ],
       rowsPerPage: 6,
       rowsItems: [6,12,18],
@@ -119,7 +114,54 @@ export default {
         inputClass: 'final-form-input',
         },
       }
-    }
+    },
+  computed: {
+    ...mapGetters([
+      'GET_STATE1',
+      'GET_STATE2',
+    ]),
+    toothId() {
+      return this.$route.params.id
+    },
+    stage1() {
+      let teeth1Stage1 = [],
+          teeth2Stage1 = [],
+          concatStages = [];
+      this.$store.state.module1.teeth1.forEach(el => {
+        teeth1Stage1.push(el.stage1)
+      })
+      this.$store.state.module1.teeth2.forEach(el => {
+        teeth2Stage1.push(el.stage1)
+      })
+      concatStages = teeth1Stage1.concat(teeth2Stage1)
+      return concatStages
+      },
+    stage2() {
+      let teeth1Stage2 = [],
+          teeth2Stage2 = [],
+          concatStages = [];
+      this.$store.state.module1.teeth1.forEach(el => {
+          teeth1Stage2.push(el.stage2)
+      })
+      this.$store.state.module1.teeth2.forEach(el => {
+          teeth2Stage2.push(el.stage2)
+      })
+      concatStages = teeth1Stage2.concat(teeth2Stage2)
+      return concatStages
+      },
+      compTooth1() {
+        return this.stage1.find(el => el.toothNumber === this.toothId)
+      },
+      compTooth2() {
+        return this.stage2.find(el => el.toothNumber === this.toothId)
+      },
+      teeth () {
+        return this.teeth = [this.GET_STATE1, this.GET_STATE2]
+      },
+      stage () {
+      return this.stage = [this.stage1, this.stage2]
+      }
+    },
   };
 </script>
 

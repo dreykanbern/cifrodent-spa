@@ -12,12 +12,14 @@
       <div class="steps-material">
 
         <my-steps
+            v-if="tabActive === true"
             v-on:select-type="selectedConstructionType"
             v-on:select-implant="selectedImplantSystem"
             v-on:select-material="selectedMaterial"
         >
-
         </my-steps>
+
+        <my-steps2 v-else></my-steps2>
 
 
         <div class="tip-wrapper">
@@ -37,7 +39,7 @@
       </div>
 
       <div class="tabs-info">
-        <tabs :options="{ useUrlFragment: false }" class="tabs-wrapper">
+        <tabs :options="{ useUrlFragment: false }" class="tabs-wrapper" @click="stageTabsToggle">
           <tab name="1 этап" class="tab-content">
             <div class="tooth-info-wrapper">
 
@@ -168,18 +170,20 @@ import BackButton from "@/components/UI/BackButton/BackButton";
 import FlagInfo from "@/components/UI/FlagInfo/FlagInfo";
 import MyButton from "@/components/UI/MyButton/MyButton";
 import MySteps from "@/components/MySteps/MySteps";
+import MySteps2 from "@/components/MySteps2/MySteps2";
 import {Tab, Tabs} from "vue3-tabs-component";
 import MyModal from "@/components/UI/MyModal/MyModal";
 import {mapGetters, mapMutations, mapActions} from 'vuex';
 export default {
   name: "Screen2",
-  components: {router, BackButton, FlagInfo, MyButton, MySteps, Tabs, Tab, MyModal,},
+  components: {router, BackButton, FlagInfo, MyButton, MySteps, MySteps2, Tabs, Tab, MyModal,},
   // inject: ['teeth1','teeth2',],
   data() {
     return {
       chooseType: "",
       chooseImplant: "",
       chooseMaterial: "",
+      tabActive: true,
       props: {
 
       },
@@ -187,9 +191,13 @@ export default {
   },
   methods: {
     ...mapMutations([
-      'MUT_PROPERTY',
-      'MUT_COLOR'
+      'MUT_COLOR1',
+      'MUT_COLOR2',
+
     ]),
+    stageTabsToggle () {
+      this.tabActive = !this.tabActive
+    },
     selectedConstructionType(chooseType) {
       console.log(chooseType)
       this.chooseType = chooseType;

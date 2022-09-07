@@ -206,12 +206,12 @@ export default {
   },
   methods: {
     ...mapMutations([
-      'MUT_PROPERTY',
-      'MUT_COLOR',
-      'MUT_FILLED_TOOTH'
+      'MUT_FILLED_TOOTH1',
+      'MUT_FILLED_TOOTH2'
     ]),
-    FilledTooth (teeth1, teeth2) {
-      teeth1.forEach(item => {
+    FilledTooth () {
+      this.$router.push(`/teeth-map/tooth/${tooth.stage1.toothNumber}`)
+      this.$store.state.module1.teeth1.forEach(item => {
         if (item.typeConstruction !== '-' || item.implantSystem !== '-' || item.material !== '-' || item.colorVita !=='-'
             || item.gumPart !== '-' || item.carving !== '-' || item.indentOptions !== '-') {
           item.isFilledTooth = true
@@ -222,7 +222,7 @@ export default {
           })
         }
       })
-      teeth2.forEach(item => {
+      this.$store.state.module1.teeth2.forEach(item => {
         if (item.typeConstruction !== '-' || item.implantSystem !== '-' || item.material !== '-' || item.colorVita !=='-'
             || item.gumPart !== '-' || item.carving !== '-' || item.indentOptions !== '-') {
           item.isFilledTooth = true
@@ -232,7 +232,6 @@ export default {
           })
         }
       })
-      return
     },
     remoteTooth(toothNumber) {
       if (this.isDefaultStyle === true) {
@@ -240,13 +239,11 @@ export default {
         this.isRemoteTooth = true;
       }
     },
-    ChoosingTooth(el, toothNumber) {
-      this.selectedTooth = this.state.module1[tooth(toothNumber)]
-    }
   },
   computed: {
     ...mapGetters([
       'GET_STATE1',
+      'GET_STATE2',
     ]),
   },
   watch: {
@@ -254,29 +251,31 @@ export default {
       deep: true,
       handler(GET_STATE1) {
         GET_STATE1.forEach(item => {
-            if (item.typeConstruction !== '-' || item.implantSystem !== '-' || item.material !== '-' || item.colorVita !=='-'
-                || item.gumPart !== '-' || item.carving !== '-' || item.indentOptions !== '-') {
-              console.log(item.isFilledTooth)
-              item.isFilledTooth = true
-              console.log(this.GET_STATE1)
-              this.MUT_FILLED_TOOTH( {
-                newValue:  item.isFilledTooth,
-                toothId: this.toothId
-              })
-            }
-          })
-          teeth2.forEach(item => {
-            if (item.typeConstruction !== '-' || item.implantSystem !== '-' || item.material !== '-' || item.colorVita !=='-'
-                || item.gumPart !== '-' || item.carving !== '-' || item.indentOptions !== '-') {
-              item.isFilledTooth = true
-              this.MUT_FILLED_TOOTH( {
-                newValue:  item.isFilledTooth,
-                toothId: this.toothId
-              })
-            }
-          })
-        return
-      },
+          if (item.stage1.typeConstruction !== '-' || item.stage1.implantSystem !== '-' || item.stage1.material !== '-' || item.stage1.colorVita !== '-'
+              || item.stage1.gumPart !== '-' || item.stage1.carving !== '-' || item.stage1.indentOptions !== '-') {
+            item.stage1.isFilledTooth = true
+            this.MUT_FILLED_TOOTH1({
+              newValue: item.stage1.isFilledTooth,
+              toothId: this.toothId
+            })
+          }
+        })
+      }
+    },
+    'GET_STATE2': {
+      deep: true,
+      handler(GET_STATE2) {
+        GET_STATE2.forEach(item => {
+          if (item.stage2.typeConstruction !== '-' || item.stage2.implantSystem !== '-' || item.stage2.material !== '-' || item.stage2.colorVita !== '-'
+              || item.stage2.gumPart !== '-' || item.stage2.carving !== '-' || item.stage2.indentOptions !== '-') {
+            item.stage2.isFilledTooth = true
+            this.MUT_FILLED_TOOTH2({
+              newValue: item.stage2.isFilledTooth,
+              toothId: this.toothId
+            })
+          }
+        })
+      }
     }
   },
 }
