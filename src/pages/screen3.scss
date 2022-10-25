@@ -38,6 +38,48 @@
   color: #C8C8C8;
   &:hover {
     border: 2px solid #8C77DE;
-    color: #8C77DE;
+    color: #fff;
   }
 }
+
+input {
+  height: 60px;
+}
+
+.checkbox {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.p-inputtext, .p-component {
+  width: 100% !important;
+  padding: 18px !important;
+}
+
+.p-checkbox {
+  width: 30px !important;
+  padding: 0 !important;
+}
+
+.p-calendar {
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+.p-inputtext {
+  height: 60px;
+  padding: 18px;
+}
+
+.p-inputtext:enabled:hover {
+  border-color: #8C77DE !important;
+}
+
+.p-inputtext:enabled:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: 0 0 0 0.1rem #8C77DE !important;
+  border-color: #8C77DE !important;
+}
+

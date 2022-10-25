@@ -15,6 +15,8 @@
   "dependencies": {
     "@imengyu/vue3-context-menu": "^1.0.9",
     "core-js": "^3.8.3",
+    "primeicons": "^6.0.1",
+    "primevue": "^3.18.0",
     "v-contextmenu": "^3.0.0",
     "vue": "^3.2.13",
     "vue-base-input": "^1.0.9",

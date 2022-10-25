@@ -8,21 +8,21 @@
     <div class="teeth-map__container">
 
       <div class="teeth-map__first-column">
-        <input type="checkbox" v-model="selectedTeethTop" id="1817" value="1817" class="first-column__item"/>
-        <input type="checkbox" v-model="selectedTeethTop" id="1716" value="1716" class="first-column__item"/>
-        <input type="checkbox" v-model="selectedTeethTop" id="1615" value="1615" class="first-column__item"/>
-        <input type="checkbox" v-model="selectedTeethTop" id="1514" value="1514" class="first-column__item"/>
-        <input type="checkbox" v-model="selectedTeethTop" id="1413" value="1413" class="first-column__item"/>
-        <input type="checkbox" v-model="selectedTeethTop" id="1312" value="1312" class="first-column__item"/>
-        <input type="checkbox" v-model="selectedTeethTop" id="1211" value="1211" class="first-column__item"/>
-        <input type="checkbox" v-model="selectedTeethTop" id="1121" value="1121" class="first-column__item"/>
-        <input type="checkbox" v-model="selectedTeethTop" id="2122" value="2122" class="first-column__item"/>
-        <input type="checkbox" v-model="selectedTeethTop" id="2223" value="2223" class="first-column__item"/>
-        <input type="checkbox" v-model="selectedTeethTop" id="2324" value="2324" class="first-column__item"/>
-        <input type="checkbox" v-model="selectedTeethTop" id="2425" value="2425" class="first-column__item"/>
-        <input type="checkbox" v-model="selectedTeethTop" id="2526" value="2526" class="first-column__item"/>
-        <input type="checkbox" v-model="selectedTeethTop" id="2627" value="2627" class="first-column__item"/>
-        <input type="checkbox" v-model="selectedTeethTop" id="2728" value="2728" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethTop" id="1817" value="1817" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethTop" id="1716" value="1716" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethTop" id="1615" value="1615" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethTop" id="1514" value="1514" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethTop" id="1413" value="1413" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethTop" id="1312" value="1312" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethTop" id="1211" value="1211" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethTop" id="1121" value="1121" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethTop" id="2122" value="2122" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethTop" id="2223" value="2223" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethTop" id="2324" value="2324" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethTop" id="2425" value="2425" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethTop" id="2526" value="2526" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethTop" id="2627" value="2627" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethTop" id="2728" value="2728" class="first-column__item"/>
       </div>
       <div class="teeth-map__second-column">
         <div v-if="selectedTeethTop.includes('1817') === true" class="selectedTeeth-left"></div>
@@ -77,21 +77,21 @@
     <div class="teeth-map__container rotate-180">
 
       <div class="teeth-map__first-column rotate-180">
-        <input type="checkbox" v-model="selectedTeethBottom" id="3837" value="3837" class="first-column__item"/>
-        <input type="checkbox" v-model="selectedTeethBottom" id="3736" value="3736" class="first-column__item"/>
-        <input type="checkbox" v-model="selectedTeethBottom" id="3635" value="3635" class="first-column__item"/>
-        <input type="checkbox" v-model="selectedTeethBottom" id="3534" value="3534" class="first-column__item"/>
-        <input type="checkbox" v-model="selectedTeethBottom" id="3433" value="3433" class="first-column__item"/>
-        <input type="checkbox" v-model="selectedTeethBottom" id="3332" value="3332" class="first-column__item"/>
-        <input type="checkbox" v-model="selectedTeethBottom" id="3231" value="3231" class="first-column__item"/>
-        <input type="checkbox" v-model="selectedTeethBottom" id="3141" value="3141" class="first-column__item"/>
-        <input type="checkbox" v-model="selectedTeethBottom" id="4142" value="4142" class="first-column__item"/>
-        <input type="checkbox" v-model="selectedTeethBottom" id="4243" value="4243" class="first-column__item"/>
-        <input type="checkbox" v-model="selectedTeethBottom" id="4344" value="4344" class="first-column__item"/>
-        <input type="checkbox" v-model="selectedTeethBottom" id="4445" value="4445" class="first-column__item"/>
-        <input type="checkbox" v-model="selectedTeethBottom" id="4546" value="4546" class="first-column__item"/>
-        <input type="checkbox" v-model="selectedTeethBottom" id="4647" value="4647" class="first-column__item"/>
-        <input type="checkbox" v-model="selectedTeethBottom" id="4748" value="4748" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethBottom" id="3837" value="3837" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethBottom" id="3736" value="3736" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethBottom" id="3635" value="3635" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethBottom" id="3534" value="3534" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethBottom" id="3433" value="3433" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethBottom" id="3332" value="3332" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethBottom" id="3231" value="3231" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethBottom" id="3141" value="3141" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethBottom" id="4142" value="4142" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethBottom" id="4243" value="4243" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethBottom" id="4344" value="4344" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethBottom" id="4445" value="4445" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethBottom" id="4546" value="4546" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethBottom" id="4647" value="4647" class="first-column__item"/>
+        <Checkbox v-model="selectedTeethBottom" id="4748" value="4748" class="first-column__item"/>
       </div>
       <div class="teeth-map__second-column">
         <div v-if="selectedTeethBottom.includes('4748') === true" class="selectedTeeth-left"></div>
@@ -175,6 +175,7 @@
 <style lang='scss' src="./teeth-map.scss" scoped></style>
 
 <script>
+import Checkbox from 'primevue/checkbox';
 import { directive, Contextmenu, ContextmenuItem } from "v-contextmenu";
 import "v-contextmenu/dist/themes/default.css";
 import {mapGetters, mapMutations, mapActions} from 'vuex';
@@ -185,7 +186,7 @@ export default {
   components: {
     [Contextmenu.name]: Contextmenu,
     [ContextmenuItem.name]: ContextmenuItem,
-    mapGetters, mapMutations, mapActions,
+    mapGetters, mapMutations, mapActions, Checkbox
   },
   name: "TeethMap",
   // inject: ['teeth1','teeth2'],

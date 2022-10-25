@@ -23,30 +23,53 @@
 
     <h2 class="container__h2">Заполните данные полей формы</h2>
 
-    <div class="final-form">
-      <vue-base-input
+    <form class="final-form">
+      <InputText
+          type="text"
+          placeholder="ФИО заказчика*"
+          v-model="value"
+      />
+
+      <InputText
+          type="text"
           placeholder="ФИО пациента*"
-          :is-required ="modelValue.isRequired"
-          :value="modelValue.value"
-          :is-validate="modelValue.isValidate"
-      >
-      </vue-base-input>
-      <vue-base-input
-          pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+          v-model="value"
+      />
+
+      <InputText
+          type="text"
           placeholder="Контактный номер телефона*"
-          :is-required ="modelValue.isRequired"
-          :value="modelValue.value"
-          :is-validate="modelValue.isValidate"
-          :input-type="modelValue.inputTypeTel.inputType"
-      >
-      </vue-base-input>
-      <vue-base-input placeholder="Адрес доставки*"></vue-base-input>
-      <vue-base-input placeholder="Желаемая дата доставки"></vue-base-input>
-      <vue-base-input placeholder="Желаемое время доставки"></vue-base-input>
-      <textarea placeholder="Дополнительная информация к заказу"></textarea>
-      <div>
-        <input type="checkbox">
-        <label>Согласен на обработку персональных данных</label>
+          v-model="value"
+      />
+
+      <InputText
+          type="text"
+          placeholder="Контактная почта*"
+          v-model="value"
+      />
+
+      <InputText
+          type="text"
+          placeholder="Адрес доставки*"
+          v-model="value"
+      />
+
+
+      <Calendar
+          v-model="value"
+          placeholder="Желаемая дата доставки"
+          dateFormat="dd.mm.yy"
+      />
+
+
+      <Textarea v-model="value" :autoResize="true" rows="5" cols="30" placeholder="Дополнительная информация к заказу" />
+
+      <div class="checkbox">
+
+        <Checkbox v-model="checked" :binary="true" value="Согласен на обработку персональных данных" />
+        <label> Согласен на обработку персональных данных</label>
+
+
       </div>
 
       <div class="buttons-wrapper">
@@ -58,7 +81,7 @@
         </router-link>
       </div>
 
-    </div>
+    </form>
 
 
 
@@ -68,6 +91,13 @@
 <style lang='scss' src="./screen3.scss" scoped></style>
 
 <script>
+import 'primevue/resources/themes/saga-blue/theme.css';       //theme
+import 'primevue/resources/primevue.min.css';             //core css
+import 'primeicons/primeicons.css';                           //icons
+import Calendar from 'primevue/calendar';
+import Checkbox from 'primevue/checkbox';
+import Textarea from 'primevue/textarea';
+import InputText from 'primevue/inputtext';
 import MyButton from "@/components/UI/MyButton/MyButton";
 import BackButton from "@/components/UI/BackButton/BackButton";
 import router from "@/router/router";
@@ -79,7 +109,7 @@ import {mapGetters} from "vuex";
 export default {
   name: "Screen3",
   components: {
-    MyButton, BackButton, router, EasyDataTable, vueBaseInput,
+    MyButton, BackButton, router, EasyDataTable, vueBaseInput, InputText, Textarea, Checkbox, Calendar
   },
   data () {
     return {

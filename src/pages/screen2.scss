@@ -26,7 +26,7 @@
   color: #C8C8C8;
   &:hover {
     border: 2px solid #8C77DE;
-    color: #8C77DE;
+    color: #fff;
   }
 }
 
@@ -116,4 +116,56 @@
   color: black;
   font-size: 18px;
   font-family: subGeneralFont;
+}
+
+//Настройка подсказок
+
+#flag-content1 {
+  display: none;
+  position: absolute;
+  bottom: 130%;
+  background: #EFF3F5;
+  border-radius: 8px;
+  border: 0.5px solid #C8C8C8;
+  padding: 15px;
+  color: #5c5c5c;
+  font-size: 16px;
+  font-family: generalFont;
+  z-index: 101;
+  transition: all 0.5s;
+}
+
+#flag-content2 {
+  display: none;
+  position: absolute;
+  bottom: 130%;
+  background: #EFF3F5;
+  border-radius: 8px;
+  border: 0.5px solid #C8C8C8;
+  padding: 15px;
+  color: #5c5c5c;
+  font-size: 16px;
+  font-family: generalFont;
+  z-index: 101;
+  transition: all 0.5s;
+}
+
+#flag1 {
+  position: relative;
+}
+
+#flag2 {
+  position: relative;
+}
+
+#flag1:hover #flag-content1 {
+  display: flex;
+  box-shadow: rgba(0,0,0,0.5) 0 0 0 100vw;
+  transition: all 1s;
+}
+
+#flag2:hover #flag-content2 {
+  display: flex;
+  box-shadow: rgba(0,0,0,0.5) 0 0 0 100vw;
+  transition: all 1s;
 }

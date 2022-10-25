@@ -35,12 +35,23 @@
   z-index: 11;
 }
 
-.first-column__item {
+.first-column__item, {
   width: 30px;
   height: 30px;
   background-color: #eff3f5;
+  //border-radius: 4px;
+  //border: 2px solid #c8c8c8;
+}
+
+input {
+  width: 30px;
+  height: 30px;
+  background-сolor: #eff3f5 !important;
   border-radius: 4px;
-  border: 2px solid #c8c8c8;
+  border: 2px solid #c8c8c8 !important;
+  &:focus {
+    border: 2px solid #8c77de !important;
+  }
 }
 
 //Вторая колонка (Стрелки зубов)
@@ -111,6 +122,11 @@
   height: 63px;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s;
+  &:focus {
+    border: 2px solid #8c77de;
+    transition: all 0.1s;
+  }
 }
 
 .third-column__item-red {
@@ -191,6 +207,7 @@
   color: #ffff;
   background-color: #8c77de;
   cursor: pointer;
+  transition: all 0.1s;
 }
 
 .active {

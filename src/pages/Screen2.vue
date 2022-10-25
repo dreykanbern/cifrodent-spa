@@ -23,8 +23,24 @@
 
 
         <div class="tip-wrapper">
-          <flag-info>Как заполнять форму?</flag-info>
-          <flag-info>Два этапа заполнения формы</flag-info>
+          <flag-info id="flag1">
+
+            <div id="flag-content1">
+              Данный раздел находится в активной разработке и будет дополнен в ближайшее время
+            </div>
+
+            Как заполнять форму?
+          </flag-info>
+
+          <flag-info id="flag2">
+
+            <div id="flag-content2">
+              Данный раздел находится в активной разработке и будет дополнен в ближайшее время
+            </div>
+
+            Два этапа заполнения формы
+          </flag-info>
+
         </div>
 
         <div class="buttons-wrapper">
