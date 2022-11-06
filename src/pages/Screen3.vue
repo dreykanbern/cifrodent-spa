@@ -9,17 +9,23 @@
 
     <h1 class="container__h1">Итоговые данные</h1>
 
-    <EasyDataTable
-        :headers="headers"
-        :items="items"
-        :rowsPerPage="rowsPerPage"
-        :rowsItems="rowsItems"
-        :rowsPerPageMessage="rowsPerPageMessage"
-        :bodyItemClassName="bodyItemClassName"
-        :bodyRowClassName="bodyRowClassName"
-        :headerClassName="headerClassName"
-        :headerItemClassName="headerItemClassName"
-    />
+
+    <form method="post" enctype="multipart/form-data">
+
+      <EasyDataTable
+          :headers="headers"
+          :items="items"
+          :rowsPerPage="rowsPerPage"
+          :rowsItems="rowsItems"
+          :rowsPerPageMessage="rowsPerPageMessage"
+          :bodyItemClassName="bodyItemClassName"
+          :bodyRowClassName="bodyRowClassName"
+          :headerClassName="headerClassName"
+          :headerItemClassName="headerItemClassName"
+      />
+
+    </form>
+
 
     <h2 class="container__h2">Заполните данные полей формы</h2>
 
@@ -27,54 +33,55 @@
       <InputText
           type="text"
           placeholder="ФИО заказчика*"
-          v-model="value"
+          v-model="lastForm.Client"
       />
 
       <InputText
           type="text"
           placeholder="ФИО пациента*"
-          v-model="value"
+          v-model="lastForm.Patient"
       />
 
       <InputText
           type="text"
           placeholder="Контактный номер телефона*"
-          v-model="value"
+          v-model="lastForm.Tel"
       />
 
       <InputText
           type="text"
           placeholder="Контактная почта*"
-          v-model="value"
+          v-model="lastForm.Email"
       />
 
       <InputText
           type="text"
           placeholder="Адрес доставки*"
-          v-model="value"
+          v-model="lastForm.Address"
       />
 
 
       <Calendar
-          v-model="value"
+          v-model="lastForm.Calendar"
           placeholder="Желаемая дата доставки"
           dateFormat="dd.mm.yy"
       />
 
 
-      <Textarea v-model="value" :autoResize="true" rows="5" cols="30" placeholder="Дополнительная информация к заказу" />
+      <Textarea v-model="lastForm.More" :autoResize="true" rows="5" cols="30" placeholder="Дополнительная информация к заказу" />
+
+      <FileUpload mode="basic" name="demo[]" url="./upload" :auto="true" />
 
       <div class="checkbox">
 
         <Checkbox v-model="checked" :binary="true" value="Согласен на обработку персональных данных" />
         <label> Согласен на обработку персональных данных</label>
 
-
       </div>
 
       <div class="buttons-wrapper">
         <router-link to="/teeth-map" class="text-decoration-none">
-          <my-button>Отправить в работу</my-button>
+          <my-button type="submit">Отправить в работу</my-button>
         </router-link>
         <router-link to="/teeth-map" class="text-decoration-none">
           <my-button class="disabled">Вернуться к карте зубов</my-button>
@@ -88,16 +95,14 @@
   </div>
 </template>
 
-<style lang='scss' src="./screen3.scss" scoped></style>
+<style lang='scss' src="./screen3.scss"></style>
 
 <script>
-import 'primevue/resources/themes/saga-blue/theme.css';       //theme
-import 'primevue/resources/primevue.min.css';             //core css
-import 'primeicons/primeicons.css';                           //icons
-import Calendar from 'primevue/calendar';
+import FileUpload from 'primevue/fileupload';
 import Checkbox from 'primevue/checkbox';
 import Textarea from 'primevue/textarea';
 import InputText from 'primevue/inputtext';
+import Calendar from 'primevue/calendar';
 import MyButton from "@/components/UI/MyButton/MyButton";
 import BackButton from "@/components/UI/BackButton/BackButton";
 import router from "@/router/router";
@@ -106,13 +111,29 @@ import 'vue3-easy-data-table/dist/style.css';
 import vueBaseInput from "vue-base-input";
 import 'vue-base-input/src/assets/vue-base-input.css';
 import {mapGetters} from "vuex";
+import 'primevue/resources/themes/saga-blue/theme.css';       //theme
+import 'primevue/resources/primevue.min.css';             //core css
+import 'primeicons/primeicons.css';                           //icons
 export default {
   name: "Screen3",
   components: {
-    MyButton, BackButton, router, EasyDataTable, vueBaseInput, InputText, Textarea, Checkbox, Calendar
+    MyButton, BackButton, router, EasyDataTable, vueBaseInput, InputText, Textarea, Checkbox, Calendar, FileUpload
   },
   data () {
     return {
+
+      checked: false,
+
+      lastForm: {
+        Client: '',
+        Patient: '',
+        Tel: '',
+        Email: '',
+        Address: '',
+        Calendar: '',
+        More: '',
+      },
+
       headers:[
        { text: "Номер этапа", value: "stageNumber", sortable: true },
         { text: "Номер зуба", value: "toothNumber", sortable: true },

@@ -636,7 +636,7 @@
               </div>
 
                 <label class="modal-select-input" for="">Другое</label>
-                <input type="text" name="" placeholder="Напишите свой вариант" v-model="compTooth1.colorVita">
+                <InputText type="text" name="" placeholder="Напишите свой вариант" v-model="compTooth1.colorVita"/>
 
 
             </div>
@@ -725,12 +725,12 @@
         <div class="modal-select-container-column">
 
           <label class="modal-select-input" for="">Ширина уступа</label>
-          <input type="text" name="" placeholder="Вестибулярная (впишите значение в мм.)" v-model="this.indentOptions.WidhtWest">
-          <input type="text" name="" placeholder="Небная (впишите значение в мм.)" v-model="this.indentOptions.WidhtNeb" >
+          <InputText type="text" name="" placeholder="Вестибулярная (впишите значение в мм.)" v-model="this.indentOptions.WidhtWest"/>
+          <InputText type="text" name="" placeholder="Небная (впишите значение в мм.)" v-model="this.indentOptions.WidhtNeb" />
 
           <label class="modal-select-input" for="">Глубина уступа</label>
-          <input type="text" name="" placeholder="Над десной (впишите значение в мм.)" v-model="this.indentOptions.Deep1">
-          <input type="text" name="" placeholder="Под дейсной (впишите значение в мм.)" v-model="this.indentOptions.Deep2">
+          <InputText type="text" name="" placeholder="Над десной (впишите значение в мм.)" v-model="this.indentOptions.Deep1"/>
+          <InputText type="text" name="" placeholder="Под дейсной (впишите значение в мм.)" v-model="this.indentOptions.Deep2"/>
 
           <my-button @click="resetIndentOptions">Сбросить значение</my-button>
 
