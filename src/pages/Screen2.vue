@@ -45,7 +45,7 @@
 
         <div class="buttons-wrapper">
           <router-link to="/teeth-map" class="text-decoration-none">
-            <my-button>Сохранить настройки</my-button>
+            <my-button @click=saveTeeth>Сохранить настройки</my-button>
           </router-link>
           <router-link to="/teeth-map" class="text-decoration-none">
             <my-button class="disabled">Отменить</my-button>
@@ -209,8 +209,16 @@ export default {
     ...mapMutations([
       'MUT_COLOR1',
       'MUT_COLOR2',
+      'MUT_CHOOSED_TEETH',
 
     ]),
+
+    saveTeeth () {
+      this.MUT_CHOOSED_TEETH(
+          this.saveTeethObject
+      )
+    },
+
     stageTabsToggle () {
       this.tabActive = !this.tabActive
     },
@@ -263,12 +271,41 @@ export default {
     compTooth2() {
       return this.stage2.find(el => el.toothNumber === this.toothId)
     },
+    saveTeethObject () {
+      return {
+        "stageNumber": '1',
+        "toothNumber": this.$route.params.id,
+        "typeConstruction": this.compTooth1.typeConstruction,
+        "implantSystem": this.compTooth1.implantSystem,
+        "material": this.compTooth1.material,
+        "colorVita": this.compTooth1.colorVita,
+        "gumPart": this.compTooth1.gumPart,
+        "carving": this.compTooth1.carving,
+        "indentOptions": this.compTooth1.indentOptions,
+      }
+    },
+
+    // if (this.tabActive !== true) {
+    //   //          return {
+    //   "stageNumber": '2',
+    //   "toothNumber": this.$route.params.id,
+    //   "typeConstruction": this.compTooth1.typeConstruction,
+    //   "implantSystem": this.compTooth1.implantSystem,
+    //   "material": this.compTooth1.material,
+    //   "colorVita": this.compTooth1.colorVita,
+    //   "gumPart": this.compTooth1.gumPart,
+    //   "carving": this.compTooth1.carving,
+    //   "indentOptions": this.compTooth1.indentOptions,
+    // }
+    // }
+
     // stage1 () {
     //   return this.$store.state.module1.teeth1[`tooth${this.toothId}`].stage1
     // },
     // stage2 () {
     //   return this.$store.state.module1[`tooth${this.toothId}`].stage2
     // },
+
   }
 }
 </script>

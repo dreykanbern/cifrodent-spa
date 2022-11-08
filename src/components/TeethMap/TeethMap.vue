@@ -60,7 +60,7 @@
 
 
           <div
-            :class="{ 'third-column__item-red': isRemoteTooth, 'third-column__item-green': isHealthyTooth, 'third-column__item': isDefaultStyle, 'active': tooth.isFilledTooth }"
+            :class="{ 'third-column__item-red': isRemoteTooth, 'third-column__item-green': isHealthyTooth, 'third-column__item': isDefaultStyle, 'active': isFilledTeeth(tooth.stage1.toothNumber) }"
             @click="$router.push(`/teeth-map/tooth/${tooth.stage1.toothNumber}`)"
             v-contextmenu:contextmenu
             v-for="tooth in this.$store.state.module1.teeth1"
@@ -129,7 +129,7 @@
 
 
           <div
-            :class="{ 'third-column__item-red': isRemoteTooth, 'third-column__item-green': isHealthyTooth, 'third-column__item': isDefaultStyle ,  'active': tooth.isFilledTooth   }"
+            :class="{ 'third-column__item-red': isRemoteTooth, 'third-column__item-green': isHealthyTooth, 'third-column__item': isDefaultStyle ,  'active': isFilledTeeth(tooth.stage1.toothNumber)   }"
             @click="$router.push(`/teeth-map/tooth/${tooth.stage1.toothNumber}`)"
             v-contextmenu:contextmenu
             v-for="tooth in this.$store.state.module1.teeth2"
@@ -210,6 +210,12 @@ export default {
       'MUT_FILLED_TOOTH1',
       'MUT_FILLED_TOOTH2'
     ]),
+
+    isFilledTeeth(toothNumber) {
+      console.log(toothNumber)
+      return this.$store.state.module1.chooseTeeth.some(el => el.toothNumber === toothNumber)
+    },
+
     FilledTooth () {
       this.$router.push(`/teeth-map/tooth/${tooth.stage1.toothNumber}`)
       this.$store.state.module1.teeth1.forEach(item => {

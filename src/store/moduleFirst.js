@@ -905,6 +905,11 @@ export const moduleFirst = {
                 },
         ],
 
+        chooseTeeth: [
+
+        ],
+
+
         optionsTypeConstruction: {
             Type1: {
                 typeNameDefault: 'Анатомическая коронка',
@@ -1025,10 +1030,7 @@ export const moduleFirst = {
         }
     }),
     getters: {
-        zub(state) {
-            this.$store.commit('SET_PROPERTY', {key: 'zub', value: value})
-            this.zub = 'new value';
-        }
+
     },
     mutations: {
         SET_PROPERTY(state, payload) {
