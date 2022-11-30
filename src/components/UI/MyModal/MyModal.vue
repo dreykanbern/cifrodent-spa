@@ -15,7 +15,7 @@
 
 </template>
 
-<style lang='scss' src="./my-modal.scss" scoped></style>
+<style lang='scss' src="./my-modal.scss"></style>
 
 <script>
 import BackButton from "@/components/UI/BackButton/BackButton";

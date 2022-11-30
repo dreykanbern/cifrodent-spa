@@ -303,9 +303,6 @@ input {
   align-items: center;
 }
 
-.p-inputtext, .p-component {
-  padding: 18px !important;
-}
 
 .p-checkbox {
   width: 30px !important;
@@ -320,6 +317,7 @@ input {
 .p-inputtext {
   height: 60px;
   padding: 18px;
+  width: 420px;
 }
 
 .p-inputtext:enabled:hover {
@@ -332,4 +330,5 @@ input {
   box-shadow: 0 0 0 0.1rem #8C77DE !important;
   border-color: #8C77DE !important;
 }
+
 

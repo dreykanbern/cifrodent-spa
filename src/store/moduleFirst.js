@@ -9,9 +9,9 @@ export const moduleFirst = {
                         implantSystem: '-',
                         material: '-',
                         colorVita: '-',
-                        gumPart: '-',
-                        carving: '-',
-                        indentOptions: '-',
+                        gumPart: '-', //Исправить ошибку в стейте Дисневая
+                        carving: 'нет', // Опак - слабый, средний, сильный, либо его не делать,
+                        indentOptions: '-', // Убрать из текущего заказ наряда
                         selectDefault: 'Выберите значение',
                         isRemoteTooth: false, //Подумать насчет изменений значений не стейте а прокидывать настоящим инжектом
                         isHealthyTooth: false,
@@ -906,7 +906,17 @@ export const moduleFirst = {
         ],
 
         chooseTeeth: [
-
+            // {
+            //     'stageNumber':'-',
+            //     "toothNumber":'-',
+            //     "typeConstruction":'-',
+            //     "implantSystem":'-',
+            //     "material":'-',
+            //     "colorVita":'-',
+            //     "gumPart":'-',
+            //     "carving":'-',
+            //     "indentOptions":'-',
+            // },
         ],
 
 

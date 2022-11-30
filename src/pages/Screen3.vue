@@ -65,7 +65,8 @@
 
       <Textarea v-model="lastForm.More" :autoResize="true" rows="5" cols="30" placeholder="Дополнительная информация к заказу" />
 
-      <FileUpload mode="basic" name="demo[]" url="./upload" />
+      <FileUpload mode="basic" name="demo[]" url="https://cifrodent.ru/wp-content/themes/cifrodent/php/upload" :multiple="true" />
+      <!-- .stl .constuctioninfo Подсказка по почте -->
 
       <div class="checkbox">
 
@@ -93,8 +94,6 @@
 <style lang='scss' src="./screen3.scss"></style>
 
 <script>
-
-// import CarService from '../jsons/CarService.json';
 
 import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
@@ -155,10 +154,10 @@ export default {
       Object.entries(this.lastForm).forEach(([key, value]) => {
         formData.append(key, value);
       });
-      console.log(Object.fromEntries(formData))
+      // console.log(Object.fromEntries(formData))
       formData.append("tableHeader", JSON.stringify(this.tableHeader))
       formData.append('chooseTeeth', JSON.stringify(this.chooseTeeth))
-      fetch("https://cifrodent.ru/send.php", {
+      fetch("https://cifrodent.ru/wp-content/themes/cifrodent/php/send.php", {
         method:'POST',
         body: formData
       })
@@ -166,7 +165,7 @@ export default {
             Response.json()
           })
           .then(Result => {
-            console.log(Result)
+            // console.log(Result)
           })
     }
   },
@@ -220,20 +219,8 @@ export default {
     chooseTeeth () {
       return this.$store.state.module1.chooseTeeth
     }
+
   },
 };
-
-      // headers:[
-      //  { text: "Номер этапа", value: "stageNumber", sortable: true },
-      //   { text: "Номер зуба", value: "toothNumber", sortable: true },
-      //   { text: "Тип конструкции", value: "typeConstruction"},
-      //   { text: "Система имплантов и размеры", value: "implantSystem "},
-      //   { text: "Материал изготовления", value: "material" },
-      //   { text: "Цвет по шкале Vita", value: "colorVita" },
-      //   { text: "Десневая часть", value: "gumPart" },
-      //   { text: "Опак и карвинг", value: "carving" },
-      //   { text: "Параметры отступа", value: "indentOptions" },
-      // ],
-
 </script>
 

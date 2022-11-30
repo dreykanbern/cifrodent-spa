@@ -53,8 +53,7 @@ input {
 }
 
 .p-inputtext {
-  width: 100% !important;
-  padding: 18px !important;
+  padding: 18px;
 }
 
 .p-checkbox {
@@ -64,8 +63,9 @@ input {
 }
 
 .p-inputtext {
+  width: unset;
   height: 60px !important;
-  padding: 18px !important;
+  padding: 18px;
 }
 
 .p-inputtext:hover {
@@ -116,7 +116,7 @@ input .p-inputtext {
 
 .p-calendar > input {
   padding: 18px !important;
-  width: 100% !important;
+  width: inherit;
   min-height: 60px !important;
 }
 

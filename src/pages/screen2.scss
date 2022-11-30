@@ -58,6 +58,7 @@
   gap: 16px;
   font-family: generalFont;
   color: #5c5c5c;
+  z-index: 1!important;
 }
 
 .is-active {
@@ -168,4 +169,12 @@
   display: flex;
   box-shadow: rgba(0,0,0,0.5) 0 0 0 100vw;
   transition: all 1s;
+}
+
+
+.p-tabview .p-tabview-nav {
+  z-index: 1 !important;
+}
+p-tabview-nav-content {
+  z-index: 1 !important;
 }

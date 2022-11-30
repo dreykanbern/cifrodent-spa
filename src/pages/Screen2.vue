@@ -12,7 +12,7 @@
       <div class="steps-material">
 
         <my-steps
-            v-if="tabActive === true"
+            v-if="tabActive.value === true"
             v-on:select-type="selectedConstructionType"
             v-on:select-implant="selectedImplantSystem"
             v-on:select-material="selectedMaterial"
@@ -55,10 +55,9 @@
       </div>
 
       <div class="tabs-info">
-        <tabs :options="{ useUrlFragment: false }" class="tabs-wrapper" @click="stageTabsToggle">
-          <tab name="1 этап" class="tab-content">
+        <TabView class="tabs-wrapper"  @click="stageTabsToggle">
+          <TabPanel header="1 этап" class="tab-content">
             <div class="tooth-info-wrapper">
-
               <div class="tooth-number">
                 <span class="tooth-title"> Вы редактируете зуб под номером </span>
                 <div class="tooth-item">{{$route.params.id}}</div>
@@ -112,8 +111,8 @@
               </div>
 
             </div>
-          </tab>
-          <tab name="2 этап" class="tab-content">
+          </TabPanel>
+          <TabPanel header="2 этап"  class="tab-content">
             <div class="tooth-info-wrapper">
 
               <div class="tooth-number">
@@ -169,8 +168,8 @@
               </div>
 
             </div>
-          </tab>
-        </tabs>
+          </TabPanel>
+        </TabView>
       </div>
 
     </div>
@@ -178,7 +177,7 @@
   </div>
 </template>
 
-<style lang='scss' src="./screen2.scss" scoped></style>
+<style lang='scss' src="./screen2.scss"></style>
 
 <script>
 import router from "@/router/router";
@@ -190,16 +189,21 @@ import MySteps2 from "@/components/MySteps2/MySteps2";
 import {Tab, Tabs} from "vue3-tabs-component";
 import MyModal from "@/components/UI/MyModal/MyModal";
 import {mapGetters, mapMutations, mapActions} from 'vuex';
+import TabView from 'primevue/tabview';
+import TabPanel from 'primevue/tabpanel';
 export default {
   name: "Screen2",
-  components: {router, BackButton, FlagInfo, MyButton, MySteps, MySteps2, Tabs, Tab, MyModal,},
+  components: {router, BackButton, FlagInfo, MyButton, MySteps, MySteps2, Tabs, Tab, MyModal,TabView,TabPanel},
   // inject: ['teeth1','teeth2',],
   data() {
     return {
       chooseType: "",
       chooseImplant: "",
       chooseMaterial: "",
-      tabActive: true,
+      tabActive: {
+        type: Boolean,
+        value: true,
+      },
       props: {
 
       },
@@ -210,28 +214,33 @@ export default {
       'MUT_COLOR1',
       'MUT_COLOR2',
       'MUT_CHOOSED_TEETH',
-
     ]),
 
     saveTeeth () {
       this.MUT_CHOOSED_TEETH(
           this.saveTeethObject
       )
+      this.tabActive.value = true;
+    },
+    stageTabsToggle () {
+      let tabViewHeader = document.querySelector('.p-tabview-nav-link')
+       if (tabViewHeader.getAttribute('tabindex') === '0') {
+         this.tabActive.value = true
+       } else if (tabViewHeader.getAttribute('tabindex') === '-1') {
+         this.tabActive.value = false
+       }
     },
 
-    stageTabsToggle () {
-      this.tabActive = !this.tabActive
-    },
     selectedConstructionType(chooseType) {
-      console.log(chooseType)
+      // console.log(chooseType)
       this.chooseType = chooseType;
     },
     selectedImplantSystem(chooseImplant) {
-      console.log(chooseImplant)
+      // console.log(chooseImplant)
       this.chooseImplant = chooseImplant;
     },
     selectedMaterial(chooseMaterial) {
-      console.log(chooseMaterial)
+      // console.log(chooseMaterial)
       this.chooseMaterial = chooseMaterial;
     }
   },
@@ -271,17 +280,45 @@ export default {
     compTooth2() {
       return this.stage2.find(el => el.toothNumber === this.toothId)
     },
+
+    reactiveStageNumber () {
+      let stageNumber
+
+      if (this.tabActive.value === true) {
+        stageNumber = '1'
+      } else {
+        stageNumber = '2'
+      }
+
+      return stageNumber
+    },
+
     saveTeethObject () {
-      return {
-        "stageNumber": '1',
-        "toothNumber": this.$route.params.id,
-        "typeConstruction": this.compTooth1.typeConstruction,
-        "implantSystem": this.compTooth1.implantSystem,
-        "material": this.compTooth1.material,
-        "colorVita": this.compTooth1.colorVita,
-        "gumPart": this.compTooth1.gumPart,
-        "carving": this.compTooth1.carving,
-        "indentOptions": this.compTooth1.indentOptions,
+      if (this.tabActive.value === true) {
+        return {
+          "stageNumber": "1",
+          "toothNumber": this.$route.params.id,
+          "typeConstruction": this.compTooth1.typeConstruction,
+          "implantSystem": this.compTooth1.implantSystem,
+          "material": this.compTooth1.material,
+          "colorVita": this.compTooth1.colorVita,
+          "gumPart": this.compTooth1.gumPart,
+          "carving": this.compTooth1.carving,
+          "indentOptions": this.compTooth1.indentOptions,
+        }
+      }
+      else if ((this.tabActive.value === false)) {
+        return {
+          "stageNumber": "2",
+          "toothNumber": this.$route.params.id,
+          "typeConstruction": this.compTooth2.typeConstruction,
+          "implantSystem": this.compTooth2.implantSystem,
+          "material": this.compTooth2.material,
+          "colorVita": this.compTooth2.colorVita,
+          "gumPart": this.compTooth2.gumPart,
+          "carving": this.compTooth2.carving,
+          "indentOptions": this.compTooth2.indentOptions,
+        }
       }
     },
 

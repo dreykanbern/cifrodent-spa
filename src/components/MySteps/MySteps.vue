@@ -758,7 +758,7 @@
 
 </template>
 
-<style lang='scss' src="./my-steps.scss" scoped></style>
+<style lang='scss' src="./my-steps.scss" scoped ></style>
 
 <script>
 import 'primevue/resources/themes/saga-blue/theme.css';       //theme

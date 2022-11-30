@@ -79,27 +79,8 @@ export default createStore({
             })
         },
         MUT_CHOOSED_TEETH: (state, newValue) => {
-            if (state.module1.chooseTeeth.length > 0) {
-                console.log(state.module1.chooseTeeth)
-                state.module1.chooseTeeth.forEach((el, key) => {
-                    console.log(newValue.toothNumber === el.toothNumber)
-                        if (newValue.toothNumber === el.toothNumber) {
-                            state.module1.chooseTeeth.splice(key, 1)
-                            state.module1.chooseTeeth.push(newValue)
-                        }
-                        else {
-                            state.module1.chooseTeeth.push(newValue)
-                        }
-                    }
-                )
-            }
-            else {
-                state.module1.chooseTeeth.push(newValue)
-            }
-
-
-
-        }
+                state.module1.chooseTeeth = [...state.module1.chooseTeeth.filter(el => el.toothNumber !== newValue.toothNumber), newValue]
+        },
 
     },
     getters: {

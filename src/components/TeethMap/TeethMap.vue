@@ -212,7 +212,7 @@ export default {
     ]),
 
     isFilledTeeth(toothNumber) {
-      console.log(toothNumber)
+      // console.log(toothNumber)
       return this.$store.state.module1.chooseTeeth.some(el => el.toothNumber === toothNumber)
     },
 
@@ -222,7 +222,7 @@ export default {
         if (item.typeConstruction !== '-' || item.implantSystem !== '-' || item.material !== '-' || item.colorVita !=='-'
             || item.gumPart !== '-' || item.carving !== '-' || item.indentOptions !== '-') {
           item.isFilledTooth = true
-          console.log(item.isFilledTooth)
+          // console.log(item.isFilledTooth)
           this.MUT_FILLED_TOOTH( {
             newValue:  item.isFilledTooth,
             toothId: this.toothId

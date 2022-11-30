@@ -730,7 +730,7 @@
 
           <label class="modal-select-input" for="">Глубина уступа</label>
           <InputText type="text" name="" placeholder="Над десной (впишите значение в мм.)" v-model="this.indentOptions.Deep1"/>
-          <InputText type="text" name="" placeholder="Под дейсной (впишите значение в мм.)" v-model="this.indentOptions.Deep2"/>
+          <InputText type="text" name="" placeholder="Под десной (впишите значение в мм.)" v-model="this.indentOptions.Deep2"/>
 
           <my-button @click="resetIndentOptions">Сбросить значение</my-button>
 
@@ -758,9 +758,11 @@
 
 </template>
 
-<style lang='scss' src="./my-steps2.scss" scoped></style>
+<style lang='scss' src="./my-steps2.scss" scoped ></style>
 
 <script>
+import 'primevue/resources/themes/saga-blue/theme.css';       //theme
+import InputText from 'primevue/inputtext';
 import MyModal from "@/components/UI/MyModal/MyModal";
 import MySelect from "@/components/UI/MySelect/MySelect";
 import FlagInfo from "@/components/UI/FlagInfo/FlagInfo";
@@ -773,6 +775,7 @@ export default  {
     MyModal,
     MySelect,
     MyButton,
+    InputText,
   },
 
   data() {

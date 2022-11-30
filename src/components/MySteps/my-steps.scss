@@ -64,6 +64,7 @@
   margin-top: 30px;
   gap: 30px;
   flex-wrap: wrap;
+  z-index: 100 !important;
 }
 
 .modal-select-container-column {
@@ -303,10 +304,6 @@ input {
   align-items: center;
 }
 
-.p-inputtext, .p-component {
-  padding: 18px !important;
-}
-
 .p-checkbox {
   width: 30px !important;
   padding: 0 !important;
@@ -320,6 +317,7 @@ input {
 .p-inputtext {
   height: 60px;
   padding: 18px;
+  width: 420px;
 }
 
 .p-inputtext:enabled:hover {
