@@ -148,23 +148,23 @@
 </div>
 
   <v-contextmenu ref="contextmenu">
-    <v-contextmenu-item class="contextmenu-item">
+    <v-contextmenu-item class="contextmenu-item" @click="copyTooth">
       <img class="contextmenu-img" src="~@/assets/img/сopy-icon.svg" alt="#">
       <p class="contextmenu-text">Копировать</p>
     </v-contextmenu-item>
-    <v-contextmenu-item class="contextmenu-item">
+    <v-contextmenu-item class="contextmenu-item" @click="insertTooth">
       <img class="contextmenu-img" src="~@/assets/img/paste-icon.svg" alt="#">
       <p class="contextmenu-text">Вставить</p>
     </v-contextmenu-item >
-    <v-contextmenu-item @click="remoteTooth" class="contextmenu-item">
+    <v-contextmenu-item class="contextmenu-item" @click="selectMissingTooth">
       <img class="contextmenu-img" src="~@/assets/img/remote-tooth-icon.svg" alt="#">
       <p class="contextmenu-text">Пометить зуб как <span class="red">отсутствующий</span></p>
     </v-contextmenu-item>
-    <v-contextmenu-item class="contextmenu-item">
+    <v-contextmenu-item class="contextmenu-item" @click="selectHealthyTooth">
       <img class="contextmenu-img" src="~@/assets/img/healthy-tooth-icon.svg" alt="#">
       <p class="contextmenu-text">Пометить зуб как <span class="green">здоровый</span></p>
     </v-contextmenu-item>
-    <v-contextmenu-item class="contextmenu-item">
+    <v-contextmenu-item class="contextmenu-item" @click="resetTooth">
       <img class="contextmenu-img" src="~@/assets/img/reset-basket-icon.svg" alt="#">
       <p class="contextmenu-text">Сбросить настройки зуба</p>
     </v-contextmenu-item>

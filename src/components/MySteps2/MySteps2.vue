@@ -658,26 +658,11 @@
 
             <div class="modal-select-item">
 
-              <span class ='modal-select-header'>Десневая часть есть</span>
               <select class="modal-select" v-model="compTooth2.gumPart">
                 <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
-                <option class="option-modal" :value="'Есть: красить'">Красить</option>
+                <option class="option-modal" :value="'Есть: Красить'">Красить</option>
                 <option class="option-modal" :value="'Есть: Не красить'">Не красить</option>
-              </select>
-
-            </div>
-
-          </div>
-
-          <div class="column gap10">
-
-            <div class="modal-select-item">
-
-              <span class ='modal-select-header'>Десневая часть отсутствует</span>
-              <select class="modal-select" v-model="compTooth2.gumPart">
-                <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
-                <option class="option-modal" :value="'Отсутствует: красить'">Красить</option>
-                <option class="option-modal" :value="'Отсутствует: Не красить'">Не красить</option>
+                <option class="option-modal" :value="'Отсутствует'">Отсутствует</option>
               </select>
 
             </div>
@@ -716,28 +701,28 @@
       </div>
     </my-modal>
 
-    <my-modal v-model:show="modalVisible7">
-      <div class="content-modal-wrapper">
+<!-- Параметры отступа    <my-modal v-model:show="modalVisible7">-->
+<!--      <div class="content-modal-wrapper">-->
 
-        <h2 class="modal__h2">Укажите параметры отступа</h2>
-        <h3 class="subheader__h2">Напишите данные</h3>
+<!--        <h2 class="modal__h2">Укажите параметры отступа</h2>-->
+<!--        <h3 class="subheader__h2">Напишите данные</h3>-->
 
-        <div class="modal-select-container-column">
+<!--        <div class="modal-select-container-column">-->
 
-          <label class="modal-select-input" for="">Ширина уступа</label>
-          <InputText type="text" name="" placeholder="Вестибулярная (впишите значение в мм.)" v-model="this.indentOptions.WidhtWest"/>
-          <InputText type="text" name="" placeholder="Небная (впишите значение в мм.)" v-model="this.indentOptions.WidhtNeb" />
+<!--          <label class="modal-select-input" for="">Ширина уступа</label>-->
+<!--          <InputText type="text" name="" placeholder="Вестибулярная (впишите значение в мм.)" v-model="this.indentOptions.WidhtWest"/>-->
+<!--          <InputText type="text" name="" placeholder="Небная (впишите значение в мм.)" v-model="this.indentOptions.WidhtNeb" />-->
 
-          <label class="modal-select-input" for="">Глубина уступа</label>
-          <InputText type="text" name="" placeholder="Над десной (впишите значение в мм.)" v-model="this.indentOptions.Deep1"/>
-          <InputText type="text" name="" placeholder="Под десной (впишите значение в мм.)" v-model="this.indentOptions.Deep2"/>
+<!--          <label class="modal-select-input" for="">Глубина уступа</label>-->
+<!--          <InputText type="text" name="" placeholder="Над десной (впишите значение в мм.)" v-model="this.indentOptions.Deep1"/>-->
+<!--          <InputText type="text" name="" placeholder="Под десной (впишите значение в мм.)" v-model="this.indentOptions.Deep2"/>-->
 
-          <my-button @click="resetIndentOptions">Сбросить значение</my-button>
+<!--          <my-button @click="resetIndentOptions">Сбросить значение</my-button>-->
 
-        </div>
+<!--        </div>-->
 
-      </div>
-    </my-modal>
+<!--      </div>-->
+<!--    </my-modal>-->
 
     <input type="checkbox" class="steps-item checkbox-none" id="step1" @click="showModal1">
     <label for="step1">Тип конструкции</label>
@@ -751,8 +736,8 @@
     <label for="step5">Десневая часть</label>
     <input type="checkbox" class="steps-item checkbox-none" id="step6" @click="showModal6">
     <label for="step6">Опак и карвинг</label>
-    <input type="checkbox" class="steps-item checkbox-none" id="step7" @click="showModal7">
-    <label for="step7">Параметры отступа</label>
+<!-- Параметры отступа   <input type="checkbox" class="steps-item checkbox-none" id="step7" @click="showModal7">-->
+<!--    <label for="step7">Параметры отступа</label>-->
 
   </div>
 

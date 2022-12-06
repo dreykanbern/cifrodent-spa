@@ -18,13 +18,12 @@
         <Column field="colorVita" header="Цвет по шкале Vita"></Column>
         <Column field="gumPart" header="Десневая часть"></Column>
         <Column field="carving" header="Опак и карвинг"></Column>
-        <Column field="indentOptions" header="Параметры отступа"></Column>
       </DataTable>
 
 
     <h2 class="container__h2">Заполните данные полей формы</h2>
 
-    <form class="final-form">
+    <form action="https://cifrodent.ru/wp-content/themes/cifrodent/php/send.php" method="POST" enctype="multipart/form-data" class="final-form" >
       <InputText
           type="text"
           placeholder="ФИО заказчика*"
@@ -65,7 +64,7 @@
 
       <Textarea v-model="lastForm.More" :autoResize="true" rows="5" cols="30" placeholder="Дополнительная информация к заказу" />
 
-      <FileUpload mode="basic" name="demo[]" url="https://cifrodent.ru/wp-content/themes/cifrodent/php/upload" :multiple="true" />
+      <FileUpload name="upload" url="https://cifrodent.ru/wp-content/themes/cifrodent/php/upload" :multiple="true" :auto="true" accept=".stl,.constructionInfo" :maxFileSize="100000000" />
       <!-- .stl .constuctioninfo Подсказка по почте -->
 
       <div class="checkbox">
@@ -133,7 +132,6 @@ export default {
           "colorVita": 'Цвет по шкале Vita',
           "gumPart": 'Десневая часть',
           "carving": 'Опак и карвинг',
-          "indentOptions": 'Параметры отступа',
         },
 
         lastForm: {

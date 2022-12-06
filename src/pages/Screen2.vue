@@ -44,7 +44,10 @@
         </div>
 
         <div class="buttons-wrapper">
-          <router-link to="/teeth-map" class="text-decoration-none">
+          <router-link v-if="tabActive.value === true" to="/teeth-map" class="text-decoration-none">
+            <my-button @click=saveTeeth>Сохранить настройки</my-button>
+          </router-link>
+          <router-link v-else to="/teeth-map" class="text-decoration-none">
             <my-button @click=saveTeeth>Сохранить настройки</my-button>
           </router-link>
           <router-link to="/teeth-map" class="text-decoration-none">
@@ -90,7 +93,7 @@
                   </span>
                 </div>
                 <div class="tooth-attribute__item">
-                  <span class="tooth-attribute__item-title">Дисневая часть</span>
+                  <span class="tooth-attribute__item-title">Десневая часть</span>
                   <span class="tooth-attribute__item-value">
                     {{compTooth1.gumPart}}
                   </span>
@@ -101,12 +104,12 @@
                     {{compTooth1.carving}}
                   </span>
                 </div>
-                <div class="tooth-attribute__item">
-                  <span class="tooth-attribute__item-title">Параметры отступа</span>
-                  <span class="tooth-attribute__item-value">
-                    {{compTooth1.indentOptions}}
-                  </span>
-                </div>
+<!--  Параметры отступа не нужны               <div class="tooth-attribute__item">-->
+<!--                  <span class="tooth-attribute__item-title">Параметры отступа</span>-->
+<!--                  <span class="tooth-attribute__item-value">-->
+<!--                    {{compTooth1.indentOptions}}-->
+<!--                  </span>-->
+<!--                </div>-->
 
               </div>
 
@@ -147,7 +150,7 @@
                   </span>
                 </div>
                 <div class="tooth-attribute__item">
-                  <span class="tooth-attribute__item-title">Дисневая часть</span>
+                  <span class="tooth-attribute__item-title">Десневая часть</span>
                   <span class="tooth-attribute__item-value">
                     {{compTooth2.gumPart}}
                   </span>
@@ -158,12 +161,12 @@
                     {{compTooth2.carving}}
                   </span>
                 </div>
-                <div class="tooth-attribute__item">
-                  <span class="tooth-attribute__item-title">Параметры отступа</span>
-                  <span class="tooth-attribute__item-value">
-                    {{compTooth2.indentOptions}}
-                  </span>
-                </div>
+<!-- Параметры отступа пока не нужны               <div class="tooth-attribute__item">-->
+<!--                  <span class="tooth-attribute__item-title">Параметры отступа</span>-->
+<!--                  <span class="tooth-attribute__item-value">-->
+<!--                    {{compTooth2.indentOptions}}-->
+<!--                  </span>-->
+<!--                </div>-->
 
               </div>
 
@@ -217,10 +220,17 @@ export default {
     ]),
 
     saveTeeth () {
-      this.MUT_CHOOSED_TEETH(
-          this.saveTeethObject
-      )
-      this.tabActive.value = true;
+      if (this.tabActive.value === true) {
+        this.MUT_CHOOSED_TEETH(
+            this.saveTeethObject1
+        )
+        this.tabActive.value = true;
+      } else {
+        this.MUT_CHOOSED_TEETH(
+            this.saveTeethObject2
+        )
+        this.tabActive.value = true;
+      }
     },
     stageTabsToggle () {
       let tabViewHeader = document.querySelector('.p-tabview-nav-link')
@@ -293,7 +303,7 @@ export default {
       return stageNumber
     },
 
-    saveTeethObject () {
+    saveTeethObject1 () {
       if (this.tabActive.value === true) {
         return {
           "stageNumber": "1",
@@ -304,10 +314,12 @@ export default {
           "colorVita": this.compTooth1.colorVita,
           "gumPart": this.compTooth1.gumPart,
           "carving": this.compTooth1.carving,
-          "indentOptions": this.compTooth1.indentOptions,
         }
       }
-      else if ((this.tabActive.value === false)) {
+    },
+
+    saveTeethObject2 () {
+    if (this.tabActive.value === false) {
         return {
           "stageNumber": "2",
           "toothNumber": this.$route.params.id,
@@ -317,7 +329,6 @@ export default {
           "colorVita": this.compTooth2.colorVita,
           "gumPart": this.compTooth2.gumPart,
           "carving": this.compTooth2.carving,
-          "indentOptions": this.compTooth2.indentOptions,
         }
       }
     },

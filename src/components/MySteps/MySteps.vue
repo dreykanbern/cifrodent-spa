@@ -658,26 +658,11 @@
 
             <div class="modal-select-item">
 
-              <span class ='modal-select-header'>Десневая часть есть</span>
               <select class="modal-select" v-model="compTooth1.gumPart">
                 <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
-                <option class="option-modal" :value="'Есть: красить'">Красить</option>
+                <option class="option-modal" :value="'Есть: Красить'">Красить</option>
                 <option class="option-modal" :value="'Есть: Не красить'">Не красить</option>
-              </select>
-
-            </div>
-
-          </div>
-
-          <div class="column gap10">
-
-            <div class="modal-select-item">
-
-              <span class ='modal-select-header'>Десневая часть отсутствует</span>
-              <select class="modal-select" v-model="compTooth1.gumPart">
-                <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
-                <option class="option-modal" :value="'Отсутствует: красить'">Красить</option>
-                <option class="option-modal" :value="'Отсутствует: Не красить'">Не красить</option>
+                <option class="option-modal" :value="'Отсутствует'">Отсутствует</option>
               </select>
 
             </div>
@@ -701,10 +686,21 @@
 
           <div class="modal-select-item">
 
-            <span class ='modal-select-header'></span>
+            <span class ='modal-select-header'>Опак</span>
             <select class="modal-select" v-model="compTooth1.carving">
-              <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
-              <option class="option-modal" :value="'Опак'">Опак</option>
+              <option class="option-modal default-option" selected :value="'Нет'">Выберите значение</option>
+              <option class="option-modal" :value="'Опак: Слабый'">Слабый</option>
+              <option class="option-modal" :value="'Опак: Средний'">Средний</option>
+              <option class="option-modal" :value="'Опак: Сильный'">Сильный</option>
+            </select>
+
+          </div>
+
+          <div class="modal-select-item">
+
+            <span class ='modal-select-header'>Карвинг</span>
+            <select class="modal-select" v-model="compTooth1.carving">
+              <option class="option-modal default-option" selected :value="'Нет'">Выберите значение</option>
               <option class="option-modal" :value="'Карвинг (силами фрезерного центра)'">Карвинг (силами фрезерного центра)</option>
               <option class="option-modal" :value="'Отправить на карвинг заказчику'">Отправить на карвинг заказчику</option>
             </select>
@@ -716,43 +712,43 @@
       </div>
     </my-modal>
 
-    <my-modal v-model:show="modalVisible7">
-      <div class="content-modal-wrapper">
+<!--  В текущем заказ наряде не используется   <my-modal v-model:show="modalVisible7">-->
+<!--      <div class="content-modal-wrapper">-->
 
-        <h2 class="modal__h2">Укажите параметры отступа</h2>
-        <h3 class="subheader__h2">Напишите данные</h3>
+<!--        <h2 class="modal__h2">Укажите параметры отступа</h2>-->
+<!--        <h3 class="subheader__h2">Напишите данные</h3>-->
 
-        <div class="modal-select-container-column">
+<!--        <div class="modal-select-container-column">-->
 
-          <label class="modal-select-input" for="">Ширина уступа</label>
-          <InputText type="text" name="" placeholder="Вестибулярная (впишите значение в мм.)" v-model="this.indentOptions.WidhtWest"/>
-          <InputText type="text" name="" placeholder="Небная (впишите значение в мм.)" v-model="this.indentOptions.WidhtNeb" />
+<!--          <label class="modal-select-input" for="">Ширина уступа</label>-->
+<!--          <InputText type="text" name="" placeholder="Вестибулярная (впишите значение в мм.)" v-model="this.indentOptions.WidhtWest"/>-->
+<!--          <InputText type="text" name="" placeholder="Небная (впишите значение в мм.)" v-model="this.indentOptions.WidhtNeb" />-->
 
-          <label class="modal-select-input" for="">Глубина уступа</label>
-          <InputText type="text" name="" placeholder="Над десной (впишите значение в мм.)" v-model="this.indentOptions.Deep1"/>
-          <InputText type="text" name="" placeholder="Под дейсной (впишите значение в мм.)" v-model="this.indentOptions.Deep2"/>
+<!--          <label class="modal-select-input" for="">Глубина уступа</label>-->
+<!--          <InputText type="text" name="" placeholder="Над десной (впишите значение в мм.)" v-model="this.indentOptions.Deep1"/>-->
+<!--          <InputText type="text" name="" placeholder="Под дейсной (впишите значение в мм.)" v-model="this.indentOptions.Deep2"/>-->
 
-          <my-button @click="resetIndentOptions">Сбросить значение</my-button>
+<!--          <my-button @click="resetIndentOptions">Сбросить значение</my-button>-->
 
-        </div>
+<!--        </div>-->
 
-      </div>
-    </my-modal>
+<!--      </div>-->
+<!--    </my-modal>-->
 
-    <input type="checkbox" class="steps-item checkbox-none" id="step1" @click="showModal1">
+    <input type="checkbox" class="steps-item checkbox-none" id="step1" @click="showModal1" :value="compTooth1.typeConstruction !== '-'">
     <label for="step1">Тип конструкции</label>
-    <input type="checkbox" class="steps-item checkbox-none" id="step2" @click="showModal2">
+    <input type="checkbox" class="steps-item checkbox-none" id="step2" @click="showModal2" :value="compTooth1.implantSystem !== '-'">
     <label for="step2">Система имплантатов и размеры</label>
-    <input type="checkbox" class="steps-item checkbox-none" id="step3" @click="showModal3">
+    <input type="checkbox" class="steps-item checkbox-none" id="step3" @click="showModal3" :value="compTooth1.material !== '-'">
     <label for="step3">Материал изготовления</label>
-    <input type="checkbox" class="steps-item checkbox-none" id="step4" @click="showModal4">
+    <input type="checkbox" class="steps-item checkbox-none" id="step4" @click="showModal4" :value="compTooth1.colorVita !== '-'">
     <label for="step4">Цвет коронки</label>
-    <input type="checkbox" class="steps-item checkbox-none" id="step5" @click="showModal5">
+    <input type="checkbox" class="steps-item checkbox-none" id="step5" @click="showModal5" :value="compTooth1.gumPart !== '-'">
     <label for="step5">Десневая часть</label>
-    <input type="checkbox" class="steps-item checkbox-none" id="step6" @click="showModal6">
+    <input type="checkbox" class="steps-item checkbox-none" id="step6" @click="showModal6" :value="compTooth1.carving !== '-'">
     <label for="step6">Опак и карвинг</label>
-    <input type="checkbox" class="steps-item checkbox-none" id="step7" @click="showModal7">
-    <label for="step7">Параметры отступа</label>
+<!-- Не используется   <input type="checkbox" class="steps-item checkbox-none" id="step7" @click="showModal7">-->
+<!--    <label for="step7">Параметры отступа</label>-->
 
   </div>
 

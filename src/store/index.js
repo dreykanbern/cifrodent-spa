@@ -79,7 +79,7 @@ export default createStore({
             })
         },
         MUT_CHOOSED_TEETH: (state, newValue) => {
-                state.module1.chooseTeeth = [...state.module1.chooseTeeth.filter(el => el.toothNumber !== newValue.toothNumber), newValue]
+            state.module1.chooseTeeth = [...state.module1.chooseTeeth.filter(el => el.toothNumber === newValue.toothNumber & el.stageNumber !== newValue.stageNumber ), newValue]
         },
 
     },

@@ -178,3 +178,19 @@
 p-tabview-nav-content {
   z-index: 1 !important;
 }
+
+.p-tabview .p-tabview-panels {
+  padding: 0;
+}
+
+.p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+  background: #ffffff;
+  border-color: #8C77DE;
+  color: #8C77DE;
+}
+
+.p-tabview .p-tabview-nav li .p-tabview-nav-link:not(.p-disabled):focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: none ;
+}
