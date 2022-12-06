@@ -79,10 +79,23 @@ export default createStore({
             })
         },
         MUT_CHOOSED_TEETH: (state, newValue) => {
-            state.module1.chooseTeeth = [...state.module1.chooseTeeth.filter(el => el.toothNumber === newValue.toothNumber & el.stageNumber !== newValue.stageNumber ), newValue]
+            state.module1.chooseTeeth = [...state.module1.chooseTeeth.filter(el => (el.toothNumber === newValue.toothNumber && el.stageNumber !== newValue.stageNumber) || el.toothNumber !== newValue.toothNumber), newValue]
+        },
+        MUT_TOOTH_STATE: (state, {newValue, toothId}) => { 
+            state.module1.teeth1.forEach(el => {
+                if (el.toothId === `tooth${toothId}`) {
+                    el.toothState = newValue
+                }
+            })
+            state.module1.teeth2.forEach(el => {
+                if (el.toothId === `tooth${toothId}`) {
+                    el.toothState = newValue
+                }
+            })
         },
 
     },
+    
     getters: {
         GET_STATE1: state => state.module1.teeth1,
         GET_STATE2: state => state.module1.teeth2

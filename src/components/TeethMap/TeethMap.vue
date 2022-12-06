@@ -64,6 +64,7 @@
             @click="$router.push(`/teeth-map/tooth/${tooth.stage1.toothNumber}`)"
             v-contextmenu:contextmenu
             v-for="tooth in this.$store.state.module1.teeth1"
+            :key="tooth.stage1.toothNumber"
           >
             <code>{{tooth.stage1.toothNumber}}</code>
           </div>
@@ -129,11 +130,12 @@
 
 
           <div
-            :class="{ 'third-column__item-red': isRemoteTooth, 'third-column__item-green': isHealthyTooth, 'third-column__item': isDefaultStyle ,  'active': isFilledTeeth(tooth.stage1.toothNumber)   }"
+            :class="{ 'third-column__item-red': isRemoteTooth, 'third-column__item-green': isHealthyTooth, 'third-column__item': isDefaultStyle ,  'active': isFilledTeeth(tooth.stage1.toothNumber) }"
             @click="$router.push(`/teeth-map/tooth/${tooth.stage1.toothNumber}`)"
             v-contextmenu:contextmenu
             v-for="tooth in this.$store.state.module1.teeth2"
             class="rotate-180"
+            :key="tooth.stage1.toothNumber"
           >
             <code>{{tooth.stage1.toothNumber}}</code>
           </div>
@@ -194,22 +196,23 @@ export default {
     return {
       selectedTeethTop: [],
       selectedTeethBottom: [],
-
-      selectedTooth: {
-        isRemoteTooth: Boolean,
-        isHealthyTooth: Boolean,
-        isDefaultStyle: Boolean,
-      },
-      isRemoteTooth: false,
-      isHealthyTooth: false,
-      isDefaultStyle: Boolean,
+      isDefaultStyle: true,
     }
   },
   methods: {
     ...mapMutations([
       'MUT_FILLED_TOOTH1',
-      'MUT_FILLED_TOOTH2'
+      'MUT_FILLED_TOOTH2',
+      'MUT_TOOTH_STATE',
     ]),
+
+    selectMissingTooth (tooth, toothId) {
+      console.log(tooth)
+      this.MUT_TOOTH_STATE( {
+        newValue:  tooth.stateTooth = 'is-missing',
+        toothId: this.toothId
+      })
+    },
 
     isFilledTeeth(toothNumber) {
       // console.log(toothNumber)
