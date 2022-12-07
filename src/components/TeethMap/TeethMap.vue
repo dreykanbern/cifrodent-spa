@@ -206,11 +206,11 @@ export default {
       'MUT_TOOTH_STATE',
     ]),
 
-    selectMissingTooth (tooth, toothId) {
-      console.log(tooth)
+    selectMissingTooth () {
+      console.log(this.teeth.forEach(el => console.log(el)))
       this.MUT_TOOTH_STATE( {
-        newValue:  tooth.stateTooth = 'is-missing',
-        toothId: this.toothId
+        newValue:  this.teeth.forEach(el => el.toothState = 'is-missing'),
+        toothId: this.$store.state.module1.teeth1.forEach(el => el.toothId = this.toothId),
       })
     },
 
@@ -219,42 +219,84 @@ export default {
       return this.$store.state.module1.chooseTeeth.some(el => el.toothNumber === toothNumber)
     },
 
-    FilledTooth () {
-      this.$router.push(`/teeth-map/tooth/${tooth.stage1.toothNumber}`)
-      this.$store.state.module1.teeth1.forEach(item => {
-        if (item.typeConstruction !== '-' || item.implantSystem !== '-' || item.material !== '-' || item.colorVita !=='-'
-            || item.gumPart !== '-' || item.carving !== '-' || item.indentOptions !== '-') {
-          item.isFilledTooth = true
-          // console.log(item.isFilledTooth)
-          this.MUT_FILLED_TOOTH( {
-            newValue:  item.isFilledTooth,
-            toothId: this.toothId
-          })
-        }
-      })
-      this.$store.state.module1.teeth2.forEach(item => {
-        if (item.typeConstruction !== '-' || item.implantSystem !== '-' || item.material !== '-' || item.colorVita !=='-'
-            || item.gumPart !== '-' || item.carving !== '-' || item.indentOptions !== '-') {
-          item.isFilledTooth = true
-          this.MUT_FILLED_TOOTH( {
-            newValue:  item.isFilledTooth,
-            toothId: this.toothId
-          })
-        }
-      })
-    },
-    remoteTooth(toothNumber) {
-      if (this.isDefaultStyle === true) {
-        this.isDefaultStyle = false;
-        this.isRemoteTooth = true;
-      }
-    },
+    // FilledTooth () {
+    //   this.$router.push(`/teeth-map/tooth/${tooth.stage1.toothNumber}`)
+    //   this.$store.state.module1.teeth1.forEach(item => {
+    //     if (item.typeConstruction !== '-' || item.implantSystem !== '-' || item.material !== '-' || item.colorVita !=='-'
+    //         || item.gumPart !== '-' || item.carving !== '-' || item.indentOptions !== '-') {
+    //       item.isFilledTooth = true
+    //       // console.log(item.isFilledTooth)
+    //       this.MUT_FILLED_TOOTH( {
+    //         newValue:  item.isFilledTooth,
+    //         toothId: this.toothId
+    //       })
+    //     }
+    //   })
+    //   this.$store.state.module1.teeth2.forEach(item => {
+    //     if (item.typeConstruction !== '-' || item.implantSystem !== '-' || item.material !== '-' || item.colorVita !=='-'
+    //         || item.gumPart !== '-' || item.carving !== '-' || item.indentOptions !== '-') {
+    //       item.isFilledTooth = true
+    //       this.MUT_FILLED_TOOTH( {
+    //         newValue:  item.isFilledTooth,
+    //         toothId: this.toothId
+    //       })
+    //     }
+    //   })
+    // },
+    // remoteTooth(toothNumber) {
+    //   if (this.isDefaultStyle === true) {
+    //     this.isDefaultStyle = false;
+    //     this.isRemoteTooth = true;
+    //   }
+    // },
   },
   computed: {
     ...mapGetters([
       'GET_STATE1',
       'GET_STATE2',
     ]),
+
+    // toothId () {
+    //   return this.teeth.forEach(el => el.toothId === this.toothId)
+    // },
+
+    teeth () {
+      return this.teeth = [...this.$store.state.module1.teeth1, ...this.$store.state.module1.teeth2]
+    },
+
+    stage1 () {
+      let teeth1Stage1 = [],
+          teeth2Stage1 = [],
+          concatStages = [];
+      this.$store.state.module1.teeth1.forEach(el => {
+        teeth1Stage1.push(el.stage1)
+      })
+      this.$store.state.module1.teeth2.forEach(el => {
+        teeth2Stage1.push(el.stage1)
+      })
+      concatStages = teeth1Stage1.concat(teeth2Stage1)
+      return concatStages
+    },
+    stage2 () {
+      let teeth1Stage2 = [],
+          teeth2Stage2 = [],
+          concatStages = [];
+      this.$store.state.module1.teeth1.forEach(el => {
+        teeth1Stage2.push(el.stage2)
+      })
+      this.$store.state.module1.teeth2.forEach(el => {
+        teeth2Stage2.push(el.stage2)
+      })
+      concatStages = teeth1Stage2.concat(teeth2Stage2)
+      return concatStages
+    },
+    compTooth1() {
+      return this.stage1.find(el => el.toothNumber === this.toothId)
+    },
+    compTooth2() {
+      return this.stage2.find(el => el.toothNumber === this.toothId)
+    },
+
   },
   watch: {
     'GET_STATE1': {
