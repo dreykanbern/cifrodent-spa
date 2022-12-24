@@ -2,7 +2,7 @@ export const moduleFirst = {
     state: () => ({
         teeth1: [
             {toothId: 'tooth18',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '18',
@@ -31,7 +31,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth17',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '17',
@@ -60,7 +60,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth16',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '16',
@@ -89,7 +89,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth15',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '15',
@@ -118,7 +118,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth14',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '14',
@@ -147,7 +147,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth13',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '13',
@@ -176,7 +176,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth12',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '12',
@@ -205,7 +205,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth11',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '11',
@@ -234,7 +234,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth21',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '21',
@@ -263,7 +263,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth22',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '22',
@@ -292,7 +292,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth23',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '23',
@@ -321,7 +321,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth24',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '24',
@@ -350,7 +350,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth25',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '25',
@@ -379,7 +379,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth26',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '26',
@@ -408,7 +408,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth27',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '27',
@@ -437,7 +437,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth28',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '28',
@@ -468,7 +468,7 @@ export const moduleFirst = {
         ],
         teeth2: [
             {toothId: 'tooth38',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '38',
@@ -497,7 +497,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth37',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '37',
@@ -526,7 +526,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth36',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '36',
@@ -555,7 +555,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth35',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '35',
@@ -584,7 +584,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth34',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '34',
@@ -613,7 +613,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth33',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '33',
@@ -642,7 +642,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth32',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '32',
@@ -671,7 +671,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth31',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '31',
@@ -700,7 +700,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth41',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '41',
@@ -729,7 +729,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth42',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '42',
@@ -758,7 +758,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth43',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '43',
@@ -787,7 +787,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth44',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '44',
@@ -816,7 +816,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth45',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '45',
@@ -845,7 +845,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth46',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '46',
@@ -874,7 +874,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth47',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '47',
@@ -903,7 +903,7 @@ export const moduleFirst = {
                     }
                 },
             {toothId: 'tooth48',
-            toothState:'',
+            toothState:'third-column__item',
                 stage1: {
                         stageNumber: '1',
                         toothNumber: '48',
