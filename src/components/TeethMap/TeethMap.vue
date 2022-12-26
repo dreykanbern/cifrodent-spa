@@ -131,11 +131,11 @@
       <div class="teeth-map__third-column">
 
 
-          <div
-            :class="{ 'third-column__item-red': isRemoteTooth, 'third-column__item-green': isHealthyTooth, 'third-column__item': isDefaultStyle ,  'active': isFilledTeeth(tooth.stage1.toothNumber) }"
-            @click="$router.push(`/teeth-map/tooth/${tooth.stage1.toothNumber}`)"
+          <div v-for="tooth in this.$store.state.module1.teeth2"
+            :class="[tooth.toothState,{ 'active': isFilledTeeth(tooth.stage1.toothNumber)}]"
+            @click="clickTooth(tooth.stage1.toothNumber)"
+            @click.right="toothNumber = tooth.stage1.toothNumber"
             v-contextmenu:contextmenu
-            v-for="tooth in this.$store.state.module1.teeth2"
             class="rotate-180"
             :key="tooth.stage1.toothNumber"
           >
@@ -199,44 +199,7 @@ export default {
       selectedTeethTop: [],
       selectedTeethBottom: [],
       isDefaultStyle: true,
-<<<<<<< Updated upstream
-      toothIdObject: {
-        toothId: 'tooth18',
-        toothId: 'tooth17',
-        toothId: 'tooth16',
-        toothId: 'tooth15',
-        toothId: 'tooth14',
-        toothId: 'tooth13',
-        toothId: 'tooth12',
-        toothId: 'tooth11',
-        toothId: 'tooth21',
-        toothId: 'tooth22',
-        toothId: 'tooth23',
-        toothId: 'tooth24',
-        toothId: 'tooth25',
-        toothId: 'tooth26',
-        toothId: 'tooth27',
-        toothId: 'tooth28',
-        toothId: 'tooth48',
-        toothId: 'tooth47',
-        toothId: 'tooth46',
-        toothId: 'tooth45',
-        toothId: 'tooth44',
-        toothId: 'tooth43',
-        toothId: 'tooth42',
-        toothId: 'tooth41',
-        toothId: 'tooth31',
-        toothId: 'tooth32',
-        toothId: 'tooth33',
-        toothId: 'tooth34',
-        toothId: 'tooth35',
-        toothId: 'tooth36',
-        toothId: 'tooth37',
-        toothId: 'tooth38',
-      }
-=======
       toothNumber: ''
->>>>>>> Stashed changes
     }
   },
   methods: {
@@ -253,16 +216,6 @@ export default {
     },
 
     selectMissingTooth () {
-<<<<<<< Updated upstream
-      console.log()
-      this.MUT_TOOTH_STATE({
-        newValue:  this.teeth.forEach(el => {
-          if (el.toothId === this.toothId) {
-            el.toothState = 'is-missing'
-          }
-        }),
-        toothId: toothId.value = this.toothId,
-=======
       this.MUT_TOOTH_STATE( {
         newValue: 'is-missing',
         toothId: this.toothNumber,
@@ -273,9 +226,22 @@ export default {
       this.MUT_TOOTH_STATE( {
         newValue: 'is-healthy',
         toothId: this.toothNumber,
->>>>>>> Stashed changes
       })
     },
+
+    resetTooth () {
+      this.MUT_TOOTH_STATE( {
+        newValue: 'third-column__item',
+        toothId: this.toothNumber,
+      })
+      let isActive = this.$store.state.module1.chooseTeeth.some(el => el.toothNumber === this.toothNumber)
+      if (isActive === true) {
+        let arr = this.$store.state.module1.chooseTeeth
+        this.$store.state.module1.chooseTeeth = arr.filter(el => el.toothNumber !== this.toothNumber)
+        //Дописать обнуление значений глобал стора
+      }
+    },
+
 
     // selectMissingTooth () {
     //   // console.log(this.teeth.forEach(el => console.log(el)))
