@@ -157,6 +157,10 @@ input {
   justify-content: center;
 }
 
+.is-copy {
+  border: 5px dashed #fff !important;
+}
+
 //Переворот схемы
 .rotate-180 {
   transform: rotate(180deg);
@@ -192,7 +196,7 @@ input {
 }
 
 .contextmenu-text {
-  padding: 5px;
+  padding: 5px 0 5px 5px;
 }
 
 //Роутер

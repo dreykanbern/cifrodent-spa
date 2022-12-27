@@ -60,8 +60,8 @@
 
 
           <div
-             v-for="tooth in this.$store.state.module1.teeth1"
-            :class="[tooth.toothState,{ 'active': isFilledTeeth(tooth.stage1.toothNumber)}]"
+            v-for="tooth in this.$store.state.module1.teeth1"
+            :class="[tooth.toothState,{ 'active': isFilledTeeth(tooth.stage1.toothNumber), 'is-copy': tooth.copyState,}]"
             @click="clickTooth(tooth.stage1.toothNumber)"
             @click.right="toothNumber = tooth.stage1.toothNumber"
             v-contextmenu:contextmenu
@@ -159,6 +159,7 @@
     <v-contextmenu-item class="contextmenu-item" @click="insertTooth">
       <img class="contextmenu-img" src="~@/assets/img/paste-icon.svg" alt="#">
       <p class="contextmenu-text">Вставить</p>
+      <p v-if="insertToothNumber" class="contextmenu-text">значение зуба {{insertToothNumber}}</p>
     </v-contextmenu-item >
     <v-contextmenu-item class="contextmenu-item" @click="selectMissingTooth">
       <img class="contextmenu-img" src="~@/assets/img/remote-tooth-icon.svg" alt="#">
@@ -199,7 +200,9 @@ export default {
       selectedTeethTop: [],
       selectedTeethBottom: [],
       isDefaultStyle: true,
-      toothNumber: ''
+      toothNumber: '',
+      copyToothArr: [],
+      insertToothNumber: null,
     }
   },
   methods: {
@@ -207,6 +210,7 @@ export default {
       'MUT_FILLED_TOOTH1',
       'MUT_FILLED_TOOTH2',
       'MUT_TOOTH_STATE',
+      'MUT_COPY_STATE',
     ]),
 
     clickTooth (tooth) {
@@ -271,9 +275,38 @@ export default {
                     el.stage2.carving = 'Нет';
                 }
             })
+        this.MUT_COPY_STATE( {
+          newValue: false,
+          toothId: this.toothNumber,
+        })
       }
     },
 
+    copyTooth () {
+      let isActive = this.$store.state.module1.chooseTeeth.some(el => el.toothNumber === this.toothNumber)
+        if (isActive === true) {
+        //Копирование
+        let teeth1Object = this.$store.state.module1.teeth1.filter(el => el.toothId === `tooth${this.toothNumber}`)
+        let teeth2Object = this.$store.state.module1.teeth2.filter(el => el.toothId === `tooth${this.toothNumber}`)
+        let copyTooth = [...teeth1Object, ...teeth2Object]
+        this.copyToothArr = copyTooth
+          if (this.copyToothArr.length > 0) {
+            this.MUT_COPY_STATE( {
+              newValue: true,
+              toothId: this.toothNumber,
+            })
+          }
+        }
+    },
+
+    insertTooth () {
+      let teeth1Object = this.$store.state.module1.teeth1.filter(el => el.toothId === `tooth${this.toothNumber}`)
+      let teeth2Object = this.$store.state.module1.teeth2.filter(el => el.toothId === `tooth${this.toothNumber}`)
+      let teethObject = [...teeth1Object, ...teeth2Object].filter(el => el.toothId === `tooth${this.toothNumber}`)
+      console.log(this.insertToothNumber)
+      this.insertToothNumber = teethObject.target.toothId.substring(0, 5)
+      let insertToothObject = Object.assign()
+    },
 
     // selectMissingTooth () {
     //   // console.log(this.teeth.forEach(el => console.log(el)))
@@ -325,9 +358,9 @@ export default {
       'GET_STATE2',
     ]),
 
-    toothId () {
-      return this.teeth.forEach(el => console.log(el.toothId))
-    },
+    // toothId () {
+    //   return this.teeth.forEach(el => console.log(el.toothId))
+    // },
 
     teeth () {
       return this.teeth = [...this.$store.state.module1.teeth1, ...this.$store.state.module1.teeth2]

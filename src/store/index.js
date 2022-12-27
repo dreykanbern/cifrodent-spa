@@ -93,6 +93,18 @@ export default createStore({
                 }
             })
         },
+        MUT_COPY_STATE: (state, {newValue, toothId}) => { 
+            state.module1.teeth1.forEach(el => {
+                if (el.toothId === `tooth${toothId}`) {
+                    el.copyState = newValue
+                }
+            })
+            state.module1.teeth2.forEach(el => {
+                if (el.toothId === `tooth${toothId}`) {
+                    el.copyState = newValue
+                }
+            })
+        },
 
     },
     
