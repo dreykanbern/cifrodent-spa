@@ -238,7 +238,39 @@ export default {
       if (isActive === true) {
         let arr = this.$store.state.module1.chooseTeeth
         this.$store.state.module1.chooseTeeth = arr.filter(el => el.toothNumber !== this.toothNumber)
-        //Дописать обнуление значений глобал стора
+        //Обнуление значений глобал стора
+        this.$store.state.module1.teeth1.forEach(el => {
+                if (el.stage1.toothNumber === this.toothNumber) {
+                    el.stage1.typeConstruction = '-';
+                    el.stage1.implantSystem = '-';
+                    el.stage1.material = '-';
+                    el.stage1.colorVita = '-';
+                    el.stage1.gumPart = '-';
+                    el.stage1.carving = 'Нет';
+                    el.stage2.typeConstruction = '-';
+                    el.stage2.implantSystem = '-';
+                    el.stage2.material = '-';
+                    el.stage2.colorVita = '-';
+                    el.stage2.gumPart = '-';
+                    el.stage2.carving = 'Нет';
+                }
+            })
+        this.$store.state.module1.teeth2.forEach(el => {
+                if (el.stage1.toothNumber === this.toothNumber) {
+                  el.stage1.typeConstruction = '-';
+                    el.stage1.implantSystem = '-';
+                    el.stage1.material = '-';
+                    el.stage1.colorVita = '-';
+                    el.stage1.gumPart = '-';
+                    el.stage1.carving = 'Нет';
+                    el.stage2.typeConstruction = '-';
+                    el.stage2.implantSystem = '-';
+                    el.stage2.material = '-';
+                    el.stage2.colorVita = '-';
+                    el.stage2.gumPart = '-';
+                    el.stage2.carving = 'Нет';
+                }
+            })
       }
     },
 
