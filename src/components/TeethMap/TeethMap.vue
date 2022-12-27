@@ -132,7 +132,7 @@
 
 
           <div v-for="tooth in this.$store.state.module1.teeth2"
-            :class="[tooth.toothState,{ 'active': isFilledTeeth(tooth.stage1.toothNumber)}]"
+            :class="[tooth.toothState,{ 'active': isFilledTeeth(tooth.stage1.toothNumber), 'is-copy': tooth.copyState,}]"
             @click="clickTooth(tooth.stage1.toothNumber)"
             @click.right="toothNumber = tooth.stage1.toothNumber"
             v-contextmenu:contextmenu
