@@ -7,6 +7,8 @@
       </back-button>
     </router-link>
 
+
+
     <h1 class="container__h1">Итоговые данные</h1>
 
       <DataTable :value=chooseTeeth responsiveLayout="scroll">
@@ -23,7 +25,7 @@
 
     <h2 class="container__h2">Заполните данные полей формы</h2>
 
-    <form action="https://cifrodent.ru/wp-content/themes/cifrodent/php/send.php" method="POST" enctype="multipart/form-data" class="final-form" >
+    <form class="final-form" @submit.prevent="submitForm" >
       <InputText
           type="text"
           placeholder="ФИО заказчика*"
@@ -64,8 +66,7 @@
 
       <Textarea v-model="lastForm.More" :autoResize="true" rows="5" cols="30" placeholder="Дополнительная информация к заказу" />
 
-      <FileUpload name="upload" url="https://cifrodent.ru/wp-content/themes/cifrodent/php/upload" :multiple="true" :auto="true" accept=".stl,.constructionInfo" :maxFileSize="100000000" />
-      <!-- .stl .constuctioninfo Подсказка по почте -->
+      <FileUpload name="upload" v-model="upload" :multiple="true" :auto="true" accept=".stl,.constructionInfo" :maxFileSize="100000000" id="myUpload" url="/home/ru123558/domains/cifrodent.ru/public_html/wp-content/themes/cifrodent/upload/" />
 
       <div class="checkbox">
 
@@ -76,7 +77,7 @@
 
       <div class="buttons-wrapper">
         <router-link to="/teeth-map" class="text-decoration-none">
-          <my-button @click="myComplete">Отправить в работу</my-button>
+          <my-button type="submit">Отправить в работу</my-button>
         </router-link>
         <router-link to="/teeth-map" class="text-decoration-none">
           <my-button class="disabled">Вернуться к карте зубов</my-button>
@@ -94,6 +95,7 @@
 
 <script>
 
+import axios from "axios";
 import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
 import ColumnGroup from 'primevue/columngroup';     //optional for column grouping
@@ -117,12 +119,11 @@ import 'primeicons/primeicons.css';                           //icons
 export default {
   name: "Screen3",
   components: {
-    MyButton, BackButton, router, vueBaseInput, InputText, Textarea, Checkbox, Calendar, FileUpload, DataTable, Column, ColumnGroup, Row
+    MyButton, BackButton, router, vueBaseInput, InputText, Textarea, Checkbox, Calendar, FileUpload, DataTable, Column, ColumnGroup, Row, axios,
   },
     data() {
       return {
         checked: false,
-
         tableHeader: {
           'stageNumber':'Номер этапа',
           "toothNumber": 'Номер зуба',
@@ -133,7 +134,7 @@ export default {
           "gumPart": 'Десневая часть',
           "carving": 'Опак и карвинг',
         },
-
+        upload: null,
         lastForm: {
           Client: '',
           Patient: '',
@@ -147,25 +148,50 @@ export default {
     },
 
   methods: {
-    myComplete () {
-      const formData = new FormData()
+    // myComplete () {
+    //   const formData = new FormData()
+    //   Object.entries(this.lastForm).forEach(([key, value]) => {
+    //     formData.append(key, value);
+    //   });
+    //   //console.log(Object.fromEntries(formData))
+    //   formData.append("tableHeader", JSON.stringify(this.tableHeader))
+    //   formData.append('chooseTeeth', JSON.stringify(this.chooseTeeth))
+    //
+    //   const fileInput = document.querySelector('#myUpload');
+    //   for (const file of fileInput.files) {
+    //     formData.append('upload', file, file.name);
+    //   }
+    //   fetch("https://cifrodent.ru/wp-content/themes/cifrodent/php/send.php", {
+    //     method:'POST',
+    //     body: formData
+    //   })
+    //       .then(Response => {
+    //         return Response.json()
+    //       })
+    //       .then(Result => {
+    //         // console.log(Result)
+    //       })
+    // }
+
+    async submitForm() {
+      const formData = new FormData();
       Object.entries(this.lastForm).forEach(([key, value]) => {
         formData.append(key, value);
       });
-      // console.log(Object.fromEntries(formData))
-      formData.append("tableHeader", JSON.stringify(this.tableHeader))
-      formData.append('chooseTeeth', JSON.stringify(this.chooseTeeth))
-      fetch("https://cifrodent.ru/wp-content/themes/cifrodent/php/send.php", {
-        method:'POST',
-        body: formData
-      })
-          .then(Response => {
-            Response.json()
-          })
-          .then(Result => {
-            // console.log(Result)
-          })
-    }
+      formData.append("tableHeader", JSON.stringify(this.tableHeader));
+      formData.append("chooseTeeth", JSON.stringify(this.chooseTeeth));
+
+      for (const file of this.upload.files) {
+        formData.append("upload", file, file.name);
+      }
+
+      try {
+        const response = await axios.post("https://cifrodent.ru/wp-content/themes/cifrodent/php/send.php", formData);
+        console.log(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    },
   },
 
   computed: {
