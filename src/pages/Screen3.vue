@@ -7,8 +7,6 @@
       </back-button>
     </router-link>
 
-
-
     <h1 class="container__h1">Итоговые данные</h1>
 
       <DataTable :value=chooseTeeth responsiveLayout="scroll">
@@ -25,7 +23,7 @@
 
     <h2 class="container__h2">Заполните данные полей формы</h2>
 
-    <form class="final-form" @submit.prevent="submitForm" >
+    <form class="final-form" @submit.prevent>
       <InputText
           type="text"
           placeholder="ФИО заказчика*"
@@ -66,7 +64,9 @@
 
       <Textarea v-model="lastForm.More" :autoResize="true" rows="5" cols="30" placeholder="Дополнительная информация к заказу" />
 
-      <FileUpload name="upload" v-model="upload" :multiple="true" :auto="true" accept=".stl,.constructionInfo" :maxFileSize="100000000" id="myUpload" url="/home/ru123558/domains/cifrodent.ru/public_html/wp-content/themes/cifrodent/upload/" />
+      <FileUpload name="upload" @select="selectFiles" @removeUploadedFile="removeFiles" :multiple="true" accept=".stl,.constructionInfo" :maxFileSize="100000000" id="myUpload"
+                  :show-upload-button="false"
+      />
 
       <div class="checkbox">
 
@@ -76,9 +76,7 @@
       </div>
 
       <div class="buttons-wrapper">
-        <router-link to="/teeth-map" class="text-decoration-none">
-          <my-button type="submit">Отправить в работу</my-button>
-        </router-link>
+          <my-button type="submit" class="text-decoration-none" @click="submitForm">Отправить в работу</my-button>
         <router-link to="/teeth-map" class="text-decoration-none">
           <my-button class="disabled">Вернуться к карте зубов</my-button>
         </router-link>
@@ -86,6 +84,18 @@
 
     </form>
 
+
+    <my-modal class="modal-center" v-model:show="progressModal">
+
+      <div class="content-modal-wrapper">
+
+        <h2 class="modal__h2">Выполняется загрузка файла</h2>
+        <ProgressBar :value="progressValue" />
+        <h2 class="modal__h2" v-if="errorPush">Загрузка произошла с ошибкой, повторите попытку</h2>
+
+      </div>
+
+    </my-modal>
 
 
   </div>
@@ -96,6 +106,8 @@
 <script>
 
 import axios from "axios";
+import MyModal from "@/components/UI/MyModal/MyModal";
+import ProgressBar from 'primevue/progressbar';
 import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
 import ColumnGroup from 'primevue/columngroup';     //optional for column grouping
@@ -114,15 +126,19 @@ import 'vue-base-input/src/assets/vue-base-input.css';
 import {mapGetters} from "vuex";
 import 'primevue/resources/themes/saga-blue/theme.css';       //theme
 import 'primevue/resources/primevue.min.css';             //core css
-import 'primeicons/primeicons.css';                           //icons
+import 'primeicons/primeicons.css';
+import TeethMap from "@/components/TeethMap/TeethMap";                           //icons
 
 export default {
   name: "Screen3",
   components: {
-    MyButton, BackButton, router, vueBaseInput, InputText, Textarea, Checkbox, Calendar, FileUpload, DataTable, Column, ColumnGroup, Row, axios,
+    MyButton, BackButton, router, vueBaseInput, InputText, Textarea, Checkbox, Calendar, FileUpload, DataTable, Column, ColumnGroup, Row, axios, ProgressBar, MyModal
   },
     data() {
       return {
+        errorPush: false,
+        progressModal: false,
+        progressValue: null,
         checked: false,
         tableHeader: {
           'stageNumber':'Номер этапа',
@@ -134,7 +150,7 @@ export default {
           "gumPart": 'Десневая часть',
           "carving": 'Опак и карвинг',
         },
-        upload: null,
+        upload: [],
         lastForm: {
           Client: '',
           Patient: '',
@@ -173,7 +189,18 @@ export default {
     //       })
     // }
 
-    async submitForm() {
+    selectFiles (event) {
+      this.upload = (event.files)
+      // console.log(event.files)
+      // console.log(this.upload)
+    },
+
+    removeFiles(event) {
+      this.upload = event.files
+      // console.log(event)
+    },
+
+    submitForm() {
       const formData = new FormData();
       Object.entries(this.lastForm).forEach(([key, value]) => {
         formData.append(key, value);
@@ -181,16 +208,29 @@ export default {
       formData.append("tableHeader", JSON.stringify(this.tableHeader));
       formData.append("chooseTeeth", JSON.stringify(this.chooseTeeth));
 
-      for (const file of this.upload.files) {
+      for (const file of this.upload) {
         formData.append("upload", file, file.name);
       }
+      // Здесь логика открытия модалки
+      this.progressModal = true
+      axios.post("https://cifrodent.ru/wp-content/themes/cifrodent/php/send.php", formData, {
+        onUploadProgress: function (progressEvent) {
+          this.progressValue = parseInt(Math.round((progressEvent.loaded / progressEvent.total) * 100));
+          // console.log(progressEvent)
+        }.bind(this)
+      })
+          .then(() => {
+            //Роутить в самое начало с при завершении прелоадера
+            this.$router.push({name: 'TeethMap'})
+          })
+          .catch(() => {
+            //Возможность закрытия модалки и повторить отправку
+            if (this.progressModal === true) {
+              this.errorPush = true
+            }
+          })
 
-      try {
-        const response = await axios.post("https://cifrodent.ru/wp-content/themes/cifrodent/php/send.php", formData);
-        console.log(response.data);
-      } catch (error) {
-        console.error(error);
-      }
+        // console.log(response.data);
     },
   },
 

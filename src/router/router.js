@@ -12,6 +12,7 @@ const routes = [
     },
     {
         path: `/teeth-map`,
+        name: 'TeethMap',
         component: Screen1,
     },
     {

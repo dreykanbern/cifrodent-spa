@@ -146,3 +146,47 @@ input .p-inputtext {
 .p-fileupload-buttonbar >.p-button.p-component.p-disabled {
   display: none;
 }
+
+.my-modal-content {
+  width: auto;
+}
+
+.content-modal-wrapper {
+  width: 50vw;
+  height: 50vh;
+  margin: 0 30px;
+  justify-content: center;
+}
+
+.modal-center {
+  display: flex;
+  width: 100%;
+}
+
+.my-modal {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0, 0.5);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.my-modal-content-footer {
+  display: none;
+}
+
+.p-progressbar {
+  border: 0 none;
+  height: 3rem;
+  background: #dee2e6;
+  border-radius: 3px;
+  margin: 30px 0;
+}
+
+.p-progressbar .p-progressbar-value {
+  background: #8C77DE;
+}
