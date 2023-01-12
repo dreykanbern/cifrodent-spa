@@ -84,19 +84,16 @@
 
     </form>
 
-
-    <my-modal class="modal-center" v-model:show="progressModal">
-
-      <div class="content-modal-wrapper">
-
+    <final-modal v-if="finalModal" @close="finalModal = false" :showModal="finalModal">
+      <template v-slot:header>
         <h2 class="modal__h2">Выполняется загрузка файла</h2>
-        <ProgressBar :value="progressValue" />
+      </template>
+      <ProgressBar :value="progressValue" />
+      <template v-slot:footer>
         <h2 class="modal__h2" v-if="errorPush">Загрузка произошла с ошибкой, повторите попытку</h2>
-
-      </div>
-
-    </my-modal>
-
+        <button class="btn" @click="finalModal = false">Закрыть</button>
+      </template>
+    </final-modal>
 
   </div>
 </template>
@@ -128,16 +125,17 @@ import 'primevue/resources/themes/saga-blue/theme.css';       //theme
 import 'primevue/resources/primevue.min.css';             //core css
 import 'primeicons/primeicons.css';
 import TeethMap from "@/components/TeethMap/TeethMap";                           //icons
+import FinalModal from "@/components/UI/FinalModal/FinalModal";
 
 export default {
   name: "Screen3",
   components: {
-    MyButton, BackButton, router, vueBaseInput, InputText, Textarea, Checkbox, Calendar, FileUpload, DataTable, Column, ColumnGroup, Row, axios, ProgressBar, MyModal
+    MyButton, BackButton, router, vueBaseInput, InputText, Textarea, Checkbox, Calendar, FileUpload, DataTable, Column, ColumnGroup, Row, axios, ProgressBar, MyModal, FinalModal
   },
     data() {
       return {
         errorPush: false,
-        progressModal: false,
+        finalModal: false,
         progressValue: null,
         checked: false,
         tableHeader: {
@@ -150,7 +148,7 @@ export default {
           "gumPart": 'Десневая часть',
           "carving": 'Опак и карвинг',
         },
-        upload: [],
+        upload: null,
         lastForm: {
           Client: '',
           Patient: '',
@@ -189,14 +187,18 @@ export default {
     //       })
     // }
 
-    selectFiles (event) {
-      this.upload = (event.files)
-      // console.log(event.files)
+    selectFiles(event) {
+      this.upload = event.files
+      console.log(this.upload)
       // console.log(this.upload)
     },
 
     removeFiles(event) {
-      this.upload = event.files
+      const filesToRemove = event.files;
+      for (let file of filesToRemove) {
+        const index = this.upload.indexOf(file);
+        this.upload.splice(index, 1);
+      }
       // console.log(event)
     },
 
@@ -208,11 +210,11 @@ export default {
       formData.append("tableHeader", JSON.stringify(this.tableHeader));
       formData.append("chooseTeeth", JSON.stringify(this.chooseTeeth));
 
-      for (const file of this.upload) {
-        formData.append("upload", file, file.name);
+      for (let file of this.upload) {
+        formData.append("upload[]", file, file.name);
       }
       // Здесь логика открытия модалки
-      this.progressModal = true
+      this.finalModal = true
       axios.post("https://cifrodent.ru/wp-content/themes/cifrodent/php/send.php", formData, {
         onUploadProgress: function (progressEvent) {
           this.progressValue = parseInt(Math.round((progressEvent.loaded / progressEvent.total) * 100));
@@ -225,7 +227,7 @@ export default {
           })
           .catch(() => {
             //Возможность закрытия модалки и повторить отправку
-            if (this.progressModal === true) {
+            if (this.finalModal === true) {
               this.errorPush = true
             }
           })
