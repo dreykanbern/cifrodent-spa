@@ -26,13 +26,34 @@
   margin-bottom: 100px;
 }
 
+
+//Чекбоксы над зубами
+
+.checkbox-top {
+  display: flex;
+  flex-direction: row;
+  height: 35px;
+  justify-content: center;
+}
+
+.checkbox-item-container {
+  display: flex;
+  flex-direction: column;
+  width: 71px;
+  align-items: center;
+  position: relative;
+}
+
+
 //Первая колонка (Чекбоксы)
 
 .teeth-map__first-column {
   display: flex;
-  padding: 0 50px;
-  justify-content: space-between;
+  //padding: 0 50px;
+  //justify-content: space-between;
   z-index: 11;
+  position: absolute;
+  top: -50%;
 }
 
 .first-column__item, {
@@ -56,57 +77,80 @@ input {
 
 //Вторая колонка (Стрелки зубов)
 .teeth-map__second-column {
-  position: absolute;
+  //position: absolute;
   display: flex;
-  padding: 15px 30px 0 30px;
-  justify-content: space-between;
+  //padding: 15px 30px 0 30px;
+  //justify-content: space-between;
   z-index: 10;
+  position: absolute;
 }
 
 .second-column__item {
+  display: flex;
   height: 35px;
   width: 71px;
-  background-color: #eff3f5;
   background-color: transparent;
+  //border-top: 1px solid #c8c8c8;
+  //border-left: 1px solid #c8c8c8;
+  //border-right: 1px solid #c8c8c8;
+}
+
+.item-left {
+  width: inherit;
   border-top: 1px solid #c8c8c8;
   border-left: 1px solid #c8c8c8;
+}
+
+.item-right {
+  width: inherit;
+  border-top: 1px solid #c8c8c8;
   border-right: 1px solid #c8c8c8;
 }
 
 .selectedTeeth-left {
-  height: 35px;
-  width: 71px;
-  background-color: #eff3f5;
-  background-color: transparent;
+  width: inherit;
   border-top: 3px solid #8C77DE;
   border-left: 3px solid #8C77DE;
-  border-right: 2px solid #8C77DE;
 }
 
 .selectedTeeth-right {
-  height: 35px;
-  width: 71px;
-  background-color: #eff3f5;
-  background-color: transparent;
+  width: inherit;
   border-top: 3px solid #8C77DE;
-  border-left: 2px solid #8C77DE;
   border-right: 3px solid #8C77DE;
 }
 
-.selectedTeeth {
-  height: 35px;
-  width: 71px;
-  background-color: #eff3f5;
-  background-color: transparent;
+.checkedTeeth-right {
+  width: inherit;
   border-top: 3px solid #8C77DE;
-  border-left: 2px solid #8C77DE;
-  border-right: 2px solid #8C77DE;
+  border-right: 3px solid #8C77DE;
+}
+
+.checkedTeeth-left {
+  width: inherit;
+  border-top: 3px solid #8C77DE;
+  border-left: 3px solid #8C77DE;
+}
+
+.selectedTeeth {
+  width: inherit;
+  border-top: 3px solid #8C77DE;
+}
+
+.left-border {
+  width: inherit;
+  border-left: 3px solid #8C77DE;
+}
+
+.right-border {
+  width: inherit;
+  border-right: 3px solid #8C77DE;
+
 }
 
 //Третья колонка (Сами зубы)
 .teeth-map__third-column {
   display: flex;
-  padding: 20px 0 0 0;
+  //padding: 20px 0 0 0;
   justify-content: space-between;
 }
 
@@ -259,3 +303,4 @@ input {
   box-shadow: 0 0 10rem 0.1rem #8C77DE!important;
   border-color: #8C77DE!important;
 }
+

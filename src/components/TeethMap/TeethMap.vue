@@ -7,55 +7,94 @@
 
     <div class="teeth-map__container">
 
-      <div class="teeth-map__first-column">
-        <Checkbox v-model="selectedTeethTop" id="1817" value="1817" class="first-column__item"/>
-        <Checkbox v-model="selectedTeethTop" id="1716" value="1716" class="first-column__item"/>
-        <Checkbox v-model="selectedTeethTop" id="1615" value="1615" class="first-column__item"/>
-        <Checkbox v-model="selectedTeethTop" id="1514" value="1514" class="first-column__item"/>
-        <Checkbox v-model="selectedTeethTop" id="1413" value="1413" class="first-column__item"/>
-        <Checkbox v-model="selectedTeethTop" id="1312" value="1312" class="first-column__item"/>
-        <Checkbox v-model="selectedTeethTop" id="1211" value="1211" class="first-column__item"/>
-        <Checkbox v-model="selectedTeethTop" id="1121" value="1121" class="first-column__item"/>
-        <Checkbox v-model="selectedTeethTop" id="2122" value="2122" class="first-column__item"/>
-        <Checkbox v-model="selectedTeethTop" id="2223" value="2223" class="first-column__item"/>
-        <Checkbox v-model="selectedTeethTop" id="2324" value="2324" class="first-column__item"/>
-        <Checkbox v-model="selectedTeethTop" id="2425" value="2425" class="first-column__item"/>
-        <Checkbox v-model="selectedTeethTop" id="2526" value="2526" class="first-column__item"/>
-        <Checkbox v-model="selectedTeethTop" id="2627" value="2627" class="first-column__item"/>
-        <Checkbox v-model="selectedTeethTop" id="2728" value="2728" class="first-column__item"/>
+      <div class="checkbox-top">
+
+        <div class="checkbox-item-container"  v-for="(checkbox, index) in checkboxsTop" :key="index">
+
+          <div class="teeth-map__first-column">
+            <Checkbox v-model="checkbox.checked" :value="true" :binary="true" class="first-column__item"/>
+          </div>
+
+          <div class="teeth-map__second-column">
+
+            <div class="second-column__item">
+              <div
+                   :class="{'item-left': checkbox.checked === false ,'selectedTeeth': checkbox.checked || checkbox.left === checkbox.right,
+                    'selectedTeeth-left': checkbox.checked && (!checkboxsTop[index - 1] || !checkboxsTop[index - 1].checked) && (!checkboxsTop[index + 1] || !checkboxsTop[index + 1].checked),
+                    'left-border': checkbox.checked && (!checkboxsTop[index - 1] || !checkboxsTop[index - 1].checked)}">
+              </div>
+              <div
+                   :class="{'item-right': checkbox.checked === false ,'selectedTeeth': checkbox.checked,
+                   'selectedTeeth-right': checkbox.checked && (!checkboxsTop[index - 1] || !checkboxsTop[index - 1].checked) && (!checkboxsTop[index + 1] || !checkboxsTop[index + 1].checked),
+                   'right-border': checkbox.checked && (!checkboxsTop[index + 1] || !checkboxsTop[index + 1].checked)}">
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+
       </div>
-      <div class="teeth-map__second-column">
-        <div v-if="selectedTeethTop.includes('1817') === true" class="selectedTeeth-left"></div>
-        <div v-else class="second-column__item"></div>
-        <div v-if="selectedTeethTop.includes('1716') === true" class="selectedTeeth"></div>
-        <div v-else class="second-column__item"></div>
-        <div v-if="selectedTeethTop.includes('1615') === true" class="selectedTeeth"></div>
-        <div v-else class="second-column__item"></div>
-        <div v-if="selectedTeethTop.includes('1514') === true" class="selectedTeeth"></div>
-        <div v-else class="second-column__item"></div>
-        <div v-if="selectedTeethTop.includes('1413') === true" class="selectedTeeth"></div>
-        <div v-else class="second-column__item"></div>
-        <div v-if="selectedTeethTop.includes('1312') === true" class="selectedTeeth"></div>
-        <div v-else class="second-column__item"></div>
-        <div v-if="selectedTeethTop.includes('1211') === true" class="selectedTeeth"></div>
-        <div v-else class="second-column__item"></div>
-        <div v-if="selectedTeethTop.includes('1121') === true" class="selectedTeeth"></div>
-        <div v-else class="second-column__item"></div>
-        <div v-if="selectedTeethTop.includes('2122') === true" class="selectedTeeth"></div>
-        <div v-else class="second-column__item"></div>
-        <div v-if="selectedTeethTop.includes('2223') === true" class="selectedTeeth"></div>
-        <div v-else class="second-column__item"></div>
-        <div v-if="selectedTeethTop.includes('2324') === true" class="selectedTeeth"></div>
-        <div v-else class="second-column__item"></div>
-        <div v-if="selectedTeethTop.includes('2425') === true" class="selectedTeeth"></div>
-        <div v-else class="second-column__item"></div>
-        <div v-if="selectedTeethTop.includes('2526') === true" class="selectedTeeth"></div>
-        <div v-else class="second-column__item"></div>
-        <div v-if="selectedTeethTop.includes('2627') === true" class="selectedTeeth"></div>
-        <div v-else class="second-column__item"></div>
-        <div v-if="selectedTeethTop.includes('2728') === true" class="selectedTeeth-right"></div>
-        <div v-else class="second-column__item"></div>
-      </div>
+
+<!--      <div class="teeth-map__first-column">-->
+<!--        <Checkbox v-for="checkbox in checkboxs1" :key="checkbox.id" v-model="selectedTeethTop" :id="checkbox.id" :value="checkbox" class="first-column__item"/>-->
+<!--      </div>-->
+<!--      <div class="teeth-map__second-column">-->
+<!--        <div v-for="checkbox in validCheckboxs1" :key="checkbox.id" v-if="selectedTeethTop.includes(el => el.id === checkbox.id)" class="selectedTeeth"></div>-->
+<!--        <div v-for="checkbox in validCheckboxs1" :key="checkbox.id" v-if="selectedTeethTop.includes(el => el.id === checkbox.id) && checkbox.id === '1817'" class="selectedTeeth-left"></div>-->
+<!--        <div v-for="checkbox in validCheckboxs1" :key="checkbox.id" v-if="selectedTeethTop.includes(el => el.id === checkbox.id) && checkbox.id === '2728'" class="selectedTeeth-right"></div>-->
+<!--        <div v-for="checkbox in validCheckboxs1" :key="checkbox.id" v-else class="second-column__item"></div>-->
+<!--      </div>-->
+<!--      <div class="teeth-map__first-column">-->
+<!--        <Checkbox v-model="selectedTeethTop" id="1817" value="1817" class="first-column__item"/>-->
+<!--        <Checkbox v-model="selectedTeethTop" id="1716" value="1716" class="first-column__item"/>-->
+<!--        <Checkbox v-model="selectedTeethTop" id="1615" value="1615" class="first-column__item"/>-->
+<!--        <Checkbox v-model="selectedTeethTop" id="1514" value="1514" class="first-column__item"/>-->
+<!--        <Checkbox v-model="selectedTeethTop" id="1413" value="1413" class="first-column__item"/>-->
+<!--        <Checkbox v-model="selectedTeethTop" id="1312" value="1312" class="first-column__item"/>-->
+<!--        <Checkbox v-model="selectedTeethTop" id="1211" value="1211" class="first-column__item"/>-->
+<!--        <Checkbox v-model="selectedTeethTop" id="1121" value="1121" class="first-column__item"/>-->
+<!--        <Checkbox v-model="selectedTeethTop" id="2122" value="2122" class="first-column__item"/>-->
+<!--        <Checkbox v-model="selectedTeethTop" id="2223" value="2223" class="first-column__item"/>-->
+<!--        <Checkbox v-model="selectedTeethTop" id="2324" value="2324" class="first-column__item"/>-->
+<!--        <Checkbox v-model="selectedTeethTop" id="2425" value="2425" class="first-column__item"/>-->
+<!--        <Checkbox v-model="selectedTeethTop" id="2526" value="2526" class="first-column__item"/>-->
+<!--        <Checkbox v-model="selectedTeethTop" id="2627" value="2627" class="first-column__item"/>-->
+<!--        <Checkbox v-model="selectedTeethTop" id="2728" value="2728" class="first-column__item"/>-->
+<!--      </div>-->
+<!--      <div class="teeth-map__second-column">-->
+<!--        <div v-if="selectedTeethTop.includes('1817') === true" class="selectedTeeth-left"></div>-->
+<!--        <div v-else class="second-column__item"></div>-->
+<!--        <div v-if="selectedTeethTop.includes('1716') === true" class="selectedTeeth"></div>-->
+<!--        <div v-else class="second-column__item"></div>-->
+<!--        <div v-if="selectedTeethTop.includes('1615') === true" class="selectedTeeth"></div>-->
+<!--        <div v-else class="second-column__item"></div>-->
+<!--        <div v-if="selectedTeethTop.includes('1514') === true" class="selectedTeeth"></div>-->
+<!--        <div v-else class="second-column__item"></div>-->
+<!--        <div v-if="selectedTeethTop.includes('1413') === true" class="selectedTeeth"></div>-->
+<!--        <div v-else class="second-column__item"></div>-->
+<!--        <div v-if="selectedTeethTop.includes('1312') === true" class="selectedTeeth"></div>-->
+<!--        <div v-else class="second-column__item"></div>-->
+<!--        <div v-if="selectedTeethTop.includes('1211') === true" class="selectedTeeth"></div>-->
+<!--        <div v-else class="second-column__item"></div>-->
+<!--        <div v-if="selectedTeethTop.includes('1121') === true" class="selectedTeeth"></div>-->
+<!--        <div v-else class="second-column__item"></div>-->
+<!--        <div v-if="selectedTeethTop.includes('2122') === true" class="selectedTeeth"></div>-->
+<!--        <div v-else class="second-column__item"></div>-->
+<!--        <div v-if="selectedTeethTop.includes('2223') === true" class="selectedTeeth"></div>-->
+<!--        <div v-else class="second-column__item"></div>-->
+<!--        <div v-if="selectedTeethTop.includes('2324') === true" class="selectedTeeth"></div>-->
+<!--        <div v-else class="second-column__item"></div>-->
+<!--        <div v-if="selectedTeethTop.includes('2425') === true" class="selectedTeeth"></div>-->
+<!--        <div v-else class="second-column__item"></div>-->
+<!--        <div v-if="selectedTeethTop.includes('2526') === true" class="selectedTeeth"></div>-->
+<!--        <div v-else class="second-column__item"></div>-->
+<!--        <div v-if="selectedTeethTop.includes('2627') === true" class="selectedTeeth"></div>-->
+<!--        <div v-else class="second-column__item"></div>-->
+<!--        <div v-if="selectedTeethTop.includes('2728') === true" class="selectedTeeth-right"></div>-->
+<!--        <div v-else class="second-column__item"></div>-->
+<!--      </div>-->
       <div class="teeth-map__third-column" >
 
 
@@ -197,6 +236,40 @@ export default {
   // inject: ['teeth1','teeth2'],
   data() {
     return {
+      checkboxsTop: [
+        { checked: false, left: '18', right: '17' },
+        { checked: false, left: '17', right: '16' },
+        { checked: false, left: '16', right: '15' },
+        { checked: false, left: '15', right: '14' },
+        { checked: false, left: '14', right: '13' },
+        { checked: false, left: '13', right: '12' },
+        { checked: false, left: '12', right: '11' },
+        { checked: false, left: '11', right: '21' },
+        { checked: false, left: '21', right: '22' },
+        { checked: false, left: '22', right: '23' },
+        { checked: false, left: '23', right: '24' },
+        { checked: false, left: '24', right: '25' },
+        { checked: false, left: '25', right: '26' },
+        { checked: false, left: '26', right: '27' },
+        { checked: false, left: '27', right: '28' },
+      ],
+      checkboxsBottom: [
+        { checked: false, left: '48', right: '47' },
+        { checked: false, left: '47', right: '46' },
+        { checked: false, left: '46', right: '45' },
+        { checked: false, left: '45', right: '44' },
+        { checked: false, left: '44', right: '43' },
+        { checked: false, left: '43', right: '12' },
+        { checked: false, left: '42', right: '41' },
+        { checked: false, left: '41', right: '31' },
+        { checked: false, left: '31', right: '32' },
+        { checked: false, left: '32', right: '33' },
+        { checked: false, left: '33', right: '34' },
+        { checked: false, left: '34', right: '35' },
+        { checked: false, left: '35', right: '36' },
+        { checked: false, left: '36', right: '37' },
+        { checked: false, left: '37', right: '38' },
+      ],
       selectedTeethTop: [],
       selectedTeethBottom: [],
       isDefaultStyle: true,
@@ -390,6 +463,12 @@ export default {
       'GET_STATE1',
       'GET_STATE2',
     ]),
+
+    validCheckboxs1() {
+      console.log(this.selectedTeethTop.includes(el => el.id === this.checkbox.id))
+      console.log(this.checkbox)
+      return this.checkboxs1.filter(checkbox => checkbox && checkbox.id)
+    },
 
     // toothId () {
     //   return this.teeth.forEach(el => console.log(el.toothId))
