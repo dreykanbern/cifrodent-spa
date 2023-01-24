@@ -27,7 +27,7 @@
 }
 
 
-//Чекбоксы над зубами
+//Чекбоксы над зубами вверх
 
 .checkbox-top {
   display: flex;
@@ -42,6 +42,15 @@
   width: 71px;
   align-items: center;
   position: relative;
+}
+
+//Чекбоксы над зубами низ
+
+.checkbox-bottom {
+  display: flex;
+  flex-direction: row;
+  height: 35px;
+  justify-content: center;
 }
 
 
