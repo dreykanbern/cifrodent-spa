@@ -97,7 +97,7 @@ input {
 .second-column__item {
   display: flex;
   height: 35px;
-  width: 71px;
+  width: 72px;
   background-color: transparent;
   //border-top: 1px solid #c8c8c8;
   //border-left: 1px solid #c8c8c8;
@@ -179,6 +179,28 @@ input {
   &:focus {
     border: 2px solid #8c77de;
     transition: all 0.1s;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .third-column__item {
+    width: 44px;
+    height: 44px;
+    border-radius: 16px;
+  }
+  .second-column__item {
+    height: 30px;
+    width: 72px;
+  }
+  .checkbox-top {
+    height: 28px;
+  }
+  .checkbox-bottom {
+    height: 28px;
+  }
+  .teeth-map__third-column {
+    margin: 0 5px;
+    display: flex;
   }
 }
 

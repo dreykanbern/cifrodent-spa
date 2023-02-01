@@ -3,12 +3,19 @@ import Screen1 from "@/pages/Screen1";
 import Screen2 from "@/pages/Screen2";
 import Screen3 from "@/pages/Screen3";
 import {createRouter, createWebHashHistory} from "vue-router";
+import SuccessPage from "@/pages/SuccessPage";
 
 
 const routes = [
     {
         path: `/`,
+        name: 'MainPage',
         component: Screen0,
+    },
+    {
+        path:`/success-page`,
+        name: 'SuccessPage',
+        component: SuccessPage,
     },
     {
         path: `/teeth-map`,

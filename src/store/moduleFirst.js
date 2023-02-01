@@ -966,16 +966,16 @@ export const moduleFirst = {
         ],
 
         chooseTeeth: [
-            // {
-            //     'stageNumber':'-',
-            //     "toothNumber":'-',
-            //     "typeConstruction":'-',
-            //     "implantSystem":'-',
-            //     "material":'-',
-            //     "colorVita":'-',
-            //     "gumPart":'-',
-            //     "carving":'-',
-            // },
+            {
+                'stageNumber':'-',
+                "toothNumber":'-',
+                "typeConstruction":'-',
+                "implantSystem":'-',
+                "material":'-',
+                "colorVita":'-',
+                "gumPart":'-',
+                "carving":'-',
+            },
         ],
 
 

@@ -65,7 +65,9 @@
       <Textarea v-model="lastForm.More" :autoResize="true" rows="5" cols="30" placeholder="Дополнительная информация к заказу" />
 
       <FileUpload name="upload" @select="selectFiles" @removeUploadedFile="removeFiles" :multiple="true" accept=".stl,.constructionInfo" :maxFileSize="100000000" id="myUpload"
-                  :show-upload-button="false"
+                  :show-upload-button="false" choose-label="Загрузить STL файл (.stl, .constructionInfo)"  cancelLabel="Удалить все файлы"
+                  invalidFileSizeMessage="{0}: Неверный размер файла, файл должен быть меньше {1}." invalidFileTypeMessage="{0}: Неверный формат файла, разрешенные форматы: {1}."
+                  uploadLabel="Нажмите или перетащите файлы в область загрузки" :previewWidth="37"
       />
 
       <div class="checkbox">
@@ -76,9 +78,9 @@
       </div>
 
       <div class="buttons-wrapper">
-          <my-button type="submit" class="text-decoration-none" @click="submitForm">Отправить в работу</my-button>
+          <my-button type="submit" class="text-decoration-none" :class="{'disabled': checked === false | upload === null}" @click="submitForm">Отправить в работу</my-button>
         <router-link to="/teeth-map" class="text-decoration-none">
-          <my-button class="disabled">Вернуться к карте зубов</my-button>
+          <my-button class="non-active">Вернуться к карте зубов</my-button>
         </router-link>
       </div>
 
@@ -134,6 +136,7 @@ export default {
   },
     data() {
       return {
+        // orderNumber: null,
         errorPush: false,
         finalModal: false,
         progressValue: null,
@@ -189,7 +192,6 @@ export default {
 
     selectFiles(event) {
       this.upload = event.files
-      console.log(this.upload)
       // console.log(this.upload)
     },
 
@@ -221,9 +223,13 @@ export default {
           // console.log(progressEvent)
         }.bind(this)
       })
-          .then(() => {
-            //Роутить в самое начало с при завершении прелоадера
-            this.$router.push({name: 'TeethMap'})
+          .then(response => {
+            // Использовать полученное значение
+            let orderNumber = response.data
+            //console.log(orderNumber)
+
+            //Роутить на страницу успеха при завершении прелоадера
+            this.$router.push({ name: 'SuccessPage', params: { orderNumber } })
           })
           .catch(() => {
             //Возможность закрытия модалки и повторить отправку
@@ -231,8 +237,6 @@ export default {
               this.errorPush = true
             }
           })
-
-        // console.log(response.data);
     },
   },
 
@@ -283,8 +287,27 @@ export default {
       return this.stage = [this.stage1, this.stage2]
     },
     chooseTeeth () {
-      return this.$store.state.module1.chooseTeeth
+      let arr = this.$store.state.module1.chooseTeeth
+      let defaultObj = {
+        'stageNumber': '-',
+        "toothNumber": '-',
+        "typeConstruction": '-',
+        "implantSystem": '-',
+        "material": '-',
+        "colorVita": '-',
+        "gumPart": '-',
+        "carving": '-',
+      }
+
+      if (arr.length > 1) {
+        return arr.filter(function (obj) {
+          return obj.stageNumber !== defaultObj.stageNumber || defaultObj.toothNumber !== obj.toothNumber || obj.typeConstruction !== defaultObj.typeConstruction || obj.implantSystem !== defaultObj.implantSystem
+              || obj.material !== defaultObj.material || obj.colorVita !== defaultObj.colorVita || obj.gumPart !== defaultObj.gumPart || obj.carving !== defaultObj.carving
+        })
+      } else return arr
     }
+
+
 
   },
 };

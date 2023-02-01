@@ -15,3 +15,42 @@
     transition: all 0.5s;
   }
 }
+
+//Неактивная кнопка
+
+.non-active {
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+  font-family: subGeneralFont;
+  font-size: 18px;
+  background-color: transparent;
+  border-radius: 8px;
+  border: 2px solid #C8C8C8;
+  color: #C8C8C8;
+  &:hover {
+    background: #8c77de;
+    border: 2px solid #8C77DE;
+    color: white;
+    transition: all 0.5s;
+  }
+}
+
+//Выключенная кнопка
+.disabled, .disabled:disabled, .disabled:hover:disabled {
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+  font-family: subGeneralFont;
+  font-size: 18px;
+  background-color: transparent;
+  border-radius: 8px;
+  border: 2px solid #C8C8C8;
+  color: #C8C8C8;
+  cursor: not-allowed;
+  &:hover {
+    background: transparent;
+    border: 2px solid #C8C8C8;
+    color: #C8C8C8;
+  }
+}

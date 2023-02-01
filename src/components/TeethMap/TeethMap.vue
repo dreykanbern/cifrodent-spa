@@ -234,7 +234,6 @@ export default {
         toothId: this.toothNumber,
       })
       let isActive = this.$store.state.module1.chooseTeeth.some(el => el.toothNumber === this.toothNumber)
-      this.copyToothArr[0].copyState = false
       if (isActive === true) {
         let arr = this.$store.state.module1.chooseTeeth
         this.$store.state.module1.chooseTeeth = arr.filter(el => el.toothNumber !== this.toothNumber)
@@ -275,6 +274,7 @@ export default {
           newValue: false,
           toothId: this.toothNumber,
         })
+        this.copyToothArr[0].copyState = false
       }
     },
 
@@ -385,16 +385,6 @@ export default {
       'GET_STATE1',
       'GET_STATE2',
     ]),
-
-    validCheckboxs1() {
-      console.log(this.selectedTeethTop.includes(el => el.id === this.checkbox.id))
-      console.log(this.checkbox)
-      return this.checkboxs1.filter(checkbox => checkbox && checkbox.id)
-    },
-
-    // toothId () {
-    //   return this.teeth.forEach(el => console.log(el.toothId))
-    // },
 
     teeth () {
       return this.teeth = [...this.$store.state.module1.teeth1, ...this.$store.state.module1.teeth2]

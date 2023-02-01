@@ -22,7 +22,13 @@
   justify-content: center;
   gap: 15px;
   font-family: generalFont;
-  width: 27%;
+  width: 40%;
+}
+
+@media only screen and (max-width: 1280px) {
+  .final-form {
+    width: 100%;
+  }
 }
 
 //Выключенная кнопка
@@ -138,9 +144,15 @@ input .p-inputtext {
   left: 0;
   display: flex;
   width: 100%;
-  height: 80px;
+  height: 105px;
   opacity: 0;
   z-index: 999;
+  cursor: pointer;
+}
+
+div[id='myUpload']:hover .p-fileupload-buttonbar > span {
+  border: 2px dashed #8C77DE;
+  color: #8C77DE;
 }
 
 .p-fileupload-buttonbar >.p-button.p-component.p-disabled {
@@ -157,4 +169,59 @@ input .p-inputtext {
 
 .p-progressbar .p-progressbar-value {
   background: #8C77DE;
+}
+
+.p-badge.p-component.p-badge-warning.p-fileupload-file-badge {
+  display: none;
+}
+
+//Скрывает прогресс бар
+//.p-progressbar.p-component.p-progressbar-determinate {
+//  display: none;
+//}
+
+.p-fileupload-file {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.p-button {
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+  font-family: subGeneralFont;
+  font-size: 16px;
+  background-color: transparent;
+  border-radius: 8px;
+  border: 2px solid #8c77de;
+  color: #8c77de;
+  transition: all 0.5s;
+}
+.p-button:enabled:hover {
+  background: #8C77DE;
+  border: 2px solid #8c77de;
+}
+
+.p-button.p-component.p-fileupload-choose {
+  background: none;
+  border: 2px dashed #5C5C5C;
+  color: black;
+}
+// Скрывает картинку и alt у загруженных элементов
+.p-fileupload-file-thumbnail {
+  display: none;
+}
+
+.p-fileupload-file:hover {
+  color: white;
+  background: rgba(140, 119, 222, 0.7);
+  transition: all 0.3s;
+}
+//Крестик на загруженных элементах
+.p-button.p-button-danger.p-button-text:enabled:hover, .p-buttonset.p-button-danger > .p-button.p-button-text:enabled:hover, .p-splitbutton.p-button-danger > .p-button.p-button-text:enabled:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: transparent;
+  color: #D32F2F;
 }
