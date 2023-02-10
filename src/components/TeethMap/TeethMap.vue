@@ -4,110 +4,165 @@
 
   <h2 class="teeth-map-header">Карта-зубов</h2>
 
-  <div class="teeth-map__wrapper">
 
-    <div class="teeth-map__container">
+  <div class="teeth-map-group">
 
-      <div class="checkbox-top">
+    <div class="teeth-map__wrapper">
 
-        <div class="checkbox-item-container"  v-for="(checkbox, index) in checkboxsTop" :key="index">
+      <div class="teeth-map__container">
 
-          <div class="teeth-map__first-column">
-            <Checkbox v-model="checkbox.checked" :value="true" :binary="true" class="first-column__item"/>
-          </div>
+        <div class="checkbox-top">
 
-          <div class="teeth-map__second-column">
+          <div class="checkbox-item-container"  v-for="(checkbox, index) in checkboxsTop" :key="index">
 
-            <div class="second-column__item">
-              <div
-                   :class="{'item-left': checkbox.checked === false ,'selectedTeeth': checkbox.checked || checkbox.left === checkbox.right,
+            <div class="teeth-map__first-column">
+              <Checkbox v-model="checkbox.checked" :value="true" :binary="true" class="first-column__item"/>
+            </div>
+
+            <div class="teeth-map__second-column">
+
+              <div class="second-column__item">
+                <div
+                    :class="{'item-left': checkbox.checked === false ,'selectedTeeth': checkbox.checked || checkbox.left === checkbox.right,
                     'selectedTeeth-left': checkbox.checked && (!checkboxsTop[index - 1] || !checkboxsTop[index - 1].checked) && (!checkboxsTop[index + 1] || !checkboxsTop[index + 1].checked),
                     'left-border': checkbox.checked && (!checkboxsTop[index - 1] || !checkboxsTop[index - 1].checked)}">
-              </div>
-              <div
-                   :class="{'item-right': checkbox.checked === false ,'selectedTeeth': checkbox.checked,
+                </div>
+                <div
+                    :class="{'item-right': checkbox.checked === false ,'selectedTeeth': checkbox.checked,
                    'selectedTeeth-right': checkbox.checked && (!checkboxsTop[index - 1] || !checkboxsTop[index - 1].checked) && (!checkboxsTop[index + 1] || !checkboxsTop[index + 1].checked),
                    'right-border': checkbox.checked && (!checkboxsTop[index + 1] || !checkboxsTop[index + 1].checked)}">
+                </div>
               </div>
+
             </div>
 
           </div>
 
+
         </div>
 
-
-      </div>
-
-      <div class="teeth-map__third-column" >
+        <div class="teeth-map__third-column" >
 
           <div
-            v-for="tooth in this.$store.state.module1.teeth1"
-            :class="[tooth.toothState,{ 'active': isFilledTeeth(tooth.stage1.toothNumber), 'is-copy': tooth.copyState,}]"
-            @click="clickTooth(tooth.stage1.toothNumber)"
-            @click.right="toothNumber = tooth.stage1.toothNumber"
-            v-contextmenu:contextmenu
-            :key="tooth.stage1.toothNumber"
+              v-for="tooth in this.$store.state.module1.teeth1"
+              :class="[tooth.toothState,{ 'active': isFilledTeeth(tooth.stage1.toothNumber), 'is-copy': tooth.copyState,}]"
+              @click="clickTooth(tooth.stage1.toothNumber)"
+              @click.right="toothNumber = tooth.stage1.toothNumber"
+              v-contextmenu:contextmenu
+              :key="tooth.stage1.toothNumber"
           >
             <!--@click="$router.push(`/teeth-map/tooth/${tooth.stage1.toothNumber}`)" -->
             <code>{{tooth.stage1.toothNumber}}</code>
           </div>
 
 
+        </div>
+
       </div>
 
-    </div>
+      <!-- Выделить модификатор rotate-180 -->
+      <div class="teeth-map__container rotate-180">
 
-    <!-- Выделить модификатор rotate-180 -->
-    <div class="teeth-map__container rotate-180">
+        <div class="checkbox-bottom">
 
-      <div class="checkbox-bottom">
+          <div class="checkbox-item-container"  v-for="(checkbox, index) in checkboxsBottom" :key="index">
 
-        <div class="checkbox-item-container"  v-for="(checkbox, index) in checkboxsBottom" :key="index">
+            <div class="teeth-map__first-column rotate-180-m">
+              <Checkbox v-model="checkbox.checked" :value="true" :binary="true" class="first-column__item rotate-180"/>
+            </div>
 
-          <div class="teeth-map__first-column rotate-180">
-            <Checkbox v-model="checkbox.checked" :value="true" :binary="true" class="first-column__item"/>
-          </div>
+            <div class="teeth-map__second-column">
 
-          <div class="teeth-map__second-column">
-
-            <div class="second-column__item">
-              <div
-                  :class="{'item-left': checkbox.checked === false ,'selectedTeeth': checkbox.checked || checkbox.left === checkbox.right,
+              <div class="second-column__item">
+                <div
+                    :class="{'item-left': checkbox.checked === false ,'selectedTeeth': checkbox.checked || checkbox.left === checkbox.right,
                     'selectedTeeth-left': checkbox.checked && (!checkboxsBottom[index - 1] || !checkboxsBottom[index - 1].checked) && (!checkboxsBottom[index + 1] || !checkboxsBottom[index + 1].checked),
                     'left-border': checkbox.checked && (!checkboxsBottom[index - 1] || !checkboxsBottom[index - 1].checked)}">
-              </div>
-              <div
-                  :class="{'item-right': checkbox.checked === false ,'selectedTeeth': checkbox.checked,
+                </div>
+                <div
+                    :class="{'item-right': checkbox.checked === false ,'selectedTeeth': checkbox.checked,
                    'selectedTeeth-right': checkbox.checked && (!checkboxsBottom[index - 1] || !checkboxsBottom[index - 1].checked) && (!checkboxsBottom[index + 1] || !checkboxsBottom[index + 1].checked),
                    'right-border': checkbox.checked && (!checkboxsBottom[index + 1] || !checkboxsBottom[index + 1].checked)}">
+                </div>
               </div>
+
             </div>
 
           </div>
-
         </div>
-      </div>
 
-      <div class="teeth-map__third-column">
+        <div class="teeth-map__third-column">
 
 
           <div v-for="tooth in this.$store.state.module1.teeth2"
-            :class="[tooth.toothState,{ 'active': isFilledTeeth(tooth.stage1.toothNumber), 'is-copy': tooth.copyState,}]"
-            @click="clickTooth(tooth.stage1.toothNumber)"
-            @click.right="toothNumber = tooth.stage1.toothNumber"
-            v-contextmenu:contextmenu
-            class="rotate-180"
-            :key="tooth.stage1.toothNumber"
+               :class="[tooth.toothState,{ 'active': isFilledTeeth(tooth.stage1.toothNumber), 'is-copy': tooth.copyState,}]"
+               @click="clickTooth(tooth.stage1.toothNumber)"
+               @click.right="toothNumber = tooth.stage1.toothNumber"
+               v-contextmenu:contextmenu
+               class="rotate-180"
+               :key="tooth.stage1.toothNumber"
           >
             <code>{{tooth.stage1.toothNumber}}</code>
           </div>
 
 
+        </div>
+
       </div>
 
     </div>
 
+    <div class="container__info">
+
+      <div class="info__wrapper">
+
+
+        <flag-info id="flag1">
+
+          <div id="flag-content1">
+            <h3 class="flag-h3">Выполните следующие шаги:</h3>
+            <ul>
+              <li class="flag-li">Для указания протяженности изделия необходимо нажать на чек-бокс между зубами.</li>
+              <li class="flag-li">Карта зубов схематически будет увеличивать протяженность соединительными линиями при выборе чек-боксов
+                <br> на соседних зубах.</li>
+            </ul>
+          </div>
+
+          Мостовидная конструкция
+        </flag-info>
+
+
+        <flag-info id="flag2">
+
+          <div id="flag-content2">
+            <h3 class="flag-h3">Выполните следующие шаги:</h3>
+            <ul>
+              <li class="flag-li">При заполнении заказ-наряда необходимо выбрать «рабочий» зуб.</li>
+              <li class="flag-li">После чего вы окажетесь на схеме, где можно выбрать определенный этап. (предусмотрено два этапа изготовления)</li>
+              <li class="flag-li">Далее меню наряда предоставит вам возможность выбрать в хаотичном порядке нужные параметры,<br> предусматривающие данную конструкцию.</li>
+              <li class="flag-li">Во избежание повторяющихся манипуляций, предусмотрена возможность копирования параметров зуба<br> на любой другой с идентичными характеристиками. (правая кнопка мыши на заполненном зубе)</li>
+              <li class="flag-li">После заполнения всех необходимых разделов, все данные будут выведены в таблицу, которая будет направлена <br> в лабораторию и продублирована вам на электронную почту.</li>
+            </ul>
+            <h3 class="flag-h3">Перед отправкой необходимо перепроверить в таблице заполненную вами информацию. <br>
+              Для качественного оказания услуг убедительная просьба максимально подробно заполнять заказ-наряд.</h3>
+          </div>
+
+          Как заполнять заказ-наряд?
+        </flag-info>
+
+      </div>
+
+      <router-link to="/teeth-map/final-data" class="text-decoration-none">
+        <my-button class="btn">
+          Завершить редактирование
+        </my-button>
+      </router-link>
+
+    </div>
+
   </div>
+
+
 
 </div>
 
@@ -145,6 +200,8 @@ import Checkbox from 'primevue/checkbox';
 import { directive, Contextmenu, ContextmenuItem } from "v-contextmenu";
 import "v-contextmenu/dist/themes/default.css";
 import {mapGetters, mapMutations, mapActions} from 'vuex';
+import FlagInfo from "@/components/UI/FlagInfo/FlagInfo";
+import MyButton from "@/components/UI/MyButton/MyButton";
 export default {
   directives: {
     contextmenu: directive,
@@ -152,7 +209,7 @@ export default {
   components: {
     [Contextmenu.name]: Contextmenu,
     [ContextmenuItem.name]: ContextmenuItem,
-    mapGetters, mapMutations, mapActions, Checkbox
+    mapGetters, mapMutations, mapActions, Checkbox, FlagInfo, MyButton
   },
   name: "TeethMap",
   // inject: ['teeth1','teeth2'],

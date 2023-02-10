@@ -13,6 +13,12 @@
 
 //Карта зубов
 
+.teeth-map-group {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
 .teeth-map__wrapper {
   display: flex;
   flex-direction: column;
@@ -182,7 +188,12 @@ input {
   }
 }
 
-@media only screen and (max-width: 1280px) {
+//Переворот схемы
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+@media (min-width: 1025px) and (max-width: 1280px)  {
   .third-column__item {
     width: 44px;
     height: 44px;
@@ -201,6 +212,142 @@ input {
   .teeth-map__third-column {
     margin: 0 5px;
     display: flex;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .teeth-map__wrapper {
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 20%;
+    justify-content: center;
+  }
+  .teeth-map__container {
+    width: min-content;
+    height: 1122px;
+    flex-direction: row;
+  }
+  .teeth-map__third-column {
+    flex-direction: column;
+    margin: 0;
+  }
+  .checkbox-top, .checkbox-bottom {
+    height: 1122px;
+    width: 35px;
+    flex-direction: column;
+  }
+  .checkbox-item-container {
+    justify-content: space-between;
+    height: 71px;
+    width: 30px;
+    &:first-child {
+      //margin-top: 27px;
+    }
+  }
+
+  .teeth-map__first-column {
+    right: 0;
+    left: -50%;
+    top: 25%;
+    bottom: 0;
+    height: 72px;
+  }
+
+  .second-column__item {
+    //transform: rotate(270deg);
+    display: flex;
+    flex-direction: column;
+    width: 35px;
+    height: 72px;
+  }
+  .item-left {
+    height: inherit;
+    border-top: 1px solid #c8c8c8;
+    border-bottom: none;
+    border-left: 1px solid #c8c8c8;
+    border-right: none;
+  }
+
+  .item-right {
+    height: inherit;
+    border-left: 1px solid #c8c8c8;
+    border-bottom: 1px solid #c8c8c8;
+    border-top: none;
+    border-right: none;
+  }
+
+  .selectedTeeth-left {
+    height: inherit;
+    border-left: 3px solid #8C77DE;
+    border-top: 3px solid #8C77DE;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  .selectedTeeth-right {
+    height: inherit;
+    border-left: 3px solid #8C77DE;
+    border-bottom: 3px solid #8C77DE;
+    border-right: none;
+    border-top: none;
+  }
+
+  .checkedTeeth-right {
+    height: inherit;
+    border-left: 3px solid #8C77DE;
+    border-bottom: 3px solid #8C77DE;
+    border-right: none;
+    border-top: none;
+  }
+
+  .checkedTeeth-left {
+    height: inherit;
+    border-left: 3px solid #8C77DE;
+    border-top: 3px solid #8C77DE;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  .selectedTeeth {
+    height: inherit;
+    border-left: 3px solid #8C77DE;
+    border-right: none;
+    border-bottom: none;
+    border-top: none;
+  }
+
+  .left-border {
+    height: inherit;
+    border-top: 3px solid #8C77DE;
+    border-bottom: none;
+    border-right: none;
+  }
+
+  .right-border {
+    height: inherit;
+    border-bottom: 3px solid #8C77DE;
+    border-right: none;
+    border-top: none;
+  }
+  .teeth-map__third-column {
+    //margin-right: 20px;
+  }
+  .rotate-180-m {
+    transform: rotate(0deg);
+  }
+  .teeth-map-group {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .teeth-map-group {
+    flex-direction: column;
+  }
+  .teeth-map__container {
+    margin-bottom: 0;
   }
 }
 
@@ -234,11 +381,6 @@ input {
 
 .is-copy {
   border: 5px dashed #fff !important;
-}
-
-//Переворот схемы
-.rotate-180 {
-  transform: rotate(180deg);
 }
 
 //Контекстное меню

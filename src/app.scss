@@ -34,16 +34,16 @@ button {
 
 //(обозвать логически или внедрить в отдельный компонент)
 .container1 {
-  width: max-content;
-  margin: 10vh 10vw;
+  width: 100%;
+  padding: 10% 10%;
 }
 
 //Медиазапрос для разрешения меньше 1280
 
 @media only screen and (max-width: 1280px) {
   .container1 {
-    width: max-content;
-    margin: 10vh 5vw;
+    width: 100%;
+    padding: 5% 5%;
   }
 }
 
@@ -62,15 +62,6 @@ button {
   color: #000000;
   margin-top: 60px;
   margin-bottom: 30px;
-}
-
-.container__info {
-  display: flex;
-  justify-content: space-between;
-}
-
-.info__wrapper {
-  display: flex;
 }
 
 .flex-column {
