@@ -636,7 +636,7 @@
               </div>
 
                 <label class="modal-select-input" for="">Другое</label>
-                <InputText type="text" name="" placeholder="Напишите свой вариант" v-model="compTooth1.colorVita"/>
+                <InputText type="text" name="" placeholder="Напишите свой вариант" v-model="compTooth2.colorVita"/>
 
 
             </div>
@@ -686,10 +686,21 @@
 
           <div class="modal-select-item">
 
-            <span class ='modal-select-header'></span>
+            <span class ='modal-select-header'>Опак</span>
             <select class="modal-select" v-model="compTooth2.carving">
-              <option class="option-modal default-option" selected :value="'-'">Выберите значение</option>
-              <option class="option-modal" :value="'Опак'">Опак</option>
+              <option class="option-modal default-option" selected :value="'Нет'">Выберите значение</option>
+              <option class="option-modal" :value="'Опак: Слабый'">Слабый</option>
+              <option class="option-modal" :value="'Опак: Средний'">Средний</option>
+              <option class="option-modal" :value="'Опак: Сильный'">Сильный</option>
+            </select>
+
+          </div>
+
+          <div class="modal-select-item">
+
+            <span class ='modal-select-header'>Карвинг</span>
+            <select class="modal-select" v-model="compTooth2.carving">
+              <option class="option-modal default-option" selected :value="'Нет'">Выберите значение</option>
               <option class="option-modal" :value="'Карвинг (силами фрезерного центра)'">Карвинг (силами фрезерного центра)</option>
               <option class="option-modal" :value="'Отправить на карвинг заказчику'">Отправить на карвинг заказчику</option>
             </select>
@@ -724,17 +735,17 @@
 <!--      </div>-->
 <!--    </my-modal>-->
 
-    <input type="checkbox" class="steps-item checkbox-none" id="step1" @click="showModal1">
+    <input type="checkbox" class="steps-item checkbox-none" id="step1" @click.prevent="showModal1" v-model="isCheckedTypeConstruction">
     <label for="step1">Тип конструкции</label>
-    <input type="checkbox" class="steps-item checkbox-none" id="step2" @click="showModal2">
+    <input type="checkbox" class="steps-item checkbox-none" id="step2" @click.prevent="showModal2" v-model="isCheckedImplantSystem">
     <label for="step2">Система имплантатов и размеры</label>
-    <input type="checkbox" class="steps-item checkbox-none" id="step3" @click="showModal3">
+    <input type="checkbox" class="steps-item checkbox-none" id="step3" @click.prevent="showModal3" v-model="isCheckedMaterial">
     <label for="step3">Материал изготовления</label>
-    <input type="checkbox" class="steps-item checkbox-none" id="step4" @click="showModal4">
+    <input type="checkbox" class="steps-item checkbox-none" id="step4" @click.prevent="showModal4" v-model="isCheckedColorVita">
     <label for="step4">Цвет коронки</label>
-    <input type="checkbox" class="steps-item checkbox-none" id="step5" @click="showModal5">
+    <input type="checkbox" class="steps-item checkbox-none" id="step5" @click.prevent="showModal5" v-model="isCheckedGumPart">
     <label for="step5">Десневая часть</label>
-    <input type="checkbox" class="steps-item checkbox-none" id="step6" @click="showModal6">
+    <input type="checkbox" class="steps-item checkbox-none" id="step6" @click.prevent="showModal6" v-model="isCheckedCarving">
     <label for="step6">Опак и карвинг</label>
 <!-- Параметры отступа   <input type="checkbox" class="steps-item checkbox-none" id="step7" @click="showModal7">-->
 <!--    <label for="step7">Параметры отступа</label>-->
@@ -918,6 +929,24 @@ export default  {
     },
     compTooth2() {
       return this.stage2.find(el => el.toothNumber === this.toothId)
+    },
+    isCheckedTypeConstruction() {
+      return this.compTooth2.typeConstruction !== '-';
+    },
+    isCheckedImplantSystem() {
+      return this.compTooth2.implantSystem !== '-'
+    },
+    isCheckedMaterial() {
+      return this.compTooth2.material !== '-'
+    },
+    isCheckedColorVita() {
+      return this.compTooth2.colorVita !== '-'
+    },
+    isCheckedGumPart() {
+      return this.compTooth2.gumPart !== '-'
+    },
+    isCheckedCarving() {
+      return this.compTooth2.carving !== 'Нет';
     },
   },
   watch: {

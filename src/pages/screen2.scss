@@ -8,8 +8,10 @@
   display: flex;
   flex-direction: column;
   align-content: flex-start;
+  align-items: flex-start;
   flex-wrap: wrap;
   gap: 20px;
+
 }
 
 
@@ -45,6 +47,15 @@
   margin-left: 170px;
 }
 
+@media only screen and (max-width: 768px) {
+  .tabs-info {
+    margin-left: 30px;
+  }
+  .buttons-wrapper {
+    gap: 0;
+  }
+}
+
 .tabs-component-tabs {
   display: flex;
   gap: 75px;
@@ -70,7 +81,7 @@
 .tooth-info-wrapper {
   display: flex;
   flex-direction: column;
-  width: 450px;
+  width: fit-content;
 }
 
 .tooth-number {
@@ -121,10 +132,22 @@
 
 //Настройка подсказок
 
-#flag-content1 {
+#flag-container {
   display: none;
-  position: absolute;
-  bottom: 130%;
+  position: fixed;
+  left: 25%;
+  bottom: 25%;
+  box-shadow: rgba(0,0,0,0.5);
+  width: 50%;
+  height: 50%;
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
+}
+
+#flag-content1 {
+  flex-direction: column;
+  display: none;
   background: #EFF3F5;
   border-radius: 8px;
   border: 0.5px solid #C8C8C8;
@@ -134,12 +157,13 @@
   font-family: generalFont;
   z-index: 101;
   transition: all 0.5s;
+  width: max-content;
+  height: max-content;
 }
 
 #flag-content2 {
+  flex-direction: column;
   display: none;
-  position: absolute;
-  bottom: 130%;
   background: #EFF3F5;
   border-radius: 8px;
   border: 0.5px solid #C8C8C8;
@@ -149,28 +173,29 @@
   font-family: generalFont;
   z-index: 101;
   transition: all 0.5s;
+  width: max-content;
+  height: max-content;
 }
 
-#flag1 {
-  position: relative;
+#flag1:hover #flag-container, #flag-content1  {
+  display: flex;
+  transition: all 1s;
 }
 
-#flag2 {
-  position: relative;
+#flag2:hover #flag-container, #flag-content2 {
+  display: flex;
+  transition: all 1s;
 }
 
 #flag1:hover #flag-content1 {
-  display: flex;
   box-shadow: rgba(0,0,0,0.5) 0 0 0 100vw;
   transition: all 1s;
 }
 
 #flag2:hover #flag-content2 {
-  display: flex;
   box-shadow: rgba(0,0,0,0.5) 0 0 0 100vw;
   transition: all 1s;
 }
-
 
 .p-tabview .p-tabview-nav {
   z-index: 1 !important;
@@ -180,17 +205,18 @@ p-tabview-nav-content {
 }
 
 .p-tabview .p-tabview-panels {
-  padding: 0;
+  padding: 0!important;
 }
 
 .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
-  background: #ffffff;
-  border-color: #8C77DE;
-  color: #8C77DE;
+  background: #ffffff !important;
+  border-color: #8C77DE!important;
+  border-bottom: 4px solid;
+  color: #8C77DE!important;
 }
 
 .p-tabview .p-tabview-nav li .p-tabview-nav-link:not(.p-disabled):focus {
-  outline: 0 none;
-  outline-offset: 0;
-  box-shadow: none ;
+  outline: 0 none!important;
+  outline-offset: 0!important;
+  box-shadow: none!important;
 }

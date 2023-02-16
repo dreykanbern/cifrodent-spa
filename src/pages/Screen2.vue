@@ -25,20 +25,37 @@
         <div class="tip-wrapper">
           <flag-info id="flag1">
 
-            <div id="flag-content1">
-              Данный раздел находится в активной разработке и будет дополнен в ближайшее время
-            </div>
+            <div id="flag-container">
 
+              <div id="flag-content1">
+                <h3 class="flag-h3">Выполните следующие шаги:</h3>
+                <ul>
+                  <li class="flag-li">Для заполнения формы необходимо выбрать соответствующий раздел.</li>
+                  <li class="flag-li">Далее выбрать параметр.</li>
+                  <li class="flag-li">В форму подтянется выбранный параметр и это будет подтверждением выбора.</li>
+                  <li class="flag-li">После заполнения всех необходимых разделов, все данные будут выведены в таблицу.</li>
+                </ul>
+              </div>
+
+            </div>
             Как заполнять форму?
           </flag-info>
 
           <flag-info id="flag2">
 
-            <div id="flag-content2">
-              Данный раздел находится в активной разработке и будет дополнен в ближайшее время
+            <div id="flag-container">
+
+              <div id="flag-content2">
+                <h3 class="flag-h3">Пояснения к этапам конструкции</h3>
+                <ul>
+                  <li class="flag-li">В заказ-наряде предусмотрены двухэтапные конструкции. </li>
+                </ul>
+                <h3 class="flag-h3">В случаях, когда, например, необходимо изготовить индивидуальный абатмент, а сверху каркас или анатомическую коронку, все можно сразу одним нарядом обозначить в соответствующих вкладках этапов и задание для лаборатории будет принято корректно. </h3>
+              </div>
+
             </div>
 
-            Два этапа заполнения формы
+            Этапы конструкции
           </flag-info>
 
         </div>
@@ -51,7 +68,7 @@
             <my-button @click=saveTeeth>Сохранить настройки</my-button>
           </router-link>
           <router-link to="/teeth-map" class="text-decoration-none">
-            <my-button class="disabled">Отменить</my-button>
+            <my-button class="non-active">Отменить</my-button>
           </router-link>
         </div>
 
@@ -180,7 +197,7 @@
   </div>
 </template>
 
-<style lang='scss' src="./screen2.scss"></style>
+<style lang='scss' src="./screen2.scss" scoped></style>
 
 <script>
 import router from "@/router/router";
@@ -196,7 +213,7 @@ import TabView from 'primevue/tabview';
 import TabPanel from 'primevue/tabpanel';
 export default {
   name: "Screen2",
-  components: {router, BackButton, FlagInfo, MyButton, MySteps, MySteps2, Tabs, Tab, MyModal,TabView,TabPanel},
+  components: {router, BackButton, FlagInfo, MyButton, MySteps, MySteps2, Tabs, Tab, MyModal, TabView, TabPanel},
   // inject: ['teeth1','teeth2',],
   data() {
     return {
