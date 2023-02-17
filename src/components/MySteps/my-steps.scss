@@ -111,6 +111,7 @@
   border-radius: 8px;
   border: none;
   text-align: center;
+  cursor: pointer;
   &:active {
     //background: #8c77de;
     //color: white;
@@ -341,3 +342,36 @@ input {
 }
 
 
+// кастомный селект
+
+select {
+  option {
+    color: black; // Цвет не выбранных опций
+    cursor: pointer;
+  }
+
+  &:focus option:checked {
+    background-color: #8C77DE; // Цвет выбранной опции
+    color: white; // Цвет текста выбранной опции
+  }
+
+  &::selection {
+    background-color: #8C77DE; // Цвет выделения выбранной опции
+    color: white; // Цвет текста выделения выбранной опции
+  }
+
+  &:focus {
+    text-align: left;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .modal-select-container {
+    width: 100vw;
+    justify-content: center;
+  }
+  .content-modal-wrapper {
+    margin-left: 10px;
+  }
+}

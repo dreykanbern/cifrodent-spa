@@ -687,7 +687,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>Опак</span>
-            <select class="modal-select" v-model="compTooth1.carving" @change="onChange(0)">
+            <select class="modal-select" v-model="compTooth1.carving">
               <option class="option-modal default-option" selected :value="'Нет'">Выберите значение</option>
               <option class="option-modal" :value="'Опак: Слабый'">Слабый</option>
               <option class="option-modal" :value="'Опак: Средний'">Средний</option>
@@ -699,7 +699,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>Карвинг</span>
-            <select class="modal-select" v-model="compTooth1.carving" @change="onChange(1)">
+            <select class="modal-select" v-model="compTooth1.carving">
               <option class="option-modal default-option" selected :value="'Нет'">Выберите значение</option>
               <option class="option-modal" :value="'Карвинг (силами фрезерного центра)'">Карвинг (силами фрезерного центра)</option>
               <option class="option-modal" :value="'Отправить на карвинг заказчику'">Отправить на карвинг заказчику</option>
@@ -891,11 +891,6 @@ export default  {
     showModal7() {
       this.modalVisible7 = true;
     },
-    onChange(index) {
-      if (this.shouldShowWarning) {
-        this.compTooth1.carving = this.compTooth1.carving.map((value, i) => i === index ? value : "Пизда");
-      }
-    },
   },
   computed: {
     toothId () {
@@ -953,9 +948,6 @@ export default  {
     },
     isCheckedCarving() {
       return this.compTooth1.carving !== 'Нет';
-    },
-    shouldShowWarning() {
-      return this.compTooth1.carving.filter(value => !!value).length > 1;
     },
   },
   watch: {

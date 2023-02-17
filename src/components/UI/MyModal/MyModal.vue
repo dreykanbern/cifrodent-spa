@@ -7,7 +7,7 @@
         <slot></slot>
         <div class="my-modal-content-footer">
           <my-button @click.stop="hideModal">Сохранить</my-button>
-          <button @click.stop="hideModal" type="reset" class="disabled">Отменить</button>
+          <button @click.stop="hideModal" type="reset" class="btn non-active">Отменить</button>
         </div>
       </div>
     </div>

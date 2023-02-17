@@ -36,9 +36,9 @@
           v-model="lastForm.Patient"
       />
 
-      <InputText
-          type="text"
+      <InputMask
           placeholder="Контактный номер телефона*"
+          mask="+7 (999) 999-9999"
           v-model="lastForm.Tel"
       />
 
@@ -104,6 +104,7 @@
 
 <script>
 
+import InputMask from 'primevue/inputmask'
 import axios from "axios";
 import MyModal from "@/components/UI/MyModal/MyModal";
 import ProgressBar from 'primevue/progressbar';
@@ -132,7 +133,7 @@ import FinalModal from "@/components/UI/FinalModal/FinalModal";
 export default {
   name: "Screen3",
   components: {
-    MyButton, BackButton, router, vueBaseInput, InputText, Textarea, Checkbox, Calendar, FileUpload, DataTable, Column, ColumnGroup, Row, axios, ProgressBar, MyModal, FinalModal
+    MyButton, BackButton, router, vueBaseInput, InputText, Textarea, Checkbox, Calendar, FileUpload, DataTable, Column, ColumnGroup, Row, axios, ProgressBar, MyModal, FinalModal, InputMask,
   },
     data() {
       return {

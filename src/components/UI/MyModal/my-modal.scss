@@ -28,3 +28,56 @@
   gap: 30px;
   box-shadow: 0px -4px 4px rgba(39, 26, 90, 0.05);
 }
+
+.btn {
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+  font-family: subGeneralFont;
+  font-size: 18px;
+  background-color: transparent;
+  border-radius: 8px;
+  border: 2px solid #8c77de;
+  color: #8c77de;
+  transition: all 0.5s;
+  &:hover {
+    background: #8c77de;
+    color: white;
+    transition: all 0.5s;
+  }
+}
+
+//Неактивная кнопка
+
+.non-active {
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+  font-family: subGeneralFont;
+  font-size: 18px;
+  background-color: transparent;
+  border-radius: 8px;
+  border: 2px solid #C8C8C8;
+  color: #C8C8C8;
+  &:hover {
+    background: #8c77de;
+    border: 2px solid #8C77DE;
+    color: white;
+    transition: all 0.5s;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .my-modal-content {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .my-modal-content {
+    width: 100%;
+  }
+  .my-modal-content-footer {
+    padding: 10px;
+  }
+}

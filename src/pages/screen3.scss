@@ -225,3 +225,7 @@ div[id='myUpload']:hover .p-fileupload-buttonbar > span {
   border-color: transparent;
   color: #D32F2F;
 }
+
+span.p-button-label {
+  width: fit-content;
+}
