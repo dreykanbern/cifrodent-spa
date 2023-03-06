@@ -16,7 +16,9 @@ import 'vue3-side-panel/dist/vue3-side-panel.css'
 import 'vue3-easy-data-table/dist/style.css';
 import "v-contextmenu/dist/themes/default.css";
 import 'vue-base-input/src/assets/vue-base-input.css';
-
+import 'primeicons/primeicons.css';                 //icons
+import 'primevue/resources/primevue.min.css';      //core css
+import 'primevue/resources/themes/saga-blue/theme.css';       //theme
 
 
 const app = createApp(App);

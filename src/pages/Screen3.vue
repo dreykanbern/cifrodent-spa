@@ -124,11 +124,8 @@ import 'vue3-easy-data-table/dist/style.css';
 import vueBaseInput from "vue-base-input";
 import 'vue-base-input/src/assets/vue-base-input.css';
 import {mapGetters} from "vuex";
-import 'primevue/resources/themes/saga-blue/theme.css';       //theme
-import 'primevue/resources/primevue.min.css';             //core css
-import 'primeicons/primeicons.css';
-import TeethMap from "@/components/TeethMap/TeethMap";                           //icons
 import FinalModal from "@/components/UI/FinalModal/FinalModal";
+
 
 export default {
   name: "Screen3",

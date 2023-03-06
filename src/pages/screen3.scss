@@ -70,7 +70,7 @@ input {
 
 .p-inputtext {
   width: unset;
-  height: 60px !important;
+  height: 60px;
   padding: 18px;
 }
 
@@ -78,11 +78,11 @@ input {
   border-color: #8C77DE !important;
 }
 
-.p-inputtext:focus {
+.p-inputtext:enabled:focus {
   outline: 0 none;
   outline-offset: 0;
-  box-shadow: 0 0 0 0.1rem #8C77DE !important;
-  border-color: #8C77DE !important;
+  box-shadow: 0 0 0 0.1rem #8C77DE;
+  border-color: #8C77DE;
 }
 
 input .p-inputtext {
@@ -201,13 +201,13 @@ div[id='myUpload']:hover .p-fileupload-buttonbar > span {
 }
 .p-button:enabled:hover {
   background: #8C77DE;
-  border: 2px solid #8c77de;
+  border: 2px solid #8c77de !important;
 }
 
 .p-button.p-component.p-fileupload-choose {
-  background: none;
-  border: 2px dashed #5C5C5C;
-  color: black;
+  background: none !important;
+  border: 2px dashed #5C5C5C !important;
+  color: black !important;
 }
 // Скрывает картинку и alt у загруженных элементов
 .p-fileupload-file-thumbnail {
@@ -215,17 +215,20 @@ div[id='myUpload']:hover .p-fileupload-buttonbar > span {
 }
 
 .p-fileupload-file:hover {
-  color: white;
-  background: rgba(140, 119, 222, 0.7);
-  transition: all 0.3s;
+  color: white !important;
+  background: rgba(140, 119, 222, 0.7) !important;
+  transition: all 0.3s !important;
 }
 //Крестик на загруженных элементах
 .p-button.p-button-danger.p-button-text:enabled:hover, .p-buttonset.p-button-danger > .p-button.p-button-text:enabled:hover, .p-splitbutton.p-button-danger > .p-button.p-button-text:enabled:hover {
-  background: rgba(255, 255, 255, 0.9);
-  border-color: transparent;
-  color: #D32F2F;
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-color: transparent !important;
+  color: #D32F2F !important;
 }
 
 span.p-button-label {
-  width: fit-content;
+  width: fit-content !important;
+}
+
+.p-button-label {
 }
