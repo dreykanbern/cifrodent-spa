@@ -506,7 +506,7 @@
           <div class="modal-select-item">
 
             <span class ='modal-select-header'>Опак</span>
-            <Dropdown class="modal-select" v-model="compTooth2.carving" placeholder="Выберите значение" :options="opaqueValues" optionLabel="name" optionValue="value">
+            <Dropdown class="modal-select" v-model="compTooth2.opac" placeholder="Выберите значение" :options="opaqueValues" optionLabel="name" optionValue="value">
             </Dropdown>
 
           </div>
@@ -1046,7 +1046,7 @@ export default  {
       return this.compTooth2.gumPart !== '-'
     },
     isCheckedCarving() {
-      return this.compTooth2.carving !== 'Нет';
+      return this.compTooth2.carving !== 'Нет' || this.compTooth2.opac !== 'Нет';
     },
   },
   watch: {

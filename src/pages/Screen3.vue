@@ -10,14 +10,15 @@
     <h1 class="container__h1">Итоговые данные</h1>
 
       <DataTable :value=chooseTeeth responsiveLayout="scroll">
-        <Column field="stageNumber" header="Номер этапа"></Column>
         <Column field="toothNumber" header="Номер зуба"></Column>
+        <Column field="stageNumber" header="Номер этапа"></Column>
         <Column field="typeConstruction" header="Тип конструкции"></Column>
         <Column field="implantSystem" header="Система имплантов и размеры"></Column>
         <Column field="material" header="Материал изготовления"></Column>
         <Column field="colorVita" header="Цвет по шкале Vita"></Column>
         <Column field="gumPart" header="Десневая часть"></Column>
-        <Column field="carving" header="Опак и карвинг"></Column>
+        <Column field="carving" header="Карвинг"></Column>
+        <Column field="opac" header="Опак"></Column>
       </DataTable>
 
 
@@ -147,7 +148,8 @@ export default {
           "material": 'Материал изготовления',
           "colorVita": 'Цвет по шкале Vita',
           "gumPart": 'Десневая часть',
-          "carving": 'Опак и карвинг',
+          "carving": 'Карвинг',
+          "opac": 'Опак'
         },
         upload: null,
         lastForm: {
@@ -218,13 +220,11 @@ export default {
       axios.post("https://cifrodent.ru/wp-content/themes/cifrodent/php/send.php", formData, {
         onUploadProgress: function (progressEvent) {
           this.progressValue = parseInt(Math.round((progressEvent.loaded / progressEvent.total) * 100));
-          // console.log(progressEvent)
         }.bind(this)
       })
           .then(response => {
             // Использовать полученное значение
             let orderNumber = response.data
-            //console.log(orderNumber)
 
             //Роутить на страницу успеха при завершении прелоадера
             this.$router.push({ name: 'SuccessPage', params: { orderNumber } })
@@ -295,12 +295,13 @@ export default {
         "colorVita": '-',
         "gumPart": '-',
         "carving": '-',
+        "opac": '-',
       }
 
       if (arr.length > 1) {
         return arr.filter(function (obj) {
           return obj.stageNumber !== defaultObj.stageNumber || defaultObj.toothNumber !== obj.toothNumber || obj.typeConstruction !== defaultObj.typeConstruction || obj.implantSystem !== defaultObj.implantSystem
-              || obj.material !== defaultObj.material || obj.colorVita !== defaultObj.colorVita || obj.gumPart !== defaultObj.gumPart || obj.carving !== defaultObj.carving
+              || obj.material !== defaultObj.material || obj.colorVita !== defaultObj.colorVita || obj.gumPart !== defaultObj.gumPart || obj.carving !== defaultObj.carving || obj.opac !== defaultObj.opac;
         })
       } else return arr
     }

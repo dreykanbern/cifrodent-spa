@@ -116,9 +116,15 @@
                   </span>
                 </div>
                 <div class="tooth-attribute__item">
-                  <span class="tooth-attribute__item-title">Опак и карвинг</span>
+                  <span class="tooth-attribute__item-title">Карвинг</span>
                   <span class="tooth-attribute__item-value">
                     {{compTooth1.carving}}
+                  </span>
+                </div>
+                <div class="tooth-attribute__item">
+                  <span class="tooth-attribute__item-title">Опак</span>
+                  <span class="tooth-attribute__item-value">
+                    {{compTooth1.opac}}
                   </span>
                 </div>
 <!--  Параметры отступа не нужны               <div class="tooth-attribute__item">-->
@@ -173,9 +179,15 @@
                   </span>
                 </div>
                 <div class="tooth-attribute__item">
-                  <span class="tooth-attribute__item-title">Опак и карвинг</span>
+                  <span class="tooth-attribute__item-title">Карвинг</span>
                   <span class="tooth-attribute__item-value">
                     {{compTooth2.carving}}
+                  </span>
+                </div>
+                <div class="tooth-attribute__item">
+                  <span class="tooth-attribute__item-title">Опак</span>
+                  <span class="tooth-attribute__item-value">
+                    {{compTooth2.opac}}
                   </span>
                 </div>
 <!-- Параметры отступа пока не нужны               <div class="tooth-attribute__item">-->
@@ -331,6 +343,7 @@ export default {
           "colorVita": this.compTooth1.colorVita,
           "gumPart": this.compTooth1.gumPart,
           "carving": this.compTooth1.carving,
+          "opac": this.compTooth1.opac,
         }
       }
     },
@@ -346,6 +359,7 @@ export default {
           "colorVita": this.compTooth2.colorVita,
           "gumPart": this.compTooth2.gumPart,
           "carving": this.compTooth2.carving,
+          "opac": this.compTooth2.opac,
         }
       }
     },

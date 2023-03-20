@@ -11,7 +11,7 @@
           <p class="order-p">Нанесите номер заказ-наряда <br> на отправляемые модели</p>
         </div>
 
-        <my-button class="success-btn" @click="this.$router.push({ name: 'MainPage'})">Вернуться к заказ-нарядам</my-button>
+        <my-button class="success-btn" @click="goToMainPage">Вернуться к заказ-нарядам</my-button>
 
     </div>
   </div>
@@ -30,7 +30,12 @@ export default {
     return {
       orderNumber: this.$route.params.orderNumber,
     }
-  }
+  },
+  methods: {
+    goToMainPage() {
+      this.$router.push({name: 'MainPage'})
+    },
+  },
 }
 </script>
 

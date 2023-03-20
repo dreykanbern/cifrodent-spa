@@ -263,6 +263,8 @@ export default {
       toothNumber: '',
       copyToothArr: [],
       insertToothNumber: null,
+      lastToothNumber: '',
+      copyObj: null,
     }
   },
   methods: {
@@ -311,12 +313,14 @@ export default {
                     el.stage1.colorVita = '-';
                     el.stage1.gumPart = '-';
                     el.stage1.carving = 'Нет';
+                    el.stage1.opac = 'Нет';
                     el.stage2.typeConstruction = '-';
                     el.stage2.implantSystem = '-';
                     el.stage2.material = '-';
                     el.stage2.colorVita = '-';
                     el.stage2.gumPart = '-';
                     el.stage2.carving = 'Нет';
+                    el.stage2.opac = 'Нет';
                 }
             })
         this.$store.state.module1.teeth2.forEach(el => {
@@ -327,12 +331,14 @@ export default {
                     el.stage1.colorVita = '-';
                     el.stage1.gumPart = '-';
                     el.stage1.carving = 'Нет';
+                    el.stage1.opac = 'Нет';
                     el.stage2.typeConstruction = '-';
                     el.stage2.implantSystem = '-';
                     el.stage2.material = '-';
                     el.stage2.colorVita = '-';
                     el.stage2.gumPart = '-';
                     el.stage2.carving = 'Нет';
+                    el.stage2.opac = 'Нет';
                 }
             })
         this.MUT_COPY_STATE( {
@@ -345,14 +351,28 @@ export default {
 
     copyTooth () {
       let isActive = this.$store.state.module1.chooseTeeth.some(el => el.toothNumber === this.toothNumber)
+      let lastToothNumber
       if (isActive === true) {
         // Копирование
         let teeth1Object = this.$store.state.module1.teeth1.filter(el => el.toothId === `tooth${this.toothNumber}`)
-        // console.log(teeth1Object)
         let teeth2Object = this.$store.state.module1.teeth2.filter(el => el.toothId === `tooth${this.toothNumber}`)
         let copyTooth = [...teeth1Object, ...teeth2Object]
+        // console.log(copyTooth)
+
         // Создаем новый массив с экземплярами объектов без указанных свойств
-        let newCopyTooth = copyTooth.map(obj => ({
+        let newCopyTooth = copyTooth.map(obj => {
+          let newObj = {}
+          Object.entries(obj).forEach(([key, value]) => {
+            if (key !== 'toothNumber') {
+              newObj[key] = key === 'stage1' || key === 'stage2' ? { ...value } : value
+            }
+          })
+          // console.log(newObj)
+          return this.copyObj = newObj
+        })
+
+        // Создаем новый массив с экземплярами объектов без указанных свойств
+        newCopyTooth = copyTooth.map(obj => ({
           toothState: obj.toothState,
           copyState: obj.copyState,
           stage1: { ...obj.stage1 },
@@ -366,39 +386,42 @@ export default {
             toothId: this.toothNumber,
           })
         }
+        this.lastToothNumber = this.toothNumber
       }
     },
 
     insertTooth () {
-      let teeth1Object = this.$store.state.module1.teeth1
-      let teeth2Object = this.$store.state.module1.teeth2
-      let teeth = [...teeth1Object, ...teeth2Object]
-      let teethObject = teeth.filter(el => el.toothId === `tooth${this.toothNumber}`)
-      let copyTooth = []
-      for (let i = 0; i < this.copyToothArr.length; i++) {
-        copyTooth.push(Object.assign({}, this.copyToothArr[i]))
-      }
-      // Обновляем свойства в копии объекта
-      copyTooth[0].toothId = `tooth${this.toothNumber}`
-      copyTooth[0].stage1.toothNumber = this.toothNumber
-      copyTooth[0].stage2.toothNumber = this.toothNumber
-
-      // Получаем индекс объекта в массиве teeth1Object
-      let index = teeth1Object.indexOf(teethObject[0])
-      if (index !== -1) {
-        teeth1Object.splice(index, 1, copyTooth[0])
-      }
-      // Получаем индекс объекта в массиве teeth2Object
-      let index2 = teeth2Object.indexOf(teethObject[0])
-      if (index2 !== -1) {
-        teeth2Object.splice(index2, 1, copyTooth[0])
-      }
-      this.copyToothArr.forEach(obj => {
-        this.$store.state.module1.chooseTeeth.push(
-          { ...obj.stage1 },
-          { ...obj.stage2 }
-        )
-      })
+      this.$store.state.module1.chooseTeeth.push(this.copyObj);
+      console.log(this.copyObj)
+      // let teeth1Object = this.$store.state.module1.teeth1
+      // let teeth2Object = this.$store.state.module1.teeth2
+      // let teeth = [...teeth1Object, ...teeth2Object]
+      // let teethObject = teeth.filter(el => el.toothId === `tooth${this.toothNumber}`)
+      // let copyTooth = []
+      // for (let i = 0; i < this.copyToothArr.length; i++) {
+      //   copyTooth.push(Object.assign({}, this.copyToothArr[i]))
+      // }
+      // // Обновляем свойства в копии объекта
+      // copyTooth[0].toothId = `tooth${this.lastToothNumber}`
+      // copyTooth[0].stage1.toothNumber = this.toothNumber
+      // copyTooth[0].stage2.toothNumber = this.toothNumber
+      //
+      // // Получаем индекс объекта в массиве teeth1Object
+      // let index = teeth1Object.indexOf(teethObject[0])
+      // if (index !== -1) {
+      //   teeth1Object.splice(index, 1, copyTooth[0])
+      // }
+      // // Получаем индекс объекта в массиве teeth2Object
+      // let index2 = teeth2Object.indexOf(teethObject[0])
+      // if (index2 !== -1) {
+      //   teeth2Object.splice(index2, 1, copyTooth[0])
+      // }
+      // this.copyToothArr.forEach(obj => {
+      //   this.$store.state.module1.chooseTeeth.push(
+      //     { ...obj.stage1 },
+      //     { ...obj.stage2 }
+      //   )
+      // })
     },
 
     // selectMissingTooth () {
