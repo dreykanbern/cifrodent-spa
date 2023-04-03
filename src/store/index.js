@@ -105,6 +105,15 @@ export default createStore({
                 }
             })
         },
+        MUT_RESET_STATE: (state) => {
+            Object.assign(state, getDefaultState());
+            function getDefaultState() {
+                return {
+                    //Начальное состояние приложения
+                    module1: moduleFirst,
+                };
+            }
+        }
 
     },
     

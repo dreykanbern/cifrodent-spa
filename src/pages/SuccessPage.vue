@@ -21,19 +21,40 @@
 
 <script>
 import MyButton from "@/components/UI/MyButton/MyButton";
+import { mapMutations } from 'vuex';
 export default {
   name: "SuccessPage",
   components: {
-    MyButton,
+    MyButton, mapMutations
   },
   data() {
     return {
       orderNumber: this.$route.params.orderNumber,
+      isReloaded: false // флаг для проверки выполнения перезагрузки
+    }
+  },
+  mounted() {
+    // проверяем, была ли выполнена перезагрузка страницы
+    if (localStorage.getItem('isReloaded')) {
+      this.isReloaded = true;
+      localStorage.removeItem('isReloaded');
+      // выполняем редирект на MainPage
+      this.$router.push({name: 'MainPage'});
     }
   },
   methods: {
+    ...mapMutations([
+      'MUT_RESET_STATE',
+    ]),
     goToMainPage() {
-      this.$router.push({name: 'MainPage'})
+      if (this.$route.name === 'SuccessPage' && !this.isReloaded) {
+        //this.MUT_RESET_STATE(); // вызываем мутацию для сброса стора
+        localStorage.setItem('isReloaded', 'true'); // сохраняем флаг перезагрузки в localStorage
+        window.location.reload(); // перезагружаем страницу один раз
+      }
+      else {
+        this.$router.push({name: 'MainPage'})
+      }
     },
   },
 }
