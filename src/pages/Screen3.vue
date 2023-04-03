@@ -10,15 +10,15 @@
     <h1 class="container__h1">Итоговые данные</h1>
 
       <DataTable :value=chooseTeeth responsiveLayout="scroll">
-        <Column field="toothNumber" header="Номер зуба"></Column>
-        <Column field="stageNumber" header="Номер этапа"></Column>
-        <Column field="typeConstruction" header="Тип конструкции"></Column>
-        <Column field="implantSystem" header="Система имплантов и размеры"></Column>
-        <Column field="material" header="Материал изготовления"></Column>
-        <Column field="colorVita" header="Цвет по шкале Vita"></Column>
-        <Column field="gumPart" header="Десневая часть"></Column>
-        <Column field="carving" header="Карвинг"></Column>
-        <Column field="opac" header="Опак"></Column>
+        <Column field="toothNumber" header="Номер зуба" :rowspan="2"></Column>
+        <Column field="stageNumber" header="Номер этапа" :rowspan="1"></Column>
+        <Column field="typeConstruction" header="Тип конструкции" :rowspan="1"></Column>
+        <Column field="implantSystem" header="Система имплантов и размеры" :rowspan="1"></Column>
+        <Column field="material" header="Материал изготовления" :rowspan="1"></Column>
+        <Column field="colorVita" header="Цвет по шкале Vita" :rowspan="1"></Column>
+        <Column field="gumPart" header="Десневая часть" :rowspan="1"></Column>
+        <Column field="carving" header="Карвинг" :rowspan="1"></Column>
+        <Column field="opac" header="Опак" :rowspan="1"></Column>
       </DataTable>
 
 
@@ -165,30 +165,6 @@ export default {
     },
 
   methods: {
-    // myComplete () {
-    //   const formData = new FormData()
-    //   Object.entries(this.lastForm).forEach(([key, value]) => {
-    //     formData.append(key, value);
-    //   });
-    //   //console.log(Object.fromEntries(formData))
-    //   formData.append("tableHeader", JSON.stringify(this.tableHeader))
-    //   formData.append('chooseTeeth', JSON.stringify(this.chooseTeeth))
-    //
-    //   const fileInput = document.querySelector('#myUpload');
-    //   for (const file of fileInput.files) {
-    //     formData.append('upload', file, file.name);
-    //   }
-    //   fetch("https://cifrodent.ru/wp-content/themes/cifrodent/php/send.php", {
-    //     method:'POST',
-    //     body: formData
-    //   })
-    //       .then(Response => {
-    //         return Response.json()
-    //       })
-    //       .then(Result => {
-    //         // console.log(Result)
-    //       })
-    // }
 
     selectFiles(event) {
       this.upload = event.files
