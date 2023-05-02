@@ -9,18 +9,17 @@
 
     <h1 class="container__h1">Итоговые данные</h1>
 
-      <DataTable :value=chooseTeeth responsiveLayout="scroll">
-        <Column field="toothNumber" header="Номер зуба" :rowspan="2"></Column>
-        <Column field="stageNumber" header="Номер этапа" :rowspan="1"></Column>
-        <Column field="typeConstruction" header="Тип конструкции" :rowspan="1"></Column>
-        <Column field="implantSystem" header="Система имплантов и размеры" :rowspan="1"></Column>
-        <Column field="material" header="Материал изготовления" :rowspan="1"></Column>
-        <Column field="colorVita" header="Цвет по шкале Vita" :rowspan="1"></Column>
-        <Column field="gumPart" header="Десневая часть" :rowspan="1"></Column>
-        <Column field="carving" header="Карвинг" :rowspan="1"></Column>
-        <Column field="opac" header="Опак" :rowspan="1"></Column>
+      <DataTable :value=newSelectedTeeth responsiveLayout="scroll" expandableRows>
+        <Column field="toothNumber" header="Номер зуба"></Column>
+        <Column field="stage1.stageNumber" header="Номер этапа"></Column>
+        <Column field="stage1.typeConstruction" header="Тип конструкции"></Column>
+        <Column field="stage1.implantSystem" header="Система имплантов и размеры"></Column>
+        <Column field="stage1.material" header="Материал изготовления"></Column>
+        <Column field="stage1.colorVita" header="Цвет по шкале Vita"></Column>
+        <Column field="stage1.gumPart" header="Десневая часть"></Column>
+        <Column field="stage1.carving" header="Карвинг"></Column>
+        <Column field="stage1.opac" header="Опак"></Column>
       </DataTable>
-
 
     <h2 class="container__h2">Заполните данные полей формы</h2>
 
@@ -141,8 +140,8 @@ export default {
         progressValue: null,
         checked: false,
         tableHeader: {
-          'stageNumber':'Номер этапа',
           "toothNumber": 'Номер зуба',
+          'stageNumber':'Номер этапа',
           "typeConstruction": 'Тип конструкции',
           "implantSystem": 'Система имплантов и размеры',
           "material": 'Материал изготовления',
@@ -165,6 +164,14 @@ export default {
     },
 
   methods: {
+    // Удалить не забыть для тестового примера
+    toggleExpand(rowData) {
+      if (this.expandedRows.includes(rowData)) {
+        this.expandedRows = this.expandedRows.filter(row => row !== rowData);
+      } else {
+        this.expandedRows.push(rowData);
+      }
+    },
 
     selectFiles(event) {
       this.upload = event.files
@@ -218,6 +225,7 @@ export default {
     ...mapGetters([
       'GET_STATE1',
       'GET_STATE2',
+      'GET_NEW_CHOOSE_TEETH',
     ]),
     toothId() {
       return this.$route.params.id
@@ -280,10 +288,51 @@ export default {
               || obj.material !== defaultObj.material || obj.colorVita !== defaultObj.colorVita || obj.gumPart !== defaultObj.gumPart || obj.carving !== defaultObj.carving || obj.opac !== defaultObj.opac;
         })
       } else return arr
-    }
-
-
-
+    },
+    sortedTeeth() {
+      return this.$store.getters.GET_NEW_CHOOSE_TEETH.sort(function(a, b) {
+        return a.sortOrder - b.sortOrder;
+      });
+    },
+    newSelectedTeeth () {
+      let arr = this.sortedTeeth
+      let defaultObj = {
+        toothNumber: '-',
+        sortOrder: 1,
+        stage1: {
+          "stageNumber": '1',
+          "typeConstruction": "-",
+          "implantSystem": '-',
+          "material": '-',
+          "gumPart": '-',
+          "colorVita": '-',
+          "carving": 'Нет',
+          "opac": 'Нет',
+        },
+        stage2: {
+          "stageNumber": '2',
+          "typeConstruction": "-",
+          "implantSystem": '-',
+          "material": '-',
+          "gumPart": '-',
+          "colorVita": '-',
+          "carving": 'Нет',
+          "opac": 'Нет',
+        }
+      }
+      if (arr.length > 1) {
+        return arr.filter(function (obj) {
+          return defaultObj.stage1.toothNumber !== obj.stage1.toothNumber || defaultObj.stage2.toothNumber !== obj.stage2.toothNumber
+              || obj.stage1.typeConstruction !== defaultObj.stage1.typeConstruction || obj.stage2.typeConstruction !== defaultObj.stage2.typeConstruction
+              || obj.stage1.implantSystem !== defaultObj.stage1.implantSystem || obj.stage2.implantSystem !== defaultObj.stage2.implantSystem
+              || obj.stage1.material !== defaultObj.stage1.material || obj.stage2.material !== defaultObj.stage2.material
+              || obj.stage1.colorVita !== defaultObj.stage1.colorVita || obj.stage2.colorVita !== defaultObj.stage2.colorVita
+              || obj.stage1.gumPart !== defaultObj.stage1.gumPart || obj.stage2.gumPart !== defaultObj.stage2.gumPart
+              || obj.stage1.carving !== defaultObj.stage1.carving || obj.stage2.carving !== defaultObj.stage2.carving
+              || obj.stage1.opac !== defaultObj.stage1.opac || obj.stage2.opac !== defaultObj.stage2.opac;
+        })
+      } else return arr
+    },
   },
 };
 </script>

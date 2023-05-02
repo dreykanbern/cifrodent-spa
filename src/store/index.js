@@ -113,12 +113,24 @@ export default createStore({
                     module1: moduleFirst,
                 };
             }
-        }
+        },
+        // Эта мутация будет изменять массив newChooseTeeth в state Vuex
+        MUT_SET_NEW_CHOOSE_TEETH (state, newChooseTeeth) {
+            state.module1.newChooseTeeth = newChooseTeeth;
+        },
 
     },
-    
+    actions: {
+        // Это действие будет вызываться в компоненте, чтобы обновить массив newChooseTeeth в state Vuex
+        updateNewChooseTeeth({ commit }, newChooseTeeth) {
+            commit('MUT_SET_NEW_CHOOSE_TEETH', newChooseTeeth);
+        }
+    },
     getters: {
         GET_STATE1: state => state.module1.teeth1,
-        GET_STATE2: state => state.module1.teeth2
+        GET_STATE2: state => state.module1.teeth2,
+        GET_NEW_CHOOSE_TEETH (state) {
+            return state.module1.newChooseTeeth;
+        }
     }
 })
