@@ -424,49 +424,10 @@ export default {
       // })
     },
 
-    // selectMissingTooth () {
-    //   // console.log(this.teeth.forEach(el => console.log(el)))
-    //   this.MUT_TOOTH_STATE( {
-    //     newValue:  this.teeth.forEach(el => el.toothState = 'is-missing'),
-    //     toothId: this.$store.state.module1.teeth1.forEach(el => el.toothId = `tooth${this.toothNumber}`),
-    //   })
-    // },
-
     isFilledTeeth(toothNumber) {
       // console.log(toothNumber)
       return this.$store.state.module1.chooseTeeth.some(el => el.toothNumber === toothNumber)
     },
-
-    // FilledTooth () {
-    //   this.$router.push(`/teeth-map/tooth/${tooth.stage1.toothNumber}`)
-    //   this.$store.state.module1.teeth1.forEach(item => {
-    //     if (item.typeConstruction !== '-' || item.implantSystem !== '-' || item.material !== '-' || item.colorVita !=='-'
-    //         || item.gumPart !== '-' || item.carving !== '-' || item.indentOptions !== '-') {
-    //       item.isFilledTooth = true
-    //       // console.log(item.isFilledTooth)
-    //       this.MUT_FILLED_TOOTH( {
-    //         newValue:  item.isFilledTooth,
-    //         toothId: this.toothId
-    //       })
-    //     }
-    //   })
-    //   this.$store.state.module1.teeth2.forEach(item => {
-    //     if (item.typeConstruction !== '-' || item.implantSystem !== '-' || item.material !== '-' || item.colorVita !=='-'
-    //         || item.gumPart !== '-' || item.carving !== '-' || item.indentOptions !== '-') {
-    //       item.isFilledTooth = true
-    //       this.MUT_FILLED_TOOTH( {
-    //         newValue:  item.isFilledTooth,
-    //         toothId: this.toothId
-    //       })
-    //     }
-    //   })
-    // },
-    // remoteTooth(toothNumber) {
-    //   if (this.isDefaultStyle === true) {
-    //     this.isDefaultStyle = false;
-    //     this.isRemoteTooth = true;
-    //   }
-    // },
   },
   computed: {
     ...mapGetters([
@@ -512,38 +473,6 @@ export default {
     },
 
   },
-  // watch: {
-  //   'GET_STATE1': {
-  //     deep: true,
-  //     handler(GET_STATE1) {
-  //       GET_STATE1.forEach(item => {
-  //         if (item.stage1.typeConstruction !== '-' || item.stage1.implantSystem !== '-' || item.stage1.material !== '-' || item.stage1.colorVita !== '-'
-  //             || item.stage1.gumPart !== '-' || item.stage1.carving !== '-' || item.stage1.indentOptions !== '-') {
-  //           item.stage1.isFilledTooth = true
-  //           this.MUT_FILLED_TOOTH1({
-  //             newValue: item.stage1.isFilledTooth,
-  //             toothId: this.toothId
-  //           })
-  //         }
-  //       })
-  //     }
-  //   },
-  //   'GET_STATE2': {
-  //     deep: true,
-  //     handler(GET_STATE2) {
-  //       GET_STATE2.forEach(item => {
-  //         if (item.stage2.typeConstruction !== '-' || item.stage2.implantSystem !== '-' || item.stage2.material !== '-' || item.stage2.colorVita !== '-'
-  //             || item.stage2.gumPart !== '-' || item.stage2.carving !== '-' || item.stage2.indentOptions !== '-') {
-  //           item.stage2.isFilledTooth = true
-  //           this.MUT_FILLED_TOOTH2({
-  //             newValue: item.stage2.isFilledTooth,
-  //             toothId: this.toothId
-  //           })
-  //         }
-  //       })
-  //     }
-  //   }
-  // },
 }
 
 
