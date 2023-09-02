@@ -5,7 +5,8 @@ export const moduleFirst = {
             sortOrder: 1,
             toothState:'third-column__item',
             copyState: false,
-                stage1:{
+            stages: [
+                {
                     stageNumber: '1',
                     typeConstruction: "-",
                     implantSystem: '-',
@@ -17,7 +18,7 @@ export const moduleFirst = {
                     indentOptions: '-', // Убрать из текущего заказ наряда
                     selectDefault: 'Выберите значение',
                 },
-                stage2:{
+                {
                     stageNumber: '2',
                     typeConstruction: "-",
                     implantSystem: '-',
@@ -28,903 +29,969 @@ export const moduleFirst = {
                     opac: 'Нет',
                     indentOptions: '-', // Убрать из текущего заказ наряда
                     selectDefault: 'Выберите значение',
-                }
+                },
+            ]
             },
             {toothNumber: '17',
                 sortOrder: 2,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '16',
                 sortOrder: 3,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '15',
                 sortOrder: 4,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '14',
                 sortOrder: 5,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '13',
                 sortOrder: 6,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '12',
                 sortOrder: 7,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '11',
                 sortOrder: 8,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '21',
                 sortOrder: 9,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '22',
                 sortOrder: 10,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '23',
                 sortOrder: 11,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    colorVita: '-',
-                    material: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '24',
                 sortOrder: 12,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '25',
                 sortOrder: 13,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '26',
                 sortOrder: 14,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '27',
                 sortOrder: 15,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '28',
                 sortOrder: 16,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '48',
                 sortOrder: 32,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '47',
                 sortOrder: 31,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '46',
                 sortOrder: 30,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '45',
                 sortOrder: 29,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '44',
                 sortOrder: 28,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '43',
                 sortOrder: 27,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '42',
                 sortOrder: 26,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '41',
                 sortOrder: 25,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '31',
                 sortOrder: 24,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '32',
                 sortOrder: 23,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '33',
                 sortOrder: 22,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '34',
                 sortOrder: 21,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '35',
                 sortOrder: 20,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '36',
                 sortOrder: 19,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '37',
                 sortOrder: 18,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
             {toothNumber: '38',
                 sortOrder: 17,
                 toothState:'third-column__item',
                 copyState: false,
-                stage1:{
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                },
-                stage2:{
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    colorVita: '-',
-                    gumPart: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    indentOptions: '-', // Убрать из текущего заказ наряда
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             },
         ],
         teeth1: [
@@ -1974,28 +2041,32 @@ export const moduleFirst = {
             {
                 toothNumber: '-',
                 sortOrder: 1,
-                stage1: {
-                    stageNumber: '1',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    gumPart: '-',
-                    colorVita: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    selectDefault: 'Выберите значение',
-                },
-                stage2: {
-                    stageNumber: '2',
-                    typeConstruction: "-",
-                    implantSystem: '-',
-                    material: '-',
-                    gumPart: '-',
-                    colorVita: '-',
-                    carving: 'Нет',
-                    opac: 'Нет',
-                    selectDefault: 'Выберите значение',
-                }
+                stages: [
+                    {
+                        stageNumber: '1',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    },
+                    {
+                        stageNumber: '2',
+                        typeConstruction: "-",
+                        implantSystem: '-',
+                        material: '-',
+                        colorVita: '-',
+                        gumPart: '-',
+                        carving: 'Нет',
+                        opac: 'Нет',
+                        indentOptions: '-', // Убрать из текущего заказ наряда
+                        selectDefault: 'Выберите значение',
+                    }
+                ]
             }
         ],
 

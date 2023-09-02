@@ -9,17 +9,10 @@
 
     <h1 class="container__h1">Итоговые данные</h1>
 
-      <DataTable :value=newSelectedTeeth responsiveLayout="scroll" expandableRows>
-        <Column field="toothNumber" header="Номер зуба"></Column>
-        <Column field="stage1.stageNumber" header="Номер этапа"></Column>
-        <Column field="stage1.typeConstruction" header="Тип конструкции"></Column>
-        <Column field="stage1.implantSystem" header="Система имплантов и размеры"></Column>
-        <Column field="stage1.material" header="Материал изготовления"></Column>
-        <Column field="stage1.colorVita" header="Цвет по шкале Vita"></Column>
-        <Column field="stage1.gumPart" header="Десневая часть"></Column>
-        <Column field="stage1.carving" header="Карвинг"></Column>
-        <Column field="stage1.opac" header="Опак"></Column>
-      </DataTable>
+    <DataTable :value="newSelectedTeeth" :expandedRows="expandedRows" @row-toggle="onRowToggle" dataKey="toothNumber" :rowExpansionTemplate="rowExpansionTemplate">
+      <Column field="toothNumber" header="Номер зуба"></Column>
+      <Column expander></Column>
+    </DataTable>
 
     <h2 class="container__h2">Заполните данные полей формы</h2>
 
@@ -104,7 +97,7 @@
 
 <script>
 
-import InputMask from 'primevue/inputmask'
+import InputMask from 'primevue/inputmask';
 import axios from "axios";
 import MyModal from "@/components/UI/MyModal/MyModal";
 import ProgressBar from 'primevue/progressbar';
@@ -132,46 +125,38 @@ export default {
   components: {
     MyButton, BackButton, router, vueBaseInput, InputText, Textarea, Checkbox, Calendar, FileUpload, DataTable, Column, ColumnGroup, Row, axios, ProgressBar, MyModal, FinalModal, InputMask,
   },
-    data() {
-      return {
-        // orderNumber: null,
-        errorPush: false,
-        finalModal: false,
-        progressValue: null,
-        checked: false,
-        tableHeader: {
-          "toothNumber": 'Номер зуба',
-          'stageNumber':'Номер этапа',
-          "typeConstruction": 'Тип конструкции',
-          "implantSystem": 'Система имплантов и размеры',
-          "material": 'Материал изготовления',
-          "colorVita": 'Цвет по шкале Vita',
-          "gumPart": 'Десневая часть',
-          "carving": 'Карвинг',
-          "opac": 'Опак'
-        },
-        upload: null,
-        lastForm: {
-          Client: '',
-          Patient: '',
-          Tel: '',
-          Email: '',
-          Address: '',
-          Calendar: '',
-          More: '',
-        },
-      }
-    },
+  data() {
+    return {
+      expandedRows: [],
+      errorPush: false,
+      finalModal: false,
+      progressValue: null,
+      checked: false,
+      tableHeader: {
+        "toothNumber": 'Номер зуба',
+        'stageNumber':'Номер этапа',
+        "typeConstruction": 'Тип конструкции',
+        "implantSystem": 'Система имплантов и размеры',
+        "material": 'Материал изготовления',
+        "colorVita": 'Цвет по шкале Vita',
+        "gumPart": 'Десневая часть',
+        "carving": 'Карвинг',
+        "opac": 'Опак'
+      },
+      upload: null,
+      lastForm: {
+        Client: '',
+        Patient: '',
+        Tel: '',
+        Email: '',
+        Address: '',
+        Calendar: '',
+        More: '',
+      },
+    }
+  },
 
   methods: {
-    // Удалить не забыть для тестового примера
-    toggleExpand(rowData) {
-      if (this.expandedRows.includes(rowData)) {
-        this.expandedRows = this.expandedRows.filter(row => row !== rowData);
-      } else {
-        this.expandedRows.push(rowData);
-      }
-    },
 
     selectFiles(event) {
       this.upload = event.files
@@ -299,26 +284,28 @@ export default {
       let defaultObj = {
         toothNumber: '-',
         sortOrder: 1,
-        stage1: {
-          "stageNumber": '1',
-          "typeConstruction": "-",
-          "implantSystem": '-',
-          "material": '-',
-          "gumPart": '-',
-          "colorVita": '-',
-          "carving": 'Нет',
-          "opac": 'Нет',
-        },
-        stage2: {
-          "stageNumber": '2',
-          "typeConstruction": "-",
-          "implantSystem": '-',
-          "material": '-',
-          "gumPart": '-',
-          "colorVita": '-',
-          "carving": 'Нет',
-          "opac": 'Нет',
-        }
+        stages: [
+            {
+              "stageNumber": '1',
+              "typeConstruction": "-",
+              "implantSystem": '-',
+              "material": '-',
+              "gumPart": '-',
+              "colorVita": '-',
+              "carving": 'Нет',
+              "opac": 'Нет',
+            },
+            {
+              "stageNumber": '2',
+              "typeConstruction": "-",
+              "implantSystem": '-',
+              "material": '-',
+              "gumPart": '-',
+              "colorVita": '-',
+              "carving": 'Нет',
+              "opac": 'Нет',
+            }
+        ],
       }
       if (arr.length > 1) {
         return arr.filter(function (obj) {
@@ -336,4 +323,3 @@ export default {
   },
 };
 </script>
-

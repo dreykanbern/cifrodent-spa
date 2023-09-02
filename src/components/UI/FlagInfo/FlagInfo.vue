@@ -2,7 +2,7 @@
 
   <div class="wrapper__flag">
     <slot></slot>
-    <img class="flag__img" src="~@/assets/img/info-icon.svg" alt="#">
+    <img class="flag__img" src="@/assets/img/info-icon.svg" alt="#">
   </div>
 
 </template>
